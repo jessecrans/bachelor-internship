@@ -1,0 +1,4 @@
+- De simulatie van de detectie kans staat er zover ik kan zien niet bij.
+- Er wordt een functie gebruikt die niet gedefinieerd is.
+- De event files zitten er ook niet bij. Ik neem aan dat die files de echte data zijn, dus ik snap dat die er niet bij zitten.  Ik vroeg mij af of je misschien 1 of 2 van zulke files hebt zodat ik kan zien hoe die eruitzien. Hopelijk begrijp ik de code dan ook wat beter, want nu is het nogal veel en niet altijd heel duidelijk. Veel variabelen hebben ook afkortingen als namen die ik niet ken, dus misschien kunnen we dat volgend gesprek ook bespreken.
+- Ik begrijp de code in de file `search_data.py​` wel voor een groot deel, maar niet in de `app.py`​ en `Stars in the MW.ipynb`, maar ik weet ook niet in hoeverre deze bestanden belangrijk zijn aangezien de `search_data.py`​ het zoek algoritme met de windows is.
