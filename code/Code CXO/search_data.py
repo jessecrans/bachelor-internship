@@ -136,7 +136,7 @@ def get_counts_from_event(
     Ncnt_tot = len(evt_in_Rsrc_idxs)
 
     # Get background counts
-    Ncnt_bkg = len(evt_in_Rbkg_idxs)-Ncnt_tot
+    Ncnt_bkg = len(evt_in_Rbkg_idxs) - Ncnt_tot
 
     if output == 'net':
         # Get net counts and uncertainties
@@ -284,6 +284,8 @@ def transient_selection(evt_data_raw, src_xs, src_ys, R_apers):
     xt_idxs = np.where(flags_1 | flags_2)[0]
 
     return xt_idxs
+
+# Waar is dit voor?
 
 
 def chopp(evt_data_raw, src_xs, src_ys, R_apers):
