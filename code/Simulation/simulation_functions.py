@@ -17,7 +17,7 @@ def generate_light_curve(
         t_1_offset: float,
         t_2_offset: float,
         alpha_1: float,
-        alpha_2: float
+        alpha_2: float,
 ) -> list[float]:
     """
     ## Generate a light curve of an X-ray transient (XT) with a given start time, peak and background.
@@ -52,11 +52,55 @@ def generate_light_curve(
         elif t_1 <= t_i < t_2:  # during plateau
             A = peak / (t_1 - t_0)**alpha_1
             y = A * (t_i - t_0)**alpha_1
-        # Q? Why does the plateau end lower than the start of the decay. Shouldn't they end and start at the same value?
-        # Q? Can be seen in the cell below in the top left plot.
         else:  # during decay
-            A = peak / (t_2 - t_1)**alpha_2
+            # A = peak / (t_2 - t_1)**alpha_2
+            A = peak * ((t_2 - t_0)**(alpha_1 - alpha_2) /
+                        (t_1 - t_0)**alpha_1)
             y = A * (t_i - t_0)**alpha_2
+
+        light_curve.append(y + background)  # add background to the light curve
+
+    return light_curve
+
+
+def generate_light_curve_2(
+        t: list[float],
+        t_0: float,
+        peak: float,
+        background: float,
+        t_1_offset: float,
+        alpha_1: float
+):
+    """
+    ## Generate a light curve of an X-ray transient (XT) with a given start time, peak and background.
+
+
+    ### Args:
+        t `list[float]`: List of time values, in seconds.
+        t_0 `float`: Start time of the transient, in kiloseconds.
+        peak `float`: Peak count rate of the transient, in counts per second.
+        background `float`: Background count rate of the transient, in counts per second.
+        t_1_offset `float` (optional): Time offset for the peak of the transient, in seconds.
+        alpha_1 `float` (optional): Power law index for the decay of the transient.
+
+    ### Returns:
+        `list[float]`: The simulated light curve as the count rate as a function of time.
+    """
+
+    t_0 = t_0 * 1000.0  # convert start time to seconds
+    t_1 = t_0 + t_1_offset  # peak time is t_1_offset s after the start
+
+    light_curve = []  # list to store the simulated light curve
+
+    for t_i in t:
+        if t_i < t_0:  # before the transient starts
+            y = 0.0
+        elif t_0 <= t_i < t_1:  # during linear rise
+            A = peak / t_1
+            y = A * (t_i - t_0)
+        else:  # during plateau
+            A = peak / (t_1 - t_0)**alpha_1
+            y = A * (t_i - t_0)**alpha_1
 
         light_curve.append(y + background)  # add background to the light curve
 
@@ -146,14 +190,15 @@ def simulate_FXRT(
     t_1_offset: float = 50.0,
     t_2_offset: float = 1000.0,
     alpha_1: float = -0.1,
-    alpha_2: float = -2.0
+    alpha_2: float = -2.0,
+    broken_power_law: bool = True
 ) -> tuple[np.ndarray[float], np.ndarray[float], np.ndarray[int], np.ndarray[int]]:
     """
     ## Simulate the light curve and spectrum of an X-ray transient (XT) with a given start time, peak and background.
 
 
     ### Args:
-        t_exp `float`: Exposure time, in kiloseconds.
+        T_exp `float`: Exposure time, in kiloseconds.
         t_bin `float`: Size of the time bins, in seconds.
         t_0 `float`: Start time of the transient, in kiloseconds.
         background `float`: Background count rate of the transient, in counts per second.
@@ -169,12 +214,14 @@ def simulate_FXRT(
     """
 
     T_exp = T_exp*1000  # convert exposure time to seconds
-    # create time steps from 0 to T_exp with t_bin step size
-    t = np.arange(0.0, T_exp, t_bin)
+    t = np.arange(0, T_exp, t_bin)
 
     # simulate light curve with given start time, peak and background
     function = np.array(generate_light_curve(t, t_0, peak, background,
                         t_1_offset, t_2_offset, alpha_1, alpha_2))
+    if not broken_power_law:
+        function = np.array(generate_light_curve_2(t, t_0, peak, background,
+                                                   t_1_offset, alpha_1))
     # get temporal and spectral distributions from the light curve
     temporal_dist, spectral_dist, wave = get_distributions(function)
     # generate random light curve and spectrum with total_counts counts from the temporal and spectral distributions
@@ -399,7 +446,7 @@ def transient_selection(time: list[float], energy: list[float], T_exp: float, ba
     return False
 
 
-def simulate_detection(T_exp: float, F_peak: float, background: float, theta: float, simulations: int):
+def simulate_detection(T_exp: float, F_peak: float, background: float, theta: float, simulations: int, window: float = 20.0):
     """
     ## Simulate the detection of an X-ray transient (XT) with a given peak flux and background.
 
@@ -417,7 +464,7 @@ def simulate_detection(T_exp: float, F_peak: float, background: float, theta: fl
         1.6e14*F_peak)  # convert F_peak to net counts: Yang et al. 2019
     e_lower = 5e2  # ev
     e_upper = 7e3  # ev
-    t_bin = 2
+    t_bin = 10
 
     detections = 0
 
@@ -426,7 +473,7 @@ def simulate_detection(T_exp: float, F_peak: float, background: float, theta: fl
         t, function, simulated_time, energy = simulate_FXRT(
             T_exp, t_bin, t_start, background, total_counts)
         xt_idxs = transient_selection(
-            simulated_time, energy, T_exp, background, theta, e_lower, e_upper)
+            simulated_time, energy, T_exp, background, theta, e_lower, e_upper, window)
 
         if xt_idxs:
             detections += 1
@@ -438,22 +485,22 @@ def simulate_detection(T_exp: float, F_peak: float, background: float, theta: fl
     return probability
 
 
-def simulate_detection_parallel_simulations_helper(T_exp: float, F_peak: float, background: float, theta: float, simulations: int):
+def simulate_detection_parallel_simulations_helper(T_exp: float, F_peak: float, background: float, theta: float, window: float = 20.0):
     # convert F_peak to net counts: Yang et al. 2019
     total_counts = int(1.6e14*F_peak)
     e_lower = 5e2  # ev
     e_upper = 7e3  # ev
-    t_bin = 2
+    t_bin = 10
     t_start = random.uniform(-3.0, T_exp-1.0)
     t, function, simulated_time, energy = simulate_FXRT(
         T_exp, t_bin, t_start, background, total_counts)
     xt_idxs = transient_selection(
-        simulated_time, energy, T_exp, background, theta, e_lower, e_upper
+        simulated_time, energy, T_exp, background, theta, e_lower, e_upper, window
     )
     return xt_idxs
 
 
-def simulate_detection_parallel_simulations(T_exp: float, F_peak: float, background: float, theta: float, simulations: int):
+def simulate_detection_parallel_simulations(T_exp: float, F_peak: float, background: float, theta: float, simulations: int, window: float = 20.0):
     """
     ## Simulate the detection of an X-ray transient (XT) with a given peak flux and background.
 
@@ -474,7 +521,7 @@ def simulate_detection_parallel_simulations(T_exp: float, F_peak: float, backgro
             [F_peak]*simulations,
             [background]*simulations,
             [theta]*simulations,
-            [simulations]*simulations
+            [window]*simulations
         ))
 
     probability = detections / simulations
