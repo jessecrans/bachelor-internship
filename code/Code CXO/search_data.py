@@ -285,8 +285,6 @@ def transient_selection(evt_data_raw, src_xs, src_ys, R_apers):
 
     return xt_idxs
 
-# Waar is dit voor?
-
 
 def chopp(evt_data_raw, src_xs, src_ys, R_apers):
     xt_idxs = transient_selection(evt_data_raw, src_xs, src_ys, R_apers)

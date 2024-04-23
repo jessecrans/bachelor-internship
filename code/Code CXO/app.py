@@ -27,15 +27,21 @@ def index():
     )
 
 
-def function(obsid):
-    command = 'download_chandra_obsid ' + str(obsid) + ' evt2,fov,asol,bpix,msk'
+def function(obsid: str):
+    # Download data from Chandra archive
+    command = 'download_chandra_obsid ' + \
+        str(obsid) + ' evt2,fov,asol,bpix,msk'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
+
     # command='cd '+str(obsid)
     # proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
+
     command = 'cp search_data.py ' + str(obsid) + '/'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
+
     command = 'cp '+str(obsid) + '/primary/* ' + str(obsid) + '/'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
+
     command = 'gunzip ' + str(obsid) + '/*.gz'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
@@ -102,7 +108,7 @@ def function(obsid):
 
 # if __name__ == "__main__":
 #    app.run(host="0.0.0.0", port=8080, debug=False)
-Obsid = [16454, 16453, 803]
+Obsid = [803]
 # Obsid=[23570,23831,24275,24276,24669,23728,23696,23635,24835,22542,23556,23631,23699,23695,23691,26139,23749,23568,23557,23572]
 # Obsid=[26146,23812,26150,23740,23741,23394,23770,26175,23692,23725,26197,23744,23832,24472,24473,24474,24836,24837,24844]
 # Obsid=[26137,26168,23719,26183,26166,26148,26135,23688,26186,26151,26145,23627,26147,23686,26159,26162,23705,26229,26286,22616,22617,22974,22975,22976,24892,20611,26156,23793]
