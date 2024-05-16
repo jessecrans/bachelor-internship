@@ -52,11 +52,15 @@ def generate_light_curve(
         elif t_1 <= t_i < t_2:  # during plateau
             A = peak / (t_1 - t_0)**alpha_1
             y = A * (t_i - t_0)**alpha_1
-        # Q? Why does the plateau end lower than the start of the decay. Shouldn't they end and start at the same value?
-        # Q? Can be seen in the cell below in the top left plot.
         else:  # during decay
-            A = peak / (t_2 - t_1)**alpha_2
+            A = peak * (t_2 - t_0)**(alpha_1 - alpha_2) / (t_1 - t_0)**alpha_1
             y = A * (t_i - t_0)**alpha_2
+
+        """
+        y_plat = peak / (t_1 - t_0)**alpha_1 * (t_2 - t_0)**alpha_1
+        y_decay = A * (t_2 - t_0)**alpha_2
+        A = peak * (t_2 - t_0)**(alpha_1 - alpha_2) / (t_1 - t_0)**alpha_1
+        """
 
         light_curve.append(y + background)  # add background to the light curve
 
@@ -118,15 +122,6 @@ def generate_counts(
     time = []
     energy = []
 
-    # Q? Why would you loop and get only the first element? The tem and spec are already lists of N_net elements randomly chosen from t and wav
-    # for i in range(0, total_counts):
-    #     tem = random.choices(t, weights=temporal_dist, k=total_counts) # generate random light curve with N_net total counts from t and temporal_dist
-    #     spec = random.choices(wav, weights=spectral_dist, k=total_counts) # generate random spectrum with N_net total counts from wav and spectral_dist
-
-    #     time.append(tem[0])
-    #     energy.append(spec[0]*1000) # convert energy to keV
-
-    # Q? Would this not do the same thing as the loop above?
     # generate random light curve with N_net total counts from t and temporal_dist
     time = np.array(random.choices(t, weights=temporal_dist, k=total_counts))
     # generate random spectrum with N_net total counts from wav and spectral_dist
@@ -399,7 +394,7 @@ def transient_selection(time: list[float], energy: list[float], T_exp: float, ba
     return False
 
 
-def simulate_detection(T_exp: float, F_peak: float, background: float, theta: float, simulations: int):
+def simulate_detection(T_exp: float, F_peak: float, background: float, theta: float, simulations: int, t_bin, window: float = 20.0):
     """
     ## Simulate the detection of an X-ray transient (XT) with a given peak flux and background.
 
@@ -417,7 +412,6 @@ def simulate_detection(T_exp: float, F_peak: float, background: float, theta: fl
         1.6e14*F_peak)  # convert F_peak to net counts: Yang et al. 2019
     e_lower = 5e2  # ev
     e_upper = 7e3  # ev
-    t_bin = 2
 
     detections = 0
 
@@ -426,34 +420,32 @@ def simulate_detection(T_exp: float, F_peak: float, background: float, theta: fl
         t, function, simulated_time, energy = simulate_FXRT(
             T_exp, t_bin, t_start, background, total_counts)
         xt_idxs = transient_selection(
-            simulated_time, energy, T_exp, background, theta, e_lower, e_upper)
+            simulated_time, energy, T_exp, background, theta, e_lower, e_upper, window)
 
         if xt_idxs:
             detections += 1
 
     probability = detections / simulations
 
-    # print(f"T_exp = {T_exp}, F_peak = {F_peak}, background = {background}, theta = {theta}, simulations = {simulations}, probability = {probability}")
-
     return probability
 
 
-def simulate_detection_parallel_simulations_helper(T_exp: float, F_peak: float, background: float, theta: float, simulations: int):
+def simulate_detection_parallel_simulations_helper(T_exp: float, F_peak: float, background: float, theta: float, t_bin: float, window: float = 20.0):
     # convert F_peak to net counts: Yang et al. 2019
     total_counts = int(1.6e14*F_peak)
     e_lower = 5e2  # ev
     e_upper = 7e3  # ev
-    t_bin = 2
+
     t_start = random.uniform(-3.0, T_exp-1.0)
-    t, function, simulated_time, energy = simulate_FXRT(
+    t, _, simulated_time, energy = simulate_FXRT(
         T_exp, t_bin, t_start, background, total_counts)
     xt_idxs = transient_selection(
-        simulated_time, energy, T_exp, background, theta, e_lower, e_upper
+        simulated_time, energy, T_exp, background, theta, e_lower, e_upper, window
     )
     return xt_idxs
 
 
-def simulate_detection_parallel_simulations(T_exp: float, F_peak: float, background: float, theta: float, simulations: int):
+def simulate_detection_parallel_simulations(T_exp: float, F_peak: float, background: float, theta: float, simulations: int, t_bin: float, window: float = 20.0):
     """
     ## Simulate the detection of an X-ray transient (XT) with a given peak flux and background.
 
@@ -474,7 +466,8 @@ def simulate_detection_parallel_simulations(T_exp: float, F_peak: float, backgro
             [F_peak]*simulations,
             [background]*simulations,
             [theta]*simulations,
-            [simulations]*simulations
+            [t_bin]*simulations,
+            [window]*simulations
         ))
 
     probability = detections / simulations
