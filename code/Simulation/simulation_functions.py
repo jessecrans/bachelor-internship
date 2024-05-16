@@ -53,13 +53,9 @@ def generate_light_curve(
             A = peak / (t_1 - t_0)**alpha_1
             y = A * (t_i - t_0)**alpha_1
         else:  # during decay
-<<<<<<< HEAD
-            A = peak * (t_2 - t_0)**(alpha_1 - alpha_2) / (t_1 - t_0)**alpha_1
-=======
             # A = peak / (t_2 - t_1)**alpha_2
             A = peak * ((t_2 - t_0)**(alpha_1 - alpha_2) /
                         (t_1 - t_0)**alpha_1)
->>>>>>> 1fb5c9ed2ebb003c40e49ce72098b3d47c26a68a
             y = A * (t_i - t_0)**alpha_2
 
         """
@@ -447,11 +443,7 @@ def transient_selection(time: list[float], energy: list[float], T_exp: float, ba
     return False
 
 
-<<<<<<< HEAD
-def simulate_detection(T_exp: float, F_peak: float, background: float, theta: float, simulations: int, t_bin, window: float = 20.0):
-=======
 def simulate_detection(T_exp: float, F_peak: float, background: float, theta: float, simulations: int, window: float = 20.0):
->>>>>>> 1fb5c9ed2ebb003c40e49ce72098b3d47c26a68a
     """
     ## Simulate the detection of an X-ray transient (XT) with a given peak flux and background.
 
@@ -469,10 +461,7 @@ def simulate_detection(T_exp: float, F_peak: float, background: float, theta: fl
         1.6e14*F_peak)  # convert F_peak to net counts: Yang et al. 2019
     e_lower = 5e2  # ev
     e_upper = 7e3  # ev
-<<<<<<< HEAD
-=======
     t_bin = 10
->>>>>>> 1fb5c9ed2ebb003c40e49ce72098b3d47c26a68a
 
     detections = 0
 
@@ -491,20 +480,12 @@ def simulate_detection(T_exp: float, F_peak: float, background: float, theta: fl
     return probability
 
 
-<<<<<<< HEAD
-def simulate_detection_parallel_simulations_helper(T_exp: float, F_peak: float, background: float, theta: float, t_bin: float, window: float = 20.0):
-=======
 def simulate_detection_parallel_simulations_helper(T_exp: float, F_peak: float, background: float, theta: float, window: float = 20.0):
->>>>>>> 1fb5c9ed2ebb003c40e49ce72098b3d47c26a68a
     # convert F_peak to net counts: Yang et al. 2019
     total_counts = int(1.6e14*F_peak)
     e_lower = 5e2  # ev
     e_upper = 7e3  # ev
-<<<<<<< HEAD
-
-=======
     t_bin = 10
->>>>>>> 1fb5c9ed2ebb003c40e49ce72098b3d47c26a68a
     t_start = random.uniform(-3.0, T_exp-1.0)
     t, _, simulated_time, energy = simulate_FXRT(
         T_exp, t_bin, t_start, background, total_counts)
@@ -514,11 +495,7 @@ def simulate_detection_parallel_simulations_helper(T_exp: float, F_peak: float, 
     return xt_idxs
 
 
-<<<<<<< HEAD
-def simulate_detection_parallel_simulations(T_exp: float, F_peak: float, background: float, theta: float, simulations: int, t_bin: float, window: float = 20.0):
-=======
 def simulate_detection_parallel_simulations(T_exp: float, F_peak: float, background: float, theta: float, simulations: int, window: float = 20.0):
->>>>>>> 1fb5c9ed2ebb003c40e49ce72098b3d47c26a68a
     """
     ## Simulate the detection of an X-ray transient (XT) with a given peak flux and background.
 
@@ -539,10 +516,6 @@ def simulate_detection_parallel_simulations(T_exp: float, F_peak: float, backgro
             [F_peak]*simulations,
             [background]*simulations,
             [theta]*simulations,
-<<<<<<< HEAD
-            [t_bin]*simulations,
-=======
->>>>>>> 1fb5c9ed2ebb003c40e49ce72098b3d47c26a68a
             [window]*simulations
         ))
 
