@@ -5,16 +5,22 @@ import glob
 import os
 
 
-def function(obsid):
-    command = 'download_chandra_obsid '+str(obsid)+' evt2,fov,asol,bpix,msk'
+def function(obsid: str):
+    # Download data from Chandra archive
+    command = 'download_chandra_obsid ' + \
+        str(obsid) + ' evt2,fov,asol,bpix,msk'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
+
     # command='cd '+str(obsid)
     # proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
-    command = 'cp search_data.py '+str(obsid)+'/'
+
+    command = 'cp search_data.py ' + str(obsid) + '/'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
-    command = 'cp '+str(obsid)+'/primary/* '+str(obsid)+'/'
+
+    command = 'cp '+str(obsid) + '/primary/* ' + str(obsid) + '/'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
-    command = 'gunzip '+str(obsid)+'/*.gz'
+
+    command = 'gunzip ' + str(obsid) + '/*.gz'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
     os.chdir(str(obsid)+'/')
