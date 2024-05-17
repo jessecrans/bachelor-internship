@@ -440,7 +440,7 @@ def Yang_search(
     # Extract ra, dec of sources in the observation
     source_ras, source_decs, source_thetas = \
         np.array(ra), np.array(dec), np.array(theta)
-    source_pos, source_sig = \
+    source_pos_err, source_sig = \
         np.array(position_error), np.array(significance)
 
     # Convert ra,dec to x,y
@@ -448,13 +448,13 @@ def Yang_search(
         event_wcs.all_world2pix(source_ras, source_decs, 1)
 
     # Get R90 size
-    r90_s = get_chandra_eef(source_thetas, R0=1.07, R10=9.65, alpha=2.22)
+    r90_size = get_chandra_eef(source_thetas, R0=1.07, R10=9.65, alpha=2.22)
 
     # Convert to pixel scale
-    r90_s /= acis_pix_size
+    r90_size /= acis_pix_size
 
     # Get the aperture size
-    aperture_radii = r90_s * 1.5
+    aperture_radii = r90_size * 1.5
 
     candidates = []
 
@@ -489,13 +489,13 @@ def Yang_search(
 
     candidates = pd.unique(np.array(candidates)).tolist()
 
-    with open("../detections_CSC20_w20.txt", "a") as f:
+    with open("../../detections_w20.txt", "a") as f:
         for i, candidate in enumerate(candidates):
             f.write(
-                f'{obs_id} {source_ras[candidate]} {source_decs[candidate]} {source_thetas[candidate]} {source_pos[candidate]} {source_sig[candidate]}\n'
+                f'{obs_id} {source_ras[candidate]} {source_decs[candidate]} {source_thetas[candidate]} {source_pos_err[candidate]} {source_sig[candidate]}\n'
             )
 
-    with open("../analyzed.txt", "a") as f:
+    with open("../../analysed.txt", "a") as f:
         f.write(f'{obs_id}\n')
 
 

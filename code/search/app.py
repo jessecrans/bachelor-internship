@@ -1,6 +1,5 @@
 import subprocess
 import numpy as np
-import re
 import glob
 import os
 import time
@@ -89,6 +88,8 @@ def process_data(obsid: str, logging: bool):
     command = 'wavdetect scales="1 2 4 8 16 32"'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
+    os.chdir('../../')
+
     if logging:
         end_time = time.perf_counter()
         print(f"\tFinished processing")
@@ -105,36 +106,39 @@ def search_data(obsid: str, logging: bool):
 
     if logging:
         end_time = time.perf_counter()
-        print(f"\tFinished searching")
-        print(f"\tSearching time: {end_time - start_time:.0f} seconds")
+        print(f'\tFinished searching')
+        print(f'\tSearching time: {end_time - start_time:.0f} seconds')
 
 
 def pipeline(obsid: str, logging: bool):
     if logging:
-        print(f"Processing obsid: {obsid}")
+        print(f'Starting obsid: {obsid}')
         start_time = time.perf_counter()
 
     dirs = os.listdir('obsids/')
     if str(obsid) in dirs:
-        print(f"\tObsid data already downloaded")
-        os.chdir(f'obsids/{obsid}/')
+        print(f'\tObsid data already downloaded')
+
+        # copy latest version of search_data.py to make sure it is up to date
+        command = f'cp search_data.py obsids/{obsid}/'
+        proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
     else:
         download_data(obsid, logging)
         process_data(obsid, logging)
 
     analysed = np.genfromtxt(
-        f"../../analyzed.txt", dtype='str', delimiter='\n')
+        f'analysed.txt', dtype='str', delimiter='\n')
     if str(obsid) in analysed:
         print(f"\tObsid data already searched")
     else:
+        os.chdir(f'obsids/{obsid}/')
         search_data(obsid, logging)
-
-    os.chdir('../../')
+        os.chdir('../../')
 
     if logging:
         end_time = time.perf_counter()
-        print(f"Finished processing obsid: {obsid}")
-        print(f"Total time: {end_time - start_time:.0f} seconds")
+        print(f'Finished obsid: {obsid}')
+        print(f'Time: {end_time - start_time:.0f} seconds')
 
 
 # Obsid = [803]
@@ -144,10 +148,10 @@ def pipeline(obsid: str, logging: bool):
 Obsid = [
     803,
     2025,
-    # 8490,
-    # 9546,
-    # 9548,
-    # 14904
+    8490,
+    9546,
+    9548,
+    14904
 ]
 
 for i in range(0, len(Obsid)):
