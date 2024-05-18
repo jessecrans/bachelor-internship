@@ -1,0 +1,96 @@
+Starting obsid: 4062
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 184 seconds
+	Searching
+	Finished searching
+	Searching time: 13 seconds
+Finished obsid: 4062
+Time: 210 seconds
+Starting obsid: 5885
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 172 seconds
+	Searching
+	Finished searching
+	Searching time: 14 seconds
+Finished obsid: 5885
+Time: 197 seconds
+Starting obsid: 9841
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 187 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 9841
+Time: 203 seconds
+Starting obsid: 12264
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 137 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 12264
+Time: 157 seconds
+Starting obsid: 12884
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 138 seconds
+	Searching
+	Finished searching
+	Searching time: 15 seconds
+Finished obsid: 12884
+Time: 166 seconds
+Starting obsid: 13454
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 155 seconds
+	Searching
+	Finished searching
+	Searching time: 12 seconds
+Finished obsid: 13454
+Time: 178 seconds
+Starting obsid: 15113
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 148 seconds
+	Searching
+	Finished searching
+	Searching time: 10 seconds
+Finished obsid: 15113
+Time: 167 seconds
+Starting obsid: 16454
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 98 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 16454
+Time: 116 seconds

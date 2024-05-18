@@ -141,18 +141,17 @@ def pipeline(obsid: str, logging: bool):
         print(f'Time: {end_time - start_time:.0f} seconds')
 
 
-# Obsid = [803]
-# Obsid=[23570,23831,24275,24276,24669,23728,23696,23635,24835,22542,23556,23631,23699,23695,23691,26139,23749,23568,23557,23572]
-# Obsid=[26146,23812,26150,23740,23741,23394,23770,26175,23692,23725,26197,23744,23832,24472,24473,24474,24836,24837,24844]
-# Obsid=[26137,26168,23719,26183,26166,26148,26135,23688,26186,26151,26145,23627,26147,23686,26159,26162,23705,26229,26286,22616,22617,22974,22975,22976,24892,20611,26156,23793]
-Obsid = [
-    803,
-    2025,
-    8490,
-    9546,
-    9548,
-    14904
+filenames = [
+    'obsids_2022-04-01+_Texp8+_b10+.csv',
+    'obsids_2022-04-01+_Texp8+_b-10+.csv',
 ]
 
-for i in range(0, len(Obsid)):
-    pipeline(Obsid[i], True)
+Obsids = []
+for filename in filenames:
+    Obsids.extend(np.genfromtxt(
+        filename, dtype='str', delimiter=',', skip_header=1, usecols=1
+    ))
+Obsids = np.array(Obsids)
+
+# for Obsid in Obsids:
+#     pipeline(Obsid, True)
