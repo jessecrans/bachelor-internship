@@ -489,13 +489,13 @@ def Yang_search(
 
     candidates = pd.unique(np.array(candidates)).tolist()
 
-    with open("../../detections_w20.txt", "a") as f:
+    with open(f"{sys.argv[1]}/detections_w{int(window)}.txt", "a") as f:
         for i, candidate in enumerate(candidates):
             f.write(
                 f'{obs_id} {source_ras[candidate]} {source_decs[candidate]} {source_thetas[candidate]} {source_pos_err[candidate]} {source_sig[candidate]}\n'
             )
 
-    with open("../../analysed.txt", "a") as f:
+    with open(f"{sys.argv[1]}/analysed_w{int(window)}.txt", "a") as f:
         f.write(f'{obs_id}\n')
 
 
