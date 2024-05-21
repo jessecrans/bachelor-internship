@@ -17,6 +17,7 @@ def download_data(obsid: str, logging: bool):
 
     command = f'download_chandra_obsid {obsid} evt2,fov,asol,bpix,msk'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
+    print(proc.stdout)
 
     command = f'cp {obsid}/primary/* {obsid}/'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
@@ -163,5 +164,5 @@ Obsids.extend(np.genfromtxt(
 
 Obsids = np.array(Obsids)
 
-for Obsid in Obsids:
-    pipeline(Obsid, True)
+for Obsid in Obsids[0:10]:
+    pipeline(Obsid, False)
