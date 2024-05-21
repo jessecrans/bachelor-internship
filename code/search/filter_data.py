@@ -14,26 +14,48 @@ from astroquery.vizier import Vizier
 # we only need 1 row because we are only checking if there is a match or not
 Gaia.ROW_LIMIT = 1
 
-detections = pd.read_csv('detections_w20.txt', delimiter=' ', header=0)
-queried_detections = pd.read_csv(
-    'queried_detections_w20.txt', delimiter=' ', header=0)
-queried_detections_no_match = queried_detections.filter(regex='^(?!.*_MATCH)')
+detections_file = 'detections_w20.txt'
+queried_detections_file = 'queried_detections_w20.txt'
+
+CATALOGS = [
+    'gaia',
+]
+DETECTIONS = pd.read_csv(detections_file, delimiter=' ', header=0)
+QUERIED = pd.read_csv(
+    queried_detections_file,
+    delimiter=' ',
+    header=0
+)
+QUERIED_NO_MATCH = QUERIED.filter(
+    regex='^(?!.*_MATCH$)'
+)
 
 
-def occurs_in(detection: pd.Series, queried_detections: pd.DataFrame) -> pd.Series:
+def get_queried_detection(detection: pd.Series) -> pd.DataFrame:
     """
-    Returns a boolean Series indicating whether the detection has been queried before per catalog.
+    Returns the already queried detection from the queried_detections file.
 
     Args:
         detection (pd.Series): Detection to check if it has been queried before.
-        queried_detections (pd.DataFrame): DataFrame containing the queried detections.
 
     Returns:
-        pd.Series: Boolean Series indicating whether the detection has been queried before per catalog.
+        pd.Dataframe: Queried detection if it has been queried before.
     """
+    return QUERIED.loc[
+        QUERIED_NO_MATCH.eq(detection).all(axis=1)
+    ]
 
 
 def filter_on_gaia(detection: pd.Series) -> Table | None:
+    """
+    Checks if the given detection has a match in the Gaia catalog.
+
+    Args:
+        detection (pd.Series): Detection to check if it has a match in the Gaia catalog.
+
+    Returns:
+        Table | None: Result of the query.
+    """
     coords = SkyCoord(
         ra=detection['RA'],
         dec=detection['DEC'],
@@ -46,33 +68,8 @@ def filter_on_gaia(detection: pd.Series) -> Table | None:
     return job.get_results()
 
 
-def check_detections(detections: pd.DataFrame, catalog: str, logging: bool) -> pd.DataFrame:
-    detections = detections.assign(**{f'{catalog.upper()}_MATCH': False})
-
-    for i, detection in detections.iterrows():
-        if occurs_in(detection, queried_detections_no_match):
-            print(
-                'Detection {i} with obsid {detections.loc[i, "ObsId"]} has already been queried for {catalog}')
-            continue
-
-        result = filter_on_gaia(detection)
-
-        if len(result) > 0:
-            detections.loc[i, f'{catalog.upper()}_MATCH'] = True
-
-            if logging:
-                print(
-                    f"Match found for detection {i} with obsid {detections.loc[i, 'ObsId']} in {catalog}")
-
-    return detections
-
-
-# detections_copy = detections.loc[detections['ObsId'] == 803].copy()
-detections_copy = detections.loc[:].copy()
-
-detections_copy = check_detections(detections_copy, 'gaia', False)
-
-detections_copy.to_csv('queried_detections_w20.txt', sep=' ', index=False)
+def check_detection(detection: pd.Series, catalog: str) -> pd.Series:
+    pass
 
 # TODO: do not repeat queries, get result from queried_detections
 # TODO: if a detection has been queried for one catalog, allow it to be queried for another catalog
