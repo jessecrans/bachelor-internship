@@ -32,12 +32,16 @@ def download_data(obsid: str, logging: bool):
         print(f"\tDownload time: {end_time - start_time:.0f} seconds")
 
 
-def process_data(obsid: str, logging: bool):
+def process_data(obsid: str, logging: bool) -> bool:
     if logging:
         print(f"\tProcessing")
         start_time = time.perf_counter()
 
-    os.chdir(f"{DATA_PATH}/obsids/{obsid}/")
+    try:
+        os.chdir(f"{DATA_PATH}/obsids/{obsid}/")
+    except FileNotFoundError:
+        print(f"\tNo data found")
+        return False
 
     event_file = glob.glob('*evt2.fits', recursive=True)
     fov_file = glob.glob('*N*fov1.fits', recursive=True)
@@ -94,6 +98,8 @@ def process_data(obsid: str, logging: bool):
         print(f"\tFinished processing")
         print(f"\tProcessing time: {end_time - start_time:.0f} seconds")
 
+    return True
+
 
 def search_data(obsid: str, logging: bool):
     if logging:
@@ -126,7 +132,8 @@ def pipeline(obsid: str, logging: bool):
         print(f'\tObsid data already downloaded')
     else:
         download_data(obsid, logging)
-        process_data(obsid, logging)
+        if not process_data(obsid, logging):
+            return
 
     analysed = np.genfromtxt(
         f'analysed_w20.txt', dtype='str', delimiter='\n')
@@ -140,35 +147,21 @@ def pipeline(obsid: str, logging: bool):
         print(f'Finished obsid: {obsid}')
         print(f'Time: {end_time - start_time:.0f} seconds')
 
-# filenames = [
-#     'obsids_2022-04-01+_Texp8+_b10+.csv',
-#     'obsids_2022-04-01+_Texp8+_b-10+.csv',
-# ]
 
-# Obsids = []
-# for filename in filenames:
-#     Obsids.extend(np.genfromtxt(
-#         filename, dtype='str', delimiter=',', skip_header=1, usecols=1
-#     ))
-# Obsids = np.array(Obsids)
-
-
-Obsids = [
-    803,
-    2025,
-    8490,
-    9546,
-    9548,
-    14904,
-    4062,
-    5885,
-    9841,
-    12264,
-    12884,
-    13454,
-    15113,
-    16454,
+filenames = [
+    'obsids_2022-04-01+_Texp8+_b10+.csv',
+    'obsids_2022-04-01+_Texp8+_b-10+.csv',
 ]
+
+Obsids = []
+Obsids.extend(np.genfromtxt(
+    f"obsid_lists/{filenames[0]}", dtype='str', delimiter=',', skip_header=1, usecols=1
+)[764:])  # starting from 25996 since it encountered an error
+Obsids.extend(np.genfromtxt(
+    f"obsid_lists/{filenames[1]}", dtype='str', delimiter=',', skip_header=1, usecols=1
+))
+
+Obsids = np.array(Obsids)
 
 for Obsid in Obsids:
     pipeline(Obsid, True)
