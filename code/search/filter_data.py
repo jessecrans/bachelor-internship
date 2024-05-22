@@ -15,38 +15,11 @@ from astroquery.vizier import Vizier
 Gaia.ROW_LIMIT = 1
 
 detections_file = 'detections_w20.txt'
-queried_detections_file = 'queried_detections_w20.txt'
 
-CATALOGS = [
-    'gaia',
-]
 DETECTIONS = pd.read_csv(detections_file, delimiter=' ', header=0)
-QUERIED = pd.read_csv(
-    queried_detections_file,
-    delimiter=' ',
-    header=0
-)
-QUERIED_NO_MATCH = QUERIED.filter(
-    regex='^(?!.*_MATCH$)'
-)
 
 
-def get_queried_detection(detection: pd.Series) -> pd.DataFrame:
-    """
-    Returns the already queried detection from the queried_detections file.
-
-    Args:
-        detection (pd.Series): Detection to check if it has been queried before.
-
-    Returns:
-        pd.Dataframe: Queried detection if it has been queried before.
-    """
-    return QUERIED.loc[
-        QUERIED_NO_MATCH.eq(detection).all(axis=1)
-    ]
-
-
-def filter_on_gaia(detection: pd.Series) -> Table | None:
+def filter_on_gaia(detection: pd.Series) -> bool:
     """
     Checks if the given detection has a match in the Gaia catalog.
 
@@ -54,7 +27,7 @@ def filter_on_gaia(detection: pd.Series) -> Table | None:
         detection (pd.Series): Detection to check if it has a match in the Gaia catalog.
 
     Returns:
-        Table | None: Result of the query.
+        bool: True if the detection has a match in the Gaia catalog, False otherwise.
     """
     coords = SkyCoord(
         ra=detection['RA'],
@@ -64,15 +37,37 @@ def filter_on_gaia(detection: pd.Series) -> Table | None:
     )
     job = Gaia.cone_search_async(
         coords,
-        radius=u.Quantity(detection['POS_ERR'], u.degree),
-        frame='icrs'
+        radius=u.Quantity(
+            # 3sigma + 0.5" boresight correction + 5" proper motion margin
+            3 * detection['POS_ERR'] + 0.5 + 5,
+            u.arcsec
+        )
     )
-    return job.get_results()
+
+    result = job.get_results()
+
+    if result is None or len(result) == 0:
+        return False
+
+    return True
 
 
-def check_detection(detection: pd.Series, catalog: str) -> pd.Series:
-    pass
+CATALOGS = {
+    'gaia': filter_on_gaia,
+}
 
-# TODO: do not repeat queries, get result from queried_detections
-# TODO: if a detection has been queried for one catalog, allow it to be queried for another catalog
-# TODO: so: if a detections values are the same as the values of a queried_detection, retrieve the result from the queried_detection
+"""
+- voor elke detection in de doorgegeven lijst
+- check of het al gequeried is
+    - zo niet
+        - start een nieuwe match dictionary
+        - query alle catalogi met de dict van filter functies
+        - voeg het resultaat toe aan de match dictionary
+        - voeg de filtered detection to aan de nieuwe lijst met de dus de match dict
+    - zo ja
+        - krijg de gequeriede detectie
+        - krijg de match dict
+        - voor elke catalogus check of het al een entry heeft
+        - zo ja niks doen
+        - zo niet query en voeg toe
+"""
