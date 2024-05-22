@@ -17,7 +17,7 @@ def download_data(obsid: str, logging: bool):
 
     command = f'download_chandra_obsid {obsid} evt2,fov,asol,bpix,msk'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
-    print(proc.stdout)
+    # print(proc.stdout)
 
     command = f'cp {obsid}/primary/* {obsid}/'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
@@ -38,7 +38,7 @@ def process_data(obsid: str, logging: bool) -> bool:
         print(f"\tProcessing")
         start_time = time.perf_counter()
 
-    try:
+    try:  # try to change directory, skip if fails so that rest of the obsids can be processed
         os.chdir(f"{DATA_PATH}/obsids/{obsid}/")
     except FileNotFoundError:
         print(f"\tNo data found")
@@ -48,17 +48,17 @@ def process_data(obsid: str, logging: bool) -> bool:
     fov_file = glob.glob('*N*fov1.fits', recursive=True)
 
     # mask
-    command = 'dmcopy "' + fov_file[0] + '" s3.fov'
+    command = 'dmcopy "' + fov_file[0] + '" s3.fov clobber=yes'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
     command = 'dmcopy "' + event_file[0] + \
-        '[sky=region(s3.fov)]" 578_evt2_filtered.fits'
+        '[sky=region(s3.fov)]" 578_evt2_filtered.fits clobber=yes'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
-    command = 'fluximage 578_evt2_filtered.fits binsize=1 bands=broad outroot=s3 psfecf=0.393'
+    command = 'fluximage 578_evt2_filtered.fits binsize=1 bands=broad outroot=s3 psfecf=0.393 clobber=yes'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
-    command = 'mkpsfmap s3_broad_thresh.img outfile=s3_psfmap.fits energy=1.4967 ecf=0.393'
+    command = 'mkpsfmap s3_broad_thresh.img outfile=s3_psfmap.fits energy=1.4967 ecf=0.393 clobber=yes'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
     # detection
@@ -89,7 +89,7 @@ def process_data(obsid: str, logging: bool) -> bool:
     command = 'pset wavdetect regfile=s3_expmap_src.reg mode=h'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
-    command = 'wavdetect scales="1 2 4 8 16 32"'
+    command = 'wavdetect scales="1 2 4 8 16 32" clobber=yes'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
     os.chdir(f"{CURRENT_PATH}")
@@ -150,19 +150,17 @@ def pipeline(obsid: str, logging: bool):
 
 
 filenames = [
-    'obsids_2022-04-01+_Texp8+_b10+.csv',
-    'obsids_2022-04-01+_Texp8+_b-10+.csv',
+    'obsids_b+10_220401+.csv',
+    'obsids_b-10_220401+.csv',
 ]
 
 Obsids = []
-Obsids.extend(np.genfromtxt(
-    f"obsid_lists/{filenames[0]}", dtype='str', delimiter=',', skip_header=1, usecols=1
-)[764:])  # starting from 25996 since it encountered an error
-Obsids.extend(np.genfromtxt(
-    f"obsid_lists/{filenames[1]}", dtype='str', delimiter=',', skip_header=1, usecols=1
-))
+for filename in filenames:
+    Obsids.extend(np.genfromtxt(
+        f"obsid_lists/{filename}", dtype='str', delimiter=',', skip_header=1, usecols=1
+    ))
 
 Obsids = np.array(Obsids)
 
-for Obsid in Obsids[0:10]:
-    pipeline(Obsid, False)
+for Obsid in Obsids[0:1]:
+    pipeline(Obsid, True)

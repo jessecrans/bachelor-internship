@@ -64,7 +64,8 @@ def filter_on_gaia(detection: pd.Series) -> Table | None:
     )
     job = Gaia.cone_search_async(
         coords,
-        radius=u.Quantity(detection['POS_ERR'], u.arcmin),
+        radius=u.Quantity(detection['POS_ERR'], u.degree),
+        frame='icrs'
     )
     return job.get_results()
 
