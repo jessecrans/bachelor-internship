@@ -60,6 +60,7 @@ def filter_on_gaia(detection: pd.Series) -> Table | None:
         ra=detection['RA'],
         dec=detection['DEC'],
         unit=(u.degree, u.degree),
+        frame='icrs',
     )
     job = Gaia.cone_search_async(
         coords,
@@ -73,6 +74,4 @@ def check_detection(detection: pd.Series, catalog: str) -> pd.Series:
 
 # TODO: do not repeat queries, get result from queried_detections
 # TODO: if a detection has been queried for one catalog, allow it to be queried for another catalog
-# TODO: save the result of a check so that we dont have to query unnecessarily
-# TODO: before querying, check if the detection has already been queried
 # TODO: so: if a detections values are the same as the values of a queried_detection, retrieve the result from the queried_detection
