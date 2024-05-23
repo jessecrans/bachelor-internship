@@ -4,6 +4,9 @@ import pandas as pd
 from astropy.coordinates import SkyCoord
 import astropy.units as u
 from astroquery.gaia import Gaia
+from astroquery.vizier import Vizier
+
+import subprocess
 
 
 def filter_on_gaia(detection: pd.Series) -> bool:
@@ -11,7 +14,7 @@ def filter_on_gaia(detection: pd.Series) -> bool:
     Checks if the given detection has a match in the Gaia catalog.
 
     Args:
-        detection (NDArray): Detection to check if it has a match in the Gaia catalog.
+        detection (pd.Series): Detection to check if it has a match in the Gaia catalog.
 
     Returns:
         bool: True if the detection has a match in the Gaia catalog, False otherwise.
@@ -37,3 +40,56 @@ def filter_on_gaia(detection: pd.Series) -> bool:
         return False
 
     return True
+
+
+def filter_on_archival(detection: pd.Series) -> bool:
+    """
+    Checks if the given detection has a match in archival x-ray data.
+
+    Args:
+        detection (pd.Series): Detection to check if it has a match in the archival catalog.
+
+    Returns:
+        bool: True if the detection has a match in the archival catalogs, False otherwise.
+    """
+
+    catalog_list = Vizier.find_catalogs([
+        'XMMSL2', '2SXPS', '4XMM-DR11'
+    ])
+
+    for catalog in catalog_list.keys():
+        coords = SkyCoord(
+            ra=float(detection['RA']),
+            dec=float(detection['DEC']),
+            unit=(u.degree, u.degree),
+            frame='icrs',
+        )
+        result = Vizier.query_region(
+            coords,
+            radius=u.Quantity(
+                3 * float(detection['POS_ERR']) + 0.5,
+                u.arcsec,
+            ),
+            catalog=catalog
+        )
+
+        for table in result:
+            table.pprint()
+            # Q? What to do with these detections, can we just exclude the candidate if it has a match?
+
+
+def filter_on_chandra(detection: pd.Series) -> bool:
+    """
+    Checks if the given detection has a match in the Chandra catalog.
+
+    Args:
+        detection (pd.Series): Detection to check if it has a match in the Chandra catalog.
+
+    Returns:
+        bool: True if the detection has a match in the Chandra catalog, False otherwise.
+    """
+    command = f'search_csc pos=\'{detection["RA"]},{detection["DEC"]}\' radius={3 * detection["POS_ERR"] + 0.5} outfile=filter_on_chandra_result.csv radunit=arcsec catalog=csc2.1 clobber=yes verbose=5'
+    proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
+
+    # Q? The process is not returning any output in the outfile.
+    result = pd.read_csv('filter_on_chandra_result.csv')
