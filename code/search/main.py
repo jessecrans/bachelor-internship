@@ -107,12 +107,12 @@ def search_data(obsid: str, logging: bool):
         print(f"\tSearching")
         start_time = time.perf_counter()
 
-    command = f"cp search_data.py {DATA_PATH}/obsids/{obsid}/"
+    command = f"cp search.py {DATA_PATH}/obsids/{obsid}/"
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
     os.chdir(f"{DATA_PATH}/obsids/{obsid}/")
 
-    command = f"python search_data.py {CURRENT_PATH}"
+    command = f"python search.py {CURRENT_PATH}"
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
     os.chdir(f"{CURRENT_PATH}")
@@ -162,5 +162,5 @@ for filename in filenames:
 
 Obsids = np.array(Obsids)
 
-for Obsid in Obsids[0:1]:
+for Obsid in Obsids:
     pipeline(Obsid, True)
