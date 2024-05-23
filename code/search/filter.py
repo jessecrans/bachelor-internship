@@ -1,16 +1,18 @@
 import numpy as np
-from numpy.typing import NDArray
-
 import pandas as pd
-
 import astropy.units as u
 from astropy.coordinates import SkyCoord
-
 from astroquery.gaia import Gaia
 from astroquery.simbad import Simbad
 from astroquery.vizier import Vizier
-
 from typing import Callable, Dict
+
+from filter_functions import filter_on_gaia
+
+"""
+workflow: 
+
+"""
 
 # we only need 1 row because we are only checking if there is a match or not
 Gaia.ROW_LIMIT = 1
@@ -18,65 +20,54 @@ Gaia.ROW_LIMIT = 1
 DETECTIONS_FILENAME = 'detections_w20.txt'
 FILTERED_FILENAME = 'filtered_w20.csv'
 
-
-def filter_on_gaia(detection: pd.Series) -> bool:
-    """
-    Checks if the given detection has a match in the Gaia catalog.
-
-    Args:
-        detection (pd.Series): Detection to check if it has a match in the Gaia catalog.
-
-    Returns:
-        bool: True if the detection has a match in the Gaia catalog, False otherwise.
-    """
-    coords = SkyCoord(
-        ra=detection['RA'],
-        dec=detection['DEC'],
-        unit=(u.degree, u.degree),
-        frame='icrs',
-    )
-    job = Gaia.cone_search_async(
-        coords,
-        radius=u.Quantity(
-            # 3sigma + 0.5" boresight correction + 5" proper motion margin
-            3 * detection['POS_ERR'] + 0.5 + 5,
-            u.arcsec
-        )
-    )
-
-    result = job.get_results()
-
-    if result is None or len(result) == 0:
-        return False
-
-    return True
-
-
-def filter_on_XMM(detection: pd.Series) -> bool:
-    pass
-
-
 CATALOGS = {
     'gaia': filter_on_gaia,
 }
 
 
-def update_catalogs(dataframe: pd.DataFrame, catalogs: Dict[str, Callable]) -> pd.DataFrame:
+def update_catalogs(dataframe: pd.DataFrame, catalogs: Dict[str, Callable], verbose: bool = False) -> pd.DataFrame:
+    """
+    Returns a new dataframe with columns added for each missing catalog.
+
+    Args:
+        dataframe (pd.DataFrame): Dataframe to update with missing columns.
+        catalogs (Dict[str, Callable]): Dictionary of catalogs to add to the dataframe.
+
+    Returns:
+        pd.DataFrame: The updated dataframe with missing columns added.
+    """
+    dataframe = dataframe.copy()
+
     for catalog, filter_func in catalogs.items():
         if f'{catalog}_match' not in dataframe.columns:
-            dataframe.insert(len(dataframe.columns), f'{catalog}_match', -1)
+            dataframe.insert(len(dataframe.columns),
+                             f'{catalog}_match', 'unknown')
+
+            if verbose:
+                print(f'Added {catalog}_match column.')
 
     return dataframe
 
 
-def update_detections(in_file: str, out_file: str, catalogs: Dict[str, Callable]) -> None:
-    detections = pd.read_csv(in_file, delimiter=' ', header=0)
-    detections = update_catalogs(detections, catalogs)
+def update_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs: Dict[str, Callable], verbose: bool = False) -> pd.DataFrame:
+    """
+    Adds new detections to the filtered dataframe.
 
-    filtered = pd.read_csv(out_file, delimiter=',', header=0)
+    Args:
+        detections (pd.DataFrame): Dataframe of detections to add to the filtered dataframe.
+        filtered (pd.DataFrame): Dataframe of filtered detections.
+        catalogs (Dict[str, Callable]): Dictionary of catalogs to add to the dataframe.
+
+    Returns:
+        pd.DataFrame: The updated filtered dataframe with new detections added.
+    """
+    detections = detections.copy()
+    filtered = filtered.copy()
+
+    detections = update_catalogs(detections, catalogs)
     filtered = update_catalogs(filtered, catalogs)
 
-    # add new detections to filtered file
+    # add new detections to filtered dataframe
     for i, detection in detections.iterrows():
         if (
             detection['ObsId'] in filtered['ObsId'].values and
@@ -86,42 +77,57 @@ def update_detections(in_file: str, out_file: str, catalogs: Dict[str, Callable]
             detection['POS_ERR'] in filtered['POS_ERR'].values and
             detection['SIGNIFICANCE'] in filtered['SIGNIFICANCE'].values
         ):
+            if verbose:
+                print(
+                    f'{i}: {detection["ObsId"]} - Detection already in filtered.')
             continue
 
         filtered.loc[len(filtered)] = detection
 
-    filtered.to_csv(out_file, index=False)
+        if verbose:
+            print(f'{i}: {detection["ObsId"]} - Added detection to filtered.')
+
+    return filtered
 
 
-def filter_detections(in_file: str, out_file: str, catalogs: Dict[str, Callable], logging: bool = False) -> None:
-    if logging:
-        print(
-            f'Filtering detections from {in_file} to {out_file} using catalogs: {catalogs.keys()}...')
-
-    update_detections(in_file, out_file, catalogs)
-    filtered = pd.read_csv(out_file, delimiter=',', header=0)
+def filter_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs: Dict[str, Callable], verbose: bool = False) -> pd.DataFrame:
+    # add new detections to filtered dataframe
+    filtered = update_detections(detections, filtered, catalogs)
 
     for i, detection in filtered.iterrows():
         for catalog, filter_func in catalogs.items():
-            if int(detection[f'{catalog}_match']) == -1:
+            if detection[f'{catalog}_match'] == 'unknown':
                 try:
-                    detection[f'{catalog}_match'] = \
-                        1 if filter_func(detection) else 0
+                    result = 'yes' if filter_func(detection) else 'no'
+                    filtered.loc[i, f'{catalog}_match'] = result
+
+                    if verbose:
+                        print(
+                            f'{i}: {detection["ObsId"]} - {catalog} match: {detection[f"{catalog}_match"]}')
                 except Exception as e:
-                    print(
-                        f"\t{i}: {int(detection['ObsId'])} {catalog} failed with error: {e}")
+                    print(f'{i}: {detection["ObsId"]} - {e}')
                     continue
-
-                if logging:
-                    print(
-                        f"\t{i}: {int(detection['ObsId'])} {catalog} filtered")
             else:
-                if logging:
+                if verbose:
                     print(
-                        f"\t{i}: {int(detection['ObsId'])} {catalog} already filtered")
+                        f'{i}: {detection["ObsId"]} - {catalog} match: already known.')
 
-    filtered.to_csv(out_file, index=False)
+    return filtered
+
+
+def filter_detection_file(detections_filename: str, filtered_filename: str, catalogs: Dict[str, Callable], verbose: bool = False) -> None:
+    detections = pd.read_csv(detections_filename, sep=' ', header=0, dtype=str)
+    filtered = pd.read_csv(filtered_filename, sep=',', header=0, dtype=str)
+
+    filtered = filter_detections(detections, filtered, catalogs, verbose)
+
+    filtered.to_csv(filtered_filename, index=False)
 
 
 if __name__ == '__main__':
-    filter_detections(DETECTIONS_FILENAME, FILTERED_FILENAME, CATALOGS, True)
+    filter_detection_file(
+        DETECTIONS_FILENAME,
+        FILTERED_FILENAME,
+        CATALOGS,
+        True
+    )

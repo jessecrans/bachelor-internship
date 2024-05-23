@@ -7844,3 +7844,13 @@ Starting obsid: 27665
 	Finished downloading
 	Download time: 9 seconds
 	Processing
+	Finished processing
+	Processing time: 89 seconds
+	Obsid data already searched
+Finished obsid: 27665
+Time: 98 seconds
+Starting obsid: 27666
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
