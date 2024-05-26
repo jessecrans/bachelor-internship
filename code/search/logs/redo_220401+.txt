@@ -7854,3 +7854,8862 @@ Starting obsid: 27666
 	Finished downloading
 	Download time: 8 seconds
 	Processing
+	Finished processing
+	Processing time: 94 seconds
+	Obsid data already searched
+Finished obsid: 27666
+Time: 102 seconds
+Starting obsid: 27849
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 102 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27849
+Time: 119 seconds
+Starting obsid: 27851
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 101 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27851
+Time: 113 seconds
+Starting obsid: 27875
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 152 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 27875
+Time: 166 seconds
+Starting obsid: 29149
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 85 seconds
+	Obsid data already searched
+Finished obsid: 29149
+Time: 93 seconds
+Starting obsid: 29334
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 79 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 29334
+Time: 89 seconds
+Starting obsid: 29342
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 66 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 29342
+Time: 78 seconds
+Starting obsid: 25668
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 135 seconds
+	Obsid data already searched
+Finished obsid: 25668
+Time: 144 seconds
+Starting obsid: 25669
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 146 seconds
+	Obsid data already searched
+Finished obsid: 25669
+Time: 155 seconds
+Starting obsid: 25670
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 95 seconds
+	Obsid data already searched
+Finished obsid: 25670
+Time: 105 seconds
+Starting obsid: 25671
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 66 seconds
+	Obsid data already searched
+Finished obsid: 25671
+Time: 76 seconds
+Starting obsid: 25672
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 101 seconds
+	Obsid data already searched
+Finished obsid: 25672
+Time: 110 seconds
+Starting obsid: 25673
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 89 seconds
+	Obsid data already searched
+Finished obsid: 25673
+Time: 98 seconds
+Starting obsid: 26381
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 89 seconds
+	Obsid data already searched
+Finished obsid: 26381
+Time: 98 seconds
+Starting obsid: 25674
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 130 seconds
+	Obsid data already searched
+Finished obsid: 25674
+Time: 140 seconds
+Starting obsid: 26382
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 128 seconds
+	Obsid data already searched
+Finished obsid: 26382
+Time: 137 seconds
+Starting obsid: 25675
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 66 seconds
+	Obsid data already searched
+Finished obsid: 25675
+Time: 75 seconds
+Starting obsid: 25676
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 100 seconds
+	Obsid data already searched
+Finished obsid: 25676
+Time: 109 seconds
+Starting obsid: 25677
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 119 seconds
+	Obsid data already searched
+Finished obsid: 25677
+Time: 128 seconds
+Starting obsid: 25678
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 106 seconds
+	Obsid data already searched
+Finished obsid: 25678
+Time: 115 seconds
+Starting obsid: 25679
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 116 seconds
+	Obsid data already searched
+Finished obsid: 25679
+Time: 125 seconds
+Starting obsid: 27018
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 172 seconds
+	Obsid data already searched
+Finished obsid: 27018
+Time: 181 seconds
+Starting obsid: 27019
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 120 seconds
+	Obsid data already searched
+Finished obsid: 27019
+Time: 130 seconds
+Starting obsid: 27020
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 104 seconds
+	Obsid data already searched
+Finished obsid: 27020
+Time: 113 seconds
+Starting obsid: 27806
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 103 seconds
+	Obsid data already searched
+Finished obsid: 27806
+Time: 112 seconds
+Starting obsid: 27021
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 154 seconds
+	Obsid data already searched
+Finished obsid: 27021
+Time: 164 seconds
+Starting obsid: 27022
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 157 seconds
+	Obsid data already searched
+Finished obsid: 27022
+Time: 166 seconds
+Starting obsid: 27023
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 141 seconds
+	Obsid data already searched
+Finished obsid: 27023
+Time: 150 seconds
+Starting obsid: 27024
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 135 seconds
+	Obsid data already searched
+Finished obsid: 27024
+Time: 144 seconds
+Starting obsid: 27025
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 147 seconds
+	Obsid data already searched
+Finished obsid: 27025
+Time: 156 seconds
+Starting obsid: 27026
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 145 seconds
+	Obsid data already searched
+Finished obsid: 27026
+Time: 160 seconds
+Starting obsid: 27027
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 140 seconds
+	Obsid data already searched
+Finished obsid: 27027
+Time: 150 seconds
+Starting obsid: 27028
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 141 seconds
+	Obsid data already searched
+Finished obsid: 27028
+Time: 151 seconds
+Starting obsid: 27029
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 137 seconds
+	Obsid data already searched
+Finished obsid: 27029
+Time: 146 seconds
+Starting obsid: 23877
+	Downloading
+	Finished downloading
+	Download time: 37 seconds
+	Processing
+	Finished processing
+	Processing time: 157 seconds
+	Obsid data already searched
+Finished obsid: 23877
+Time: 194 seconds
+Starting obsid: 25976
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 119 seconds
+	Obsid data already searched
+Finished obsid: 25976
+Time: 131 seconds
+Starting obsid: 23878
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 156 seconds
+	Obsid data already searched
+Finished obsid: 23878
+Time: 165 seconds
+Starting obsid: 25978
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 107 seconds
+	Obsid data already searched
+Finished obsid: 25978
+Time: 119 seconds
+Starting obsid: 25979
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 106 seconds
+	Obsid data already searched
+Finished obsid: 25979
+Time: 115 seconds
+Starting obsid: 27451
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 107 seconds
+	Obsid data already searched
+Finished obsid: 27451
+Time: 116 seconds
+Starting obsid: 23879
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 192 seconds
+	Obsid data already searched
+Finished obsid: 23879
+Time: 202 seconds
+Starting obsid: 25980
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 74 seconds
+	Obsid data already searched
+Finished obsid: 25980
+Time: 82 seconds
+Starting obsid: 25981
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 121 seconds
+	Obsid data already searched
+Finished obsid: 25981
+Time: 130 seconds
+Starting obsid: 27576
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 73 seconds
+	Obsid data already searched
+Finished obsid: 27576
+Time: 82 seconds
+Starting obsid: 23880
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 106 seconds
+	Obsid data already searched
+Finished obsid: 23880
+Time: 115 seconds
+Starting obsid: 27725
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 131 seconds
+	Obsid data already searched
+Finished obsid: 27725
+Time: 140 seconds
+Starting obsid: 27726
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 68 seconds
+	Obsid data already searched
+Finished obsid: 27726
+Time: 77 seconds
+Starting obsid: 27764
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 76 seconds
+	Obsid data already searched
+Finished obsid: 27764
+Time: 87 seconds
+Starting obsid: 23881
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 139 seconds
+	Obsid data already searched
+Finished obsid: 23881
+Time: 150 seconds
+Starting obsid: 27876
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 132 seconds
+	Obsid data already searched
+Finished obsid: 27876
+Time: 141 seconds
+Starting obsid: 27877
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 70 seconds
+	Obsid data already searched
+Finished obsid: 27877
+Time: 78 seconds
+Starting obsid: 27878
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 69 seconds
+	Obsid data already searched
+Finished obsid: 27878
+Time: 78 seconds
+Starting obsid: 23882
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 169 seconds
+	Obsid data already searched
+Finished obsid: 23882
+Time: 181 seconds
+Starting obsid: 28880
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 76 seconds
+	Obsid data already searched
+Finished obsid: 28880
+Time: 85 seconds
+Starting obsid: 28881
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 72 seconds
+	Obsid data already searched
+Finished obsid: 28881
+Time: 81 seconds
+Starting obsid: 28882
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 77 seconds
+	Obsid data already searched
+Finished obsid: 28882
+Time: 89 seconds
+Starting obsid: 23883
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 84 seconds
+	Obsid data already searched
+Finished obsid: 23883
+Time: 97 seconds
+Starting obsid: 29095
+	Downloading
+	Finished downloading
+	Download time: 16 seconds
+	Processing
+	Finished processing
+	Processing time: 139 seconds
+	Obsid data already searched
+Finished obsid: 29095
+Time: 155 seconds
+Starting obsid: 29096
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 75 seconds
+	Obsid data already searched
+Finished obsid: 29096
+Time: 89 seconds
+Starting obsid: 29097
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 141 seconds
+	Obsid data already searched
+Finished obsid: 29097
+Time: 150 seconds
+Starting obsid: 29098
+	Downloading
+	Finished downloading
+	Download time: 24 seconds
+	Processing
+	Finished processing
+	Processing time: 71 seconds
+	Obsid data already searched
+Finished obsid: 29098
+Time: 95 seconds
+Starting obsid: 25103
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 12 seconds
+	Obsid data already searched
+Finished obsid: 25103
+Time: 21 seconds
+Starting obsid: 25104
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 40 seconds
+	Obsid data already searched
+Finished obsid: 25104
+Time: 48 seconds
+Starting obsid: 25105
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 25 seconds
+	Obsid data already searched
+Finished obsid: 25105
+Time: 35 seconds
+Starting obsid: 25106
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 32 seconds
+	Obsid data already searched
+Finished obsid: 25106
+Time: 42 seconds
+Starting obsid: 25993
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 33 seconds
+	Obsid data already searched
+Finished obsid: 25993
+Time: 42 seconds
+Starting obsid: 27476
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 108 seconds
+	Obsid data already searched
+Finished obsid: 27476
+Time: 120 seconds
+Starting obsid: 27477
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 108 seconds
+	Obsid data already searched
+Finished obsid: 27477
+Time: 123 seconds
+Starting obsid: 25994
+	Downloading
+	Finished downloading
+	Download time: 16 seconds
+	Processing
+	Finished processing
+	Processing time: 175 seconds
+	Obsid data already searched
+Finished obsid: 25994
+Time: 191 seconds
+Starting obsid: 27703
+	Downloading
+	Finished downloading
+	Download time: 23 seconds
+	Processing
+	Finished processing
+	Processing time: 186 seconds
+	Obsid data already searched
+Finished obsid: 27703
+Time: 210 seconds
+Starting obsid: 25995
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 53 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25995
+Time: 65 seconds
+Starting obsid: 27882
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 61 seconds
+	Obsid data already searched
+Finished obsid: 27882
+Time: 75 seconds
+Starting obsid: 22303
+	Downloading
+	Finished downloading
+	Download time: 37 seconds
+	Processing
+	Finished processing
+	Processing time: 52 seconds
+	Obsid data already searched
+Finished obsid: 22303
+Time: 89 seconds
+Starting obsid: 24756
+	Downloading
+	Finished downloading
+	Download time: 33 seconds
+	Processing
+	Finished processing
+	Processing time: 138 seconds
+	Obsid data already searched
+Finished obsid: 24756
+Time: 171 seconds
+Starting obsid: 23321
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 11 seconds
+	Obsid data already searched
+Finished obsid: 23321
+Time: 24 seconds
+Starting obsid: 23377
+	Downloading
+	Finished downloading
+	Download time: 32 seconds
+	Processing
+	Finished processing
+	Processing time: 23 seconds
+	Obsid data already searched
+Finished obsid: 23377
+Time: 55 seconds
+Starting obsid: 23407
+	Downloading
+	Finished downloading
+	Download time: 37 seconds
+	Processing
+	Finished processing
+	Processing time: 38 seconds
+	Obsid data already searched
+Finished obsid: 23407
+Time: 74 seconds
+Starting obsid: 24307
+	Downloading
+	Finished downloading
+	Download time: 32 seconds
+	Processing
+	Finished processing
+	Processing time: 73 seconds
+	Obsid data already searched
+Finished obsid: 24307
+Time: 105 seconds
+Starting obsid: 24308
+	Downloading
+	Finished downloading
+	Download time: 34 seconds
+	Processing
+	Finished processing
+	Processing time: 33 seconds
+	Obsid data already searched
+Finished obsid: 24308
+Time: 67 seconds
+Starting obsid: 24309
+	Downloading
+	Finished downloading
+	Download time: 26 seconds
+	Processing
+	Finished processing
+	Processing time: 36 seconds
+	Obsid data already searched
+Finished obsid: 24309
+Time: 62 seconds
+Starting obsid: 24310
+	Downloading
+	Finished downloading
+	Download time: 36 seconds
+	Processing
+	Finished processing
+	Processing time: 34 seconds
+	Obsid data already searched
+Finished obsid: 24310
+Time: 70 seconds
+Starting obsid: 24914
+	Downloading
+	Finished downloading
+	Download time: 18 seconds
+	Processing
+	Finished processing
+	Processing time: 75 seconds
+	Obsid data already searched
+Finished obsid: 24914
+Time: 93 seconds
+Starting obsid: 23412
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 145 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 23412
+Time: 162 seconds
+Starting obsid: 23414
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 110 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 23414
+Time: 127 seconds
+Starting obsid: 25114
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 36 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 25114
+Time: 45 seconds
+Starting obsid: 25115
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 32 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 25115
+Time: 42 seconds
+Starting obsid: 25116
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 8 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 25116
+Time: 18 seconds
+Starting obsid: 25119
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 122 seconds
+	Obsid data already searched
+Finished obsid: 25119
+Time: 135 seconds
+Starting obsid: 26209
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 149 seconds
+	Obsid data already searched
+Finished obsid: 26209
+Time: 159 seconds
+Starting obsid: 25120
+	Downloading
+	Finished downloading
+	Download time: 17 seconds
+	Processing
+	Finished processing
+	Processing time: 139 seconds
+	Obsid data already searched
+Finished obsid: 25120
+Time: 156 seconds
+Starting obsid: 26390
+	Downloading
+	Finished downloading
+	Download time: 16 seconds
+	Processing
+	Finished processing
+	Processing time: 138 seconds
+	Obsid data already searched
+Finished obsid: 26390
+Time: 154 seconds
+Starting obsid: 25124
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 20 seconds
+	Obsid data already searched
+Finished obsid: 25124
+Time: 29 seconds
+Starting obsid: 25693
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 63 seconds
+	Obsid data already searched
+Finished obsid: 25693
+Time: 72 seconds
+Starting obsid: 26225
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 51 seconds
+	Obsid data already searched
+Finished obsid: 26225
+Time: 60 seconds
+Starting obsid: 26419
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 63 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 26419
+Time: 75 seconds
+Starting obsid: 26423
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 56 seconds
+	Obsid data already searched
+Finished obsid: 26423
+Time: 66 seconds
+Starting obsid: 26431
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 58 seconds
+	Obsid data already searched
+Finished obsid: 26431
+Time: 68 seconds
+Starting obsid: 26447
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 73 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26447
+Time: 86 seconds
+Starting obsid: 26458
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 131 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26458
+Time: 144 seconds
+Starting obsid: 26476
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 62 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26476
+Time: 74 seconds
+Starting obsid: 27260
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 31 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 27260
+Time: 40 seconds
+Starting obsid: 27475
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 60 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27475
+Time: 73 seconds
+Starting obsid: 27540
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 33 seconds
+	Obsid data already searched
+Finished obsid: 27540
+Time: 41 seconds
+Starting obsid: 27541
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 64 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27541
+Time: 77 seconds
+Starting obsid: 27552
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 25 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 27552
+Time: 35 seconds
+Starting obsid: 27553
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 48 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27553
+Time: 60 seconds
+Starting obsid: 27566
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 69 seconds
+	Obsid data already searched
+Finished obsid: 27566
+Time: 81 seconds
+Starting obsid: 27572
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 58 seconds
+	Obsid data already searched
+Finished obsid: 27572
+Time: 67 seconds
+Starting obsid: 27573
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 71 seconds
+	Obsid data already searched
+Finished obsid: 27573
+Time: 80 seconds
+Starting obsid: 27574
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 66 seconds
+	Obsid data already searched
+Finished obsid: 27574
+Time: 76 seconds
+Starting obsid: 27600
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 22 seconds
+	Obsid data already searched
+Finished obsid: 27600
+Time: 31 seconds
+Starting obsid: 27612
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 71 seconds
+	Obsid data already searched
+Finished obsid: 27612
+Time: 80 seconds
+Starting obsid: 27733
+	Downloading
+	Finished downloading
+	Download time: 16 seconds
+	Processing
+	Finished processing
+	Processing time: 60 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27733
+Time: 80 seconds
+Starting obsid: 27873
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 86 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27873
+Time: 105 seconds
+Starting obsid: 27944
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 34 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 27944
+Time: 44 seconds
+Starting obsid: 27945
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 79 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27945
+Time: 92 seconds
+Starting obsid: 27956
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 95 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27956
+Time: 108 seconds
+Starting obsid: 28376
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 69 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 28376
+Time: 80 seconds
+Starting obsid: 28482
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 95 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28482
+Time: 109 seconds
+Starting obsid: 28489
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 81 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28489
+Time: 95 seconds
+Starting obsid: 28870
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 94 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28870
+Time: 108 seconds
+Starting obsid: 28976
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 57 seconds
+	Obsid data already searched
+Finished obsid: 28976
+Time: 67 seconds
+Starting obsid: 29041
+	Downloading
+	Finished downloading
+	Download time: 17 seconds
+	Processing
+	Finished processing
+	Processing time: 148 seconds
+	Obsid data already searched
+Finished obsid: 29041
+Time: 165 seconds
+Starting obsid: 29057
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 145 seconds
+	Obsid data already searched
+Finished obsid: 29057
+Time: 154 seconds
+Starting obsid: 29061
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 43 seconds
+	Obsid data already searched
+Finished obsid: 29061
+Time: 52 seconds
+Starting obsid: 29075
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 146 seconds
+	Obsid data already searched
+Finished obsid: 29075
+Time: 155 seconds
+Starting obsid: 29085
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 104 seconds
+	Obsid data already searched
+Finished obsid: 29085
+Time: 114 seconds
+Starting obsid: 29086
+	Downloading
+	Finished downloading
+	Download time: 17 seconds
+	Processing
+	Finished processing
+	Processing time: 143 seconds
+	Obsid data already searched
+Finished obsid: 29086
+Time: 160 seconds
+Starting obsid: 29076
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 68 seconds
+	Obsid data already searched
+Finished obsid: 29076
+Time: 79 seconds
+Starting obsid: 29088
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 43 seconds
+	Obsid data already searched
+Finished obsid: 29088
+Time: 53 seconds
+Starting obsid: 29110
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 43 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 29110
+Time: 53 seconds
+Starting obsid: 29111
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 55 seconds
+	Obsid data already searched
+Finished obsid: 29111
+Time: 67 seconds
+Starting obsid: 29112
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 65 seconds
+	Obsid data already searched
+Finished obsid: 29112
+Time: 74 seconds
+Starting obsid: 23325
+	Downloading
+	Finished downloading
+	Download time: 29 seconds
+	Processing
+	Finished processing
+	Processing time: 53 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 23325
+Time: 85 seconds
+Starting obsid: 24341
+	Downloading
+	Finished downloading
+	Download time: 28 seconds
+	Processing
+	Finished processing
+	Processing time: 54 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24341
+Time: 85 seconds
+Starting obsid: 27322
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 146 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27322
+Time: 161 seconds
+Starting obsid: 27333
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 163 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 27333
+Time: 184 seconds
+Starting obsid: 27467
+	Downloading
+	Finished downloading
+	Download time: 19 seconds
+	Processing
+	Finished processing
+	Processing time: 195 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27467
+Time: 219 seconds
+Starting obsid: 27468
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 135 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27468
+Time: 153 seconds
+Starting obsid: 27732
+	Downloading
+	Finished downloading
+	Download time: 21 seconds
+	Processing
+	Finished processing
+	Processing time: 74 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27732
+Time: 99 seconds
+Starting obsid: 27822
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 73 seconds
+	Obsid data already searched
+Finished obsid: 27822
+Time: 84 seconds
+Starting obsid: 23424
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 59 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 23424
+Time: 74 seconds
+Starting obsid: 24280
+	Downloading
+	Finished downloading
+	Download time: 22 seconds
+	Processing
+	Finished processing
+	Processing time: 28 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24280
+Time: 53 seconds
+Starting obsid: 24281
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 48 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24281
+Time: 62 seconds
+Starting obsid: 24282
+	Downloading
+	Finished downloading
+	Download time: 18 seconds
+	Processing
+	Finished processing
+	Processing time: 30 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 24282
+Time: 50 seconds
+Starting obsid: 24283
+	Downloading
+	Finished downloading
+	Download time: 31 seconds
+	Processing
+	Finished processing
+	Processing time: 27 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 24283
+Time: 61 seconds
+Starting obsid: 24284
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 55 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24284
+Time: 71 seconds
+Starting obsid: 24285
+	Downloading
+	Finished downloading
+	Download time: 33 seconds
+	Processing
+	Finished processing
+	Processing time: 48 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 24285
+Time: 85 seconds
+Starting obsid: 24286
+	Downloading
+	Finished downloading
+	Download time: 43 seconds
+	Processing
+	Finished processing
+	Processing time: 42 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24286
+Time: 90 seconds
+Starting obsid: 24287
+	Downloading
+	Finished downloading
+	Download time: 37 seconds
+	Processing
+	Finished processing
+	Processing time: 35 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24287
+Time: 76 seconds
+Starting obsid: 24288
+	Downloading
+	Finished downloading
+	Download time: 39 seconds
+	Processing
+	Finished processing
+	Processing time: 41 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24288
+Time: 82 seconds
+Starting obsid: 24289
+	Downloading
+	Finished downloading
+	Download time: 59 seconds
+	Processing
+	Finished processing
+	Processing time: 33 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24289
+Time: 94 seconds
+Starting obsid: 24290
+	Downloading
+	Finished downloading
+	Download time: 37 seconds
+	Processing
+	Finished processing
+	Processing time: 36 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24290
+Time: 76 seconds
+Starting obsid: 24291
+	Downloading
+	Finished downloading
+	Download time: 37 seconds
+	Processing
+	Finished processing
+	Processing time: 45 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24291
+Time: 85 seconds
+Starting obsid: 24292
+	Downloading
+	Finished downloading
+	Download time: 16 seconds
+	Processing
+	Finished processing
+	Processing time: 51 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 24292
+Time: 69 seconds
+Starting obsid: 24293
+	Downloading
+	Finished downloading
+	Download time: 37 seconds
+	Processing
+	Finished processing
+	Processing time: 34 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24293
+Time: 75 seconds
+Starting obsid: 24294
+	Downloading
+	Finished downloading
+	Download time: 27 seconds
+	Processing
+	Finished processing
+	Processing time: 34 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24294
+Time: 64 seconds
+Starting obsid: 25086
+	Downloading
+	Finished downloading
+	Download time: 23 seconds
+	Processing
+	Finished processing
+	Processing time: 29 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25086
+Time: 55 seconds
+Starting obsid: 26352
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 27 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 26352
+Time: 41 seconds
+Starting obsid: 26446
+	Downloading
+	Finished downloading
+	Download time: 19 seconds
+	Processing
+	Finished processing
+	Processing time: 65 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26446
+Time: 88 seconds
+Starting obsid: 26451
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 61 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26451
+Time: 75 seconds
+Starting obsid: 26452
+	Downloading
+	Finished downloading
+	Download time: 17 seconds
+	Processing
+	Finished processing
+	Processing time: 58 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26452
+Time: 78 seconds
+Starting obsid: 27264
+	Downloading
+	Finished downloading
+	Download time: 19 seconds
+	Processing
+	Finished processing
+	Processing time: 45 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27264
+Time: 68 seconds
+Starting obsid: 23440
+	Downloading
+	Finished downloading
+	Download time: 23 seconds
+	Processing
+	Finished processing
+	Processing time: 14 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 23440
+Time: 38 seconds
+Starting obsid: 24516
+	Downloading
+	Finished downloading
+	Download time: 20 seconds
+	Processing
+	Finished processing
+	Processing time: 17 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 24516
+Time: 38 seconds
+Starting obsid: 23492
+	Downloading
+	Finished downloading
+	Download time: 24 seconds
+	Processing
+	Finished processing
+	Processing time: 175 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 23492
+Time: 207 seconds
+Starting obsid: 23493
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 90 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 23493
+Time: 108 seconds
+Starting obsid: 23494
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 145 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 23494
+Time: 166 seconds
+Starting obsid: 23495
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 117 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 23495
+Time: 140 seconds
+Starting obsid: 23496
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 127 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 23496
+Time: 145 seconds
+Starting obsid: 23497
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 155 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 23497
+Time: 173 seconds
+Starting obsid: 23498
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 72 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 23498
+Time: 90 seconds
+Starting obsid: 23499
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 160 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 23499
+Time: 178 seconds
+Starting obsid: 23500
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 150 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 23500
+Time: 168 seconds
+Starting obsid: 23501
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 105 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 23501
+Time: 124 seconds
+Starting obsid: 25157
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 19 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 25157
+Time: 30 seconds
+Starting obsid: 26276
+	Downloading
+	Finished downloading
+	Download time: 16 seconds
+	Processing
+	Finished processing
+	Processing time: 56 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 26276
+Time: 73 seconds
+Starting obsid: 25162
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 69 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25162
+Time: 84 seconds
+Starting obsid: 26460
+	Downloading
+	Finished downloading
+	Download time: 16 seconds
+	Processing
+	Finished processing
+	Processing time: 70 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26460
+Time: 89 seconds
+Starting obsid: 26249
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 37 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 26249
+Time: 49 seconds
+Starting obsid: 26262
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 37 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 26262
+Time: 48 seconds
+Starting obsid: 26407
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 52 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 26407
+Time: 69 seconds
+Starting obsid: 26516
+	Downloading
+	Finished downloading
+	Download time: 19 seconds
+	Processing
+	Finished processing
+	Processing time: 161 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26516
+Time: 184 seconds
+Starting obsid: 26520
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 203 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 26520
+Time: 224 seconds
+Starting obsid: 26522
+	Downloading
+	Finished downloading
+	Download time: 46 seconds
+	Processing
+	Finished processing
+	Processing time: 153 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 26522
+Time: 204 seconds
+Starting obsid: 26546
+	Downloading
+	Finished downloading
+	Download time: 47 seconds
+	Processing
+	Finished processing
+	Processing time: 90 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26546
+Time: 141 seconds
+Starting obsid: 26549
+	Downloading
+	Finished downloading
+	Download time: 24 seconds
+	Processing
+	Finished processing
+	Processing time: 183 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26549
+Time: 210 seconds
+Starting obsid: 27065
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 121 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27065
+Time: 135 seconds
+Starting obsid: 28980
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 196 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28980
+Time: 214 seconds
+Starting obsid: 28981
+	Downloading
+	Finished downloading
+	Download time: 23 seconds
+	Processing
+	Finished processing
+	Processing time: 179 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28981
+Time: 206 seconds
+Starting obsid: 29129
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 75 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 29129
+Time: 88 seconds
+Starting obsid: 27068
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 128 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27068
+Time: 142 seconds
+Starting obsid: 29307
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 132 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 29307
+Time: 146 seconds
+Starting obsid: 29308
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 133 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29308
+Time: 148 seconds
+Starting obsid: 26551
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 237 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 26551
+Time: 261 seconds
+Starting obsid: 27069
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 113 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27069
+Time: 127 seconds
+Starting obsid: 27070
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 187 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27070
+Time: 201 seconds
+Starting obsid: 29336
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 99 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29336
+Time: 115 seconds
+Starting obsid: 29367
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 122 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29367
+Time: 135 seconds
+Starting obsid: 27071
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 203 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27071
+Time: 221 seconds
+Starting obsid: 27072
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 97 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27072
+Time: 111 seconds
+Starting obsid: 29196
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 201 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29196
+Time: 218 seconds
+Starting obsid: 27073
+	Downloading
+	Finished downloading
+	Download time: 16 seconds
+	Processing
+	Finished processing
+	Processing time: 137 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27073
+Time: 156 seconds
+Starting obsid: 29215
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 187 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29215
+Time: 200 seconds
+Starting obsid: 26554
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 156 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 26554
+Time: 171 seconds
+Starting obsid: 27075
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 238 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 27075
+Time: 261 seconds
+Starting obsid: 27669
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 198 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 27669
+Time: 214 seconds
+Starting obsid: 27975
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 108 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27975
+Time: 121 seconds
+Starting obsid: 26555
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 99 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 26555
+Time: 117 seconds
+Starting obsid: 27077
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 219 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 27077
+Time: 238 seconds
+Starting obsid: 27078
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 128 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 27078
+Time: 146 seconds
+Starting obsid: 27080
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 95 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 27080
+Time: 110 seconds
+Starting obsid: 26557
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 118 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26557
+Time: 132 seconds
+Starting obsid: 27081
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 145 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 27081
+Time: 166 seconds
+Starting obsid: 27082
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 228 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 27082
+Time: 246 seconds
+Starting obsid: 27605
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 113 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27605
+Time: 126 seconds
+Starting obsid: 27606
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 140 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 27606
+Time: 156 seconds
+Starting obsid: 27083
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 137 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 27083
+Time: 160 seconds
+Starting obsid: 27084
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 239 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 27084
+Time: 258 seconds
+Starting obsid: 27481
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 61 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27481
+Time: 74 seconds
+Starting obsid: 27777
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 96 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27777
+Time: 114 seconds
+Starting obsid: 27778
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 87 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27778
+Time: 103 seconds
+Starting obsid: 27779
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 87 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27779
+Time: 101 seconds
+Starting obsid: 28042
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 167 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 28042
+Time: 185 seconds
+Starting obsid: 28043
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 140 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 28043
+Time: 156 seconds
+Starting obsid: 28045
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 184 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 28045
+Time: 200 seconds
+Starting obsid: 22445
+	Downloading
+	Finished downloading
+	Download time: 16 seconds
+	Processing
+	Finished processing
+	Processing time: 152 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 22445
+Time: 177 seconds
+Starting obsid: 22704
+	Downloading
+	Finished downloading
+	Download time: 38 seconds
+	Processing
+	Finished processing
+	Processing time: 63 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 22704
+Time: 106 seconds
+Starting obsid: 24633
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 125 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24633
+Time: 144 seconds
+Starting obsid: 24634
+	Downloading
+	Finished downloading
+	Download time: 20 seconds
+	Processing
+	Finished processing
+	Processing time: 117 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24634
+Time: 142 seconds
+Starting obsid: 23543
+	Downloading
+	Finished downloading
+	Download time: 28 seconds
+	Processing
+	Finished processing
+	Processing time: 129 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 23543
+Time: 161 seconds
+Starting obsid: 23576
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 34 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 23576
+Time: 48 seconds
+Starting obsid: 24263
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 118 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24263
+Time: 138 seconds
+Starting obsid: 24264
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 99 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24264
+Time: 116 seconds
+Starting obsid: 24265
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 125 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 24265
+Time: 144 seconds
+Starting obsid: 24266
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 89 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24266
+Time: 104 seconds
+Starting obsid: 24267
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 118 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24267
+Time: 134 seconds
+Starting obsid: 24268
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 88 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 24268
+Time: 104 seconds
+Starting obsid: 24269
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 100 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24269
+Time: 116 seconds
+Starting obsid: 24270
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 107 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24270
+Time: 128 seconds
+Starting obsid: 24271
+	Downloading
+	Finished downloading
+	Download time: 19 seconds
+	Processing
+	Finished processing
+	Processing time: 122 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24271
+Time: 147 seconds
+Starting obsid: 24272
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 103 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 24272
+Time: 123 seconds
+Starting obsid: 24273
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 102 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24273
+Time: 121 seconds
+Starting obsid: 24274
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 97 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24274
+Time: 113 seconds
+Starting obsid: 25061
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 125 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25061
+Time: 146 seconds
+Starting obsid: 25988
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 28 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25988
+Time: 41 seconds
+Starting obsid: 24709
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 27 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24709
+Time: 39 seconds
+Starting obsid: 25179
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 33 seconds
+	Obsid data already searched
+Finished obsid: 25179
+Time: 43 seconds
+Starting obsid: 25180
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 68 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25180
+Time: 81 seconds
+Starting obsid: 25181
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 28 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25181
+Time: 41 seconds
+Starting obsid: 25190
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 40 seconds
+	Obsid data already searched
+Finished obsid: 25190
+Time: 50 seconds
+Starting obsid: 25191
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 53 seconds
+	Obsid data already searched
+Finished obsid: 25191
+Time: 62 seconds
+Starting obsid: 25208
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 141 seconds
+	Obsid data already searched
+Finished obsid: 25208
+Time: 152 seconds
+Starting obsid: 26305
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 140 seconds
+	Obsid data already searched
+Finished obsid: 26305
+Time: 149 seconds
+Starting obsid: 26306
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 142 seconds
+	Obsid data already searched
+Finished obsid: 26306
+Time: 152 seconds
+Starting obsid: 26307
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 138 seconds
+	Obsid data already searched
+Finished obsid: 26307
+Time: 150 seconds
+Starting obsid: 26308
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 137 seconds
+	Obsid data already searched
+Finished obsid: 26308
+Time: 147 seconds
+Starting obsid: 25216
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 64 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25216
+Time: 77 seconds
+Starting obsid: 25217
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 52 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25217
+Time: 65 seconds
+Starting obsid: 26441
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 53 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26441
+Time: 66 seconds
+Starting obsid: 26630
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 110 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26630
+Time: 124 seconds
+Starting obsid: 26641
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 57 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 26641
+Time: 68 seconds
+Starting obsid: 26642
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 77 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26642
+Time: 89 seconds
+Starting obsid: 26643
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 99 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26643
+Time: 111 seconds
+Starting obsid: 26644
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 97 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26644
+Time: 110 seconds
+Starting obsid: 26645
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 111 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 26645
+Time: 124 seconds
+Starting obsid: 26646
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 80 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26646
+Time: 91 seconds
+Starting obsid: 27950
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 66 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27950
+Time: 77 seconds
+Starting obsid: 27951
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 63 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27951
+Time: 74 seconds
+Starting obsid: 26648
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 81 seconds
+	Obsid data already searched
+Finished obsid: 26648
+Time: 90 seconds
+Starting obsid: 29000
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 81 seconds
+	Obsid data already searched
+Finished obsid: 29000
+Time: 90 seconds
+Starting obsid: 29001
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 81 seconds
+	Obsid data already searched
+Finished obsid: 29001
+Time: 89 seconds
+Starting obsid: 29002
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 70 seconds
+	Obsid data already searched
+Finished obsid: 29002
+Time: 78 seconds
+Starting obsid: 27263
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 44 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27263
+Time: 56 seconds
+Starting obsid: 27639
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 95 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27639
+Time: 107 seconds
+Starting obsid: 27643
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 78 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27643
+Time: 90 seconds
+Starting obsid: 27644
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 130 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27644
+Time: 142 seconds
+Starting obsid: 27645
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 147 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27645
+Time: 160 seconds
+Starting obsid: 27646
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 108 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27646
+Time: 121 seconds
+Starting obsid: 26986
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 17 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26986
+Time: 27 seconds
+Starting obsid: 27745
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 17 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27745
+Time: 28 seconds
+Starting obsid: 26987
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 28 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26987
+Time: 40 seconds
+Starting obsid: 26988
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 24 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 26988
+Time: 35 seconds
+Starting obsid: 27760
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 25 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27760
+Time: 36 seconds
+Starting obsid: 26989
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 23 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26989
+Time: 35 seconds
+Starting obsid: 27761
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 23 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27761
+Time: 34 seconds
+Starting obsid: 26990
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 15 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 26990
+Time: 26 seconds
+Starting obsid: 27762
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 12 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27762
+Time: 22 seconds
+Starting obsid: 26991
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+# wrecon (CIAO 4.16.0): Skipping duplicate source at (i,j) = (280,917)
+
+# wrecon (CIAO 4.16.0): Skipping duplicate source at (i,j) = (283,923)
+
+	Finished processing
+	Processing time: 13 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 26991
+Time: 23 seconds
+Starting obsid: 27773
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 12 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 27773
+Time: 22 seconds
+Starting obsid: 28431
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 22 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 28431
+Time: 34 seconds
+Starting obsid: 28432
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 40 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 28432
+Time: 51 seconds
+Starting obsid: 28435
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 23 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 28435
+Time: 34 seconds
+Starting obsid: 28436
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 21 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 28436
+Time: 31 seconds
+Starting obsid: 22473
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 185 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 22473
+Time: 202 seconds
+Starting obsid: 23062
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 199 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 23062
+Time: 216 seconds
+Starting obsid: 25091
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 171 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25091
+Time: 188 seconds
+Starting obsid: 23613
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 174 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 23613
+Time: 191 seconds
+Starting obsid: 24448
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 102 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24448
+Time: 117 seconds
+Starting obsid: 24449
+	Downloading
+	Finished downloading
+	Download time: 34 seconds
+	Processing
+	Finished processing
+	Processing time: 178 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24449
+Time: 217 seconds
+Starting obsid: 24450
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 198 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24450
+Time: 214 seconds
+Starting obsid: 24451
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 159 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 24451
+Time: 176 seconds
+Starting obsid: 24452
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 174 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24452
+Time: 188 seconds
+Starting obsid: 24453
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 184 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24453
+Time: 199 seconds
+Starting obsid: 24454
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 146 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24454
+Time: 165 seconds
+Starting obsid: 24455
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 161 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24455
+Time: 177 seconds
+Starting obsid: 24456
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 172 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24456
+Time: 186 seconds
+Starting obsid: 24457
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 115 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 24457
+Time: 131 seconds
+Starting obsid: 24458
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 136 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24458
+Time: 151 seconds
+Starting obsid: 24459
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 146 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24459
+Time: 161 seconds
+Starting obsid: 24460
+	Downloading
+	Finished downloading
+	Download time: 17 seconds
+	Processing
+	Finished processing
+	Processing time: 164 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24460
+Time: 183 seconds
+Starting obsid: 24920
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 170 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 24920
+Time: 184 seconds
+Starting obsid: 26483
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 91 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26483
+Time: 105 seconds
+Starting obsid: 23630
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 38 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 23630
+Time: 50 seconds
+Starting obsid: 23633
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 93 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 23633
+Time: 106 seconds
+Starting obsid: 26120
+	Downloading
+	Finished downloading
+	Download time: 17 seconds
+	Processing
+	Finished processing
+	Processing time: 92 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26120
+Time: 112 seconds
+Starting obsid: 25237
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 94 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25237
+Time: 113 seconds
+Starting obsid: 25804
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25804
+Time: 123 seconds
+Starting obsid: 25805
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 111 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25805
+Time: 125 seconds
+Starting obsid: 25806
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 106 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 25806
+Time: 117 seconds
+Starting obsid: 25807
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 107 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25807
+Time: 119 seconds
+Starting obsid: 27485
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27485
+Time: 122 seconds
+Starting obsid: 27515
+	Downloading
+	Finished downloading
+	Download time: 19 seconds
+	Processing
+	Finished processing
+	Processing time: 106 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27515
+Time: 130 seconds
+Starting obsid: 27516
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 107 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27516
+Time: 124 seconds
+Starting obsid: 27520
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 95 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27520
+Time: 108 seconds
+Starting obsid: 27533
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 82 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27533
+Time: 94 seconds
+Starting obsid: 27534
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 106 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27534
+Time: 120 seconds
+Starting obsid: 25239
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 150 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 25239
+Time: 165 seconds
+Starting obsid: 26236
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 147 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 26236
+Time: 162 seconds
+Starting obsid: 26675
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 192 seconds
+	Searching
+	Finished searching
+	Searching time: 10 seconds
+Finished obsid: 26675
+Time: 211 seconds
+Starting obsid: 27748
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 198 seconds
+	Searching
+	Finished searching
+	Searching time: 10 seconds
+Finished obsid: 27748
+Time: 218 seconds
+Starting obsid: 26678
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 193 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26678
+Time: 206 seconds
+Starting obsid: 27565
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 100 seconds
+	Obsid data already searched
+Finished obsid: 27565
+Time: 109 seconds
+Starting obsid: 22543
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 90 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 22543
+Time: 104 seconds
+Starting obsid: 25052
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 90 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 25052
+Time: 104 seconds
+Starting obsid: 23683
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 122 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 23683
+Time: 138 seconds
+Starting obsid: 23684
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 55 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 23684
+Time: 68 seconds
+Starting obsid: 23769
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 99 seconds
+	Obsid data already searched
+Finished obsid: 23769
+Time: 108 seconds
+Starting obsid: 23788
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 62 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 23788
+Time: 74 seconds
+Starting obsid: 23797
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 99 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 23797
+Time: 113 seconds
+Starting obsid: 23798
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 81 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 23798
+Time: 94 seconds
+Starting obsid: 23806
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 69 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 23806
+Time: 83 seconds
+Starting obsid: 23807
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 75 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 23807
+Time: 87 seconds
+Starting obsid: 23809
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 20 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 23809
+Time: 30 seconds
+Starting obsid: 23815
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 92 seconds
+	Obsid data already searched
+Finished obsid: 23815
+Time: 101 seconds
+Starting obsid: 26219
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 98 seconds
+	Obsid data already searched
+Finished obsid: 26219
+Time: 107 seconds
+Starting obsid: 23818
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 100 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 23818
+Time: 113 seconds
+Starting obsid: 23826
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 129 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 23826
+Time: 142 seconds
+Starting obsid: 26343
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 129 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 26343
+Time: 143 seconds
+Starting obsid: 23833
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 111 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 23833
+Time: 125 seconds
+Starting obsid: 24260
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 120 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24260
+Time: 134 seconds
+Starting obsid: 24261
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 110 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24261
+Time: 124 seconds
+Starting obsid: 24262
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 115 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 24262
+Time: 128 seconds
+Starting obsid: 25251
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 36 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 25251
+Time: 47 seconds
+Starting obsid: 25254
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 61 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25254
+Time: 72 seconds
+Starting obsid: 25739
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 33 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 25739
+Time: 43 seconds
+Starting obsid: 26254
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 27 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 26254
+Time: 37 seconds
+Starting obsid: 26391
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 70 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 26391
+Time: 81 seconds
+Starting obsid: 26392
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 61 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 26392
+Time: 71 seconds
+Starting obsid: 25261
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 116 seconds
+	Obsid data already searched
+Finished obsid: 25261
+Time: 124 seconds
+Starting obsid: 25269
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 123 seconds
+	Obsid data already searched
+Finished obsid: 25269
+Time: 133 seconds
+Starting obsid: 25277
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 93 seconds
+	Searching
+	Finished searching
+	Searching time: 11 seconds
+Finished obsid: 25277
+Time: 112 seconds
+Starting obsid: 25278
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 99 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25278
+Time: 115 seconds
+Starting obsid: 25279
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 105 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25279
+Time: 120 seconds
+Starting obsid: 25907
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 146 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 25907
+Time: 163 seconds
+Starting obsid: 25908
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 70 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25908
+Time: 85 seconds
+Starting obsid: 25909
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 108 seconds
+	Searching
+	Finished searching
+	Searching time: 11 seconds
+Finished obsid: 25909
+Time: 129 seconds
+Starting obsid: 25910
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 82 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25910
+Time: 97 seconds
+Starting obsid: 25911
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 114 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 25911
+Time: 128 seconds
+Starting obsid: 25912
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 106 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 25912
+Time: 124 seconds
+Starting obsid: 25913
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 114 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25913
+Time: 129 seconds
+Starting obsid: 25914
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 81 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25914
+Time: 97 seconds
+Starting obsid: 25915
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 117 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25915
+Time: 132 seconds
+Starting obsid: 25916
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 114 seconds
+	Searching
+	Finished searching
+	Searching time: 12 seconds
+Finished obsid: 25916
+Time: 135 seconds
+Starting obsid: 25917
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 104 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 25917
+Time: 122 seconds
+Starting obsid: 25918
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 99 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25918
+Time: 114 seconds
+Starting obsid: 25919
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 114 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25919
+Time: 130 seconds
+Starting obsid: 25920
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 100 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25920
+Time: 117 seconds
+Starting obsid: 25921
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 66 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 25921
+Time: 84 seconds
+Starting obsid: 25922
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 115 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 25922
+Time: 132 seconds
+Starting obsid: 25923
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 102 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25923
+Time: 118 seconds
+Starting obsid: 25924
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 105 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25924
+Time: 120 seconds
+Starting obsid: 25925
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25925
+Time: 124 seconds
+Starting obsid: 25926
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 89 seconds
+	Searching
+	Finished searching
+	Searching time: 11 seconds
+Finished obsid: 25926
+Time: 109 seconds
+Starting obsid: 25927
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 84 seconds
+	Searching
+	Finished searching
+	Searching time: 12 seconds
+Finished obsid: 25927
+Time: 105 seconds
+Starting obsid: 25928
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 103 seconds
+	Searching
+	Finished searching
+	Searching time: 10 seconds
+Finished obsid: 25928
+Time: 122 seconds
+Starting obsid: 25929
+	Downloading
+	Finished downloading
+	Download time: 20 seconds
+	Processing
+	Finished processing
+	Processing time: 108 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25929
+Time: 134 seconds
+Starting obsid: 25930
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 110 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25930
+Time: 125 seconds
+Starting obsid: 25931
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 107 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 25931
+Time: 126 seconds
+Starting obsid: 25932
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 105 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25932
+Time: 120 seconds
+Starting obsid: 25933
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 77 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25933
+Time: 93 seconds
+Starting obsid: 25934
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 112 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25934
+Time: 128 seconds
+Starting obsid: 25935
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 93 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25935
+Time: 108 seconds
+Starting obsid: 25936
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 66 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 25936
+Time: 84 seconds
+Starting obsid: 25937
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 106 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 25937
+Time: 125 seconds
+Starting obsid: 25938
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 99 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 25938
+Time: 115 seconds
+Starting obsid: 25939
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 66 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 25939
+Time: 85 seconds
+Starting obsid: 25940
+	Downloading
+	Finished downloading
+	Download time: 18 seconds
+	Processing
+	Finished processing
+	Processing time: 75 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25940
+Time: 100 seconds
+Starting obsid: 25941
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 108 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 25941
+Time: 127 seconds
+Starting obsid: 25942
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 104 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 25942
+Time: 122 seconds
+Starting obsid: 25943
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 106 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 25943
+Time: 124 seconds
+Starting obsid: 25944
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25944
+Time: 124 seconds
+Starting obsid: 25945
+	Downloading
+	Finished downloading
+	Download time: 23 seconds
+	Processing
+	Finished processing
+	Processing time: 62 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 25945
+Time: 93 seconds
+Starting obsid: 25946
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 94 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25946
+Time: 110 seconds
+Starting obsid: 25947
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 68 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 25947
+Time: 86 seconds
+Starting obsid: 25948
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 68 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25948
+Time: 83 seconds
+Starting obsid: 25949
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 111 seconds
+	Searching
+	Finished searching
+	Searching time: 11 seconds
+Finished obsid: 25949
+Time: 131 seconds
+Starting obsid: 25950
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 94 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 25950
+Time: 111 seconds
+Starting obsid: 25951
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 136 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25951
+Time: 153 seconds
+Starting obsid: 25952
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 56 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25952
+Time: 71 seconds
+Starting obsid: 25953
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 89 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25953
+Time: 104 seconds
+Starting obsid: 25954
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 103 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 25954
+Time: 122 seconds
+Starting obsid: 25955
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 78 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 25955
+Time: 97 seconds
+Starting obsid: 25956
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 103 seconds
+	Searching
+	Finished searching
+	Searching time: 10 seconds
+Finished obsid: 25956
+Time: 121 seconds
+Starting obsid: 25957
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 105 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 25957
+Time: 120 seconds
+Starting obsid: 25958
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 104 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25958
+Time: 120 seconds
+Starting obsid: 25959
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 67 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 25959
+Time: 84 seconds
+Starting obsid: 25960
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 87 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25960
+Time: 101 seconds
+Starting obsid: 25961
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 115 seconds
+	Searching
+	Finished searching
+	Searching time: 12 seconds
+Finished obsid: 25961
+Time: 136 seconds
+Starting obsid: 25962
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 110 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25962
+Time: 125 seconds
+Starting obsid: 25963
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 127 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 25963
+Time: 145 seconds
+Starting obsid: 25964
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Searching
+	Finished searching
+	Searching time: 12 seconds
+Finished obsid: 25964
+Time: 129 seconds
+Starting obsid: 25965
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 127 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 25965
+Time: 145 seconds
+Starting obsid: 25966
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 60 seconds
+	Searching
+	Finished searching
+	Searching time: 12 seconds
+Finished obsid: 25966
+Time: 81 seconds
+Starting obsid: 25967
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 67 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25967
+Time: 83 seconds
+Starting obsid: 25968
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 101 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25968
+Time: 117 seconds
+Starting obsid: 25969
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 89 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25969
+Time: 108 seconds
+Starting obsid: 25970
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 104 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25970
+Time: 120 seconds
+Starting obsid: 25971
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 105 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 25971
+Time: 122 seconds
+Starting obsid: 25972
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 119 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25972
+Time: 135 seconds
+Starting obsid: 25973
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 122 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 25973
+Time: 136 seconds
+Starting obsid: 26280
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 64 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 26280
+Time: 82 seconds
+Starting obsid: 27347
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 110 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27347
+Time: 125 seconds
+Starting obsid: 27449
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 61 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 27449
+Time: 76 seconds
+Starting obsid: 27450
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 59 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27450
+Time: 73 seconds
+Starting obsid: 27556
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 113 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 27556
+Time: 129 seconds
+Starting obsid: 27563
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 92 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 27563
+Time: 108 seconds
+Starting obsid: 27575
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 108 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 27575
+Time: 122 seconds
+Starting obsid: 27678
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 64 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 27678
+Time: 80 seconds
+Starting obsid: 27679
+	Downloading
+	Finished downloading
+	Download time: 19 seconds
+	Processing
+	Finished processing
+	Processing time: 63 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 27679
+Time: 89 seconds
+Starting obsid: 27680
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 66 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 27680
+Time: 82 seconds
+Starting obsid: 27681
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 59 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 27681
+Time: 73 seconds
+Starting obsid: 27739
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 92 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 27739
+Time: 107 seconds
+Starting obsid: 27780
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 91 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 27780
+Time: 107 seconds
+Starting obsid: 27856
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 101 seconds
+	Searching
+	Finished searching
+	Searching time: 10 seconds
+Finished obsid: 27856
+Time: 120 seconds
+Starting obsid: 27857
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 95 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 27857
+Time: 111 seconds
+Starting obsid: 27896
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 92 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 27896
+Time: 110 seconds
+Starting obsid: 27974
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 69 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 27974
+Time: 85 seconds
+Starting obsid: 28370
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 70 seconds
+	Searching
+	Finished searching
+	Searching time: 12 seconds
+Finished obsid: 28370
+Time: 90 seconds
+Starting obsid: 28483
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 95 seconds
+	Searching
+	Finished searching
+	Searching time: 11 seconds
+Finished obsid: 28483
+Time: 115 seconds
+Starting obsid: 28872
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 104 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 28872
+Time: 121 seconds
+Starting obsid: 28886
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 103 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 28886
+Time: 117 seconds
+Starting obsid: 28887
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Searching
+	Finished searching
+	Searching time: 11 seconds
+Finished obsid: 28887
+Time: 129 seconds
+Starting obsid: 28910
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 28910
+Time: 124 seconds
+Starting obsid: 28920
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 66 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 28920
+Time: 83 seconds
+Starting obsid: 28934
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 83 seconds
+	Searching
+	Finished searching
+	Searching time: 14 seconds
+Finished obsid: 28934
+Time: 106 seconds
+Starting obsid: 28951
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 69 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 28951
+Time: 86 seconds
+Starting obsid: 28952
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 88 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 28952
+Time: 105 seconds
+Starting obsid: 25283
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 43 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 25283
+Time: 53 seconds
+Starting obsid: 25284
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 94 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25284
+Time: 107 seconds
+Starting obsid: 25285
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 113 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 25285
+Time: 127 seconds
+Starting obsid: 25295
+	Downloading
+	Finished downloading
+	Download time: 17 seconds
+	Processing
+	Finished processing
+	Processing time: 113 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25295
+Time: 134 seconds
+Starting obsid: 25296
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 62 seconds
+	Obsid data already searched
+Finished obsid: 25296
+Time: 73 seconds
+Starting obsid: 27458
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 61 seconds
+	Obsid data already searched
+Finished obsid: 27458
+Time: 69 seconds
+Starting obsid: 25362
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 110 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25362
+Time: 124 seconds
+Starting obsid: 25363
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 97 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25363
+Time: 109 seconds
+Starting obsid: 26427
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 94 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26427
+Time: 107 seconds
+Starting obsid: 25364
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 93 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25364
+Time: 105 seconds
+Starting obsid: 25855
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 52 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25855
+Time: 65 seconds
+Starting obsid: 27330
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 52 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27330
+Time: 64 seconds
+Starting obsid: 27602
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 101 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27602
+Time: 114 seconds
+Starting obsid: 27603
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 94 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27603
+Time: 106 seconds
+Starting obsid: 27604
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 105 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27604
+Time: 118 seconds
+Starting obsid: 25376
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 121 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25376
+Time: 135 seconds
+Starting obsid: 25377
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 135 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25377
+Time: 147 seconds
+Starting obsid: 25380
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 123 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25380
+Time: 135 seconds
+Starting obsid: 27709
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 126 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 27709
+Time: 146 seconds
+Starting obsid: 27710
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 123 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27710
+Time: 137 seconds
+Starting obsid: 25383
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 82 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25383
+Time: 95 seconds
+Starting obsid: 25829
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 87 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25829
+Time: 99 seconds
+Starting obsid: 25830
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 79 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25830
+Time: 91 seconds
+Starting obsid: 25831
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 84 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25831
+Time: 97 seconds
+Starting obsid: 25832
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 80 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25832
+Time: 93 seconds
+Starting obsid: 25833
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 77 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25833
+Time: 90 seconds
+Starting obsid: 25834
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 140 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25834
+Time: 154 seconds
+Starting obsid: 25835
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 70 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25835
+Time: 82 seconds
+Starting obsid: 25836
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 83 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25836
+Time: 96 seconds
+Starting obsid: 25837
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 76 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25837
+Time: 89 seconds
+Starting obsid: 26224
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 143 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26224
+Time: 156 seconds
+Starting obsid: 27543
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 81 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27543
+Time: 94 seconds
+Starting obsid: 25388
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 57 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25388
+Time: 69 seconds
+Starting obsid: 27627
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 63 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27627
+Time: 74 seconds
+Starting obsid: 27628
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 57 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27628
+Time: 69 seconds
+Starting obsid: 27629
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 59 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27629
+Time: 71 seconds
+Starting obsid: 25390
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 119 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25390
+Time: 131 seconds
+Starting obsid: 25397
+	Downloading
+	Finished downloading
+	Download time: 17 seconds
+	Processing
+	Finished processing
+	Processing time: 149 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25397
+Time: 170 seconds
+Starting obsid: 25398
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 162 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25398
+Time: 179 seconds
+Starting obsid: 26433
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 144 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26433
+Time: 157 seconds
+Starting obsid: 25399
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 144 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25399
+Time: 157 seconds
+Starting obsid: 25400
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 117 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25400
+Time: 129 seconds
+Starting obsid: 25401
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 138 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25401
+Time: 151 seconds
+Starting obsid: 25402
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 129 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 25402
+Time: 145 seconds
+Starting obsid: 25403
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 135 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 25403
+Time: 147 seconds
+Starting obsid: 25443
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 157 seconds
+	Obsid data already searched
+Finished obsid: 25443
+Time: 166 seconds
+Starting obsid: 25444
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 100 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25444
+Time: 113 seconds
+Starting obsid: 25446
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25446
+Time: 122 seconds
+Starting obsid: 25450
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 143 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 25450
+Time: 157 seconds
+Starting obsid: 25452
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 167 seconds
+	Obsid data already searched
+Finished obsid: 25452
+Time: 176 seconds
+Starting obsid: 27613
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 171 seconds
+	Obsid data already searched
+Finished obsid: 27613
+Time: 180 seconds
+Starting obsid: 25458
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 134 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25458
+Time: 147 seconds
+Starting obsid: 25460
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 99 seconds
+	Obsid data already searched
+Finished obsid: 25460
+Time: 107 seconds
+Starting obsid: 26029
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 35 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26029
+Time: 47 seconds
+Starting obsid: 26031
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 105 seconds
+	Obsid data already searched
+Finished obsid: 26031
+Time: 114 seconds
+Starting obsid: 26384
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 93 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26384
+Time: 105 seconds
+Starting obsid: 27453
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 69 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27453
+Time: 82 seconds
+Starting obsid: 26429
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 56 seconds
+	Obsid data already searched
+Finished obsid: 26429
+Time: 65 seconds
+Starting obsid: 26430
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 56 seconds
+	Obsid data already searched
+Finished obsid: 26430
+Time: 65 seconds
+Starting obsid: 26456
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 53 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26456
+Time: 65 seconds
+Starting obsid: 26700
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 38 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 26700
+Time: 47 seconds
+Starting obsid: 26706
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 155 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26706
+Time: 168 seconds
+Starting obsid: 27588
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 156 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27588
+Time: 169 seconds
+Starting obsid: 26708
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 145 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26708
+Time: 157 seconds
+Starting obsid: 27581
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 153 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27581
+Time: 165 seconds
+Starting obsid: 26730
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 218 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 26730
+Time: 241 seconds
+Starting obsid: 27130
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 164 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27130
+Time: 177 seconds
+Starting obsid: 27131
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27131
+Time: 121 seconds
+Starting obsid: 27132
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 168 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27132
+Time: 181 seconds
+Starting obsid: 27133
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 97 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27133
+Time: 109 seconds
+Starting obsid: 27134
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 129 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27134
+Time: 141 seconds
+Starting obsid: 28935
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 102 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28935
+Time: 114 seconds
+Starting obsid: 28949
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 174 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28949
+Time: 187 seconds
+Starting obsid: 28950
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 121 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28950
+Time: 134 seconds
+Starting obsid: 28968
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 161 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28968
+Time: 174 seconds
+Starting obsid: 28969
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 148 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28969
+Time: 161 seconds
+Starting obsid: 28970
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 179 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28970
+Time: 193 seconds
+Starting obsid: 28971
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 161 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28971
+Time: 174 seconds
+Starting obsid: 26738
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 136 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26738
+Time: 148 seconds
+Starting obsid: 26742
+	Downloading
+	Finished downloading
+	Download time: 19 seconds
+	Processing
+	Finished processing
+	Processing time: 199 seconds
+	Obsid data already searched
+Finished obsid: 26742
+Time: 218 seconds
+Starting obsid: 28967
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 199 seconds
+	Obsid data already searched
+Finished obsid: 28967
+Time: 208 seconds
+Starting obsid: 26745
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 57 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26745
+Time: 68 seconds
+Starting obsid: 26790
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 90 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26790
+Time: 102 seconds
+Starting obsid: 27162
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 123 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27162
+Time: 135 seconds
+Starting obsid: 27163
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 97 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27163
+Time: 110 seconds
+Starting obsid: 27164
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 100 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27164
+Time: 111 seconds
+Starting obsid: 27165
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 84 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27165
+Time: 96 seconds
+Starting obsid: 27166
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 89 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27166
+Time: 102 seconds
+Starting obsid: 27167
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 100 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27167
+Time: 112 seconds
+Starting obsid: 27168
+	Downloading
+	Finished downloading
+	Download time: 20 seconds
+	Processing
+	Finished processing
+	Processing time: 84 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27168
+Time: 107 seconds
+Starting obsid: 28985
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 108 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 28985
+Time: 123 seconds
+Starting obsid: 28986
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 97 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28986
+Time: 112 seconds
+Starting obsid: 29004
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 85 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 29004
+Time: 97 seconds
+Starting obsid: 29005
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 95 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 29005
+Time: 107 seconds
+Starting obsid: 29021
+	Downloading
+	Finished downloading
+	Download time: 17 seconds
+	Processing
+	Finished processing
+	Processing time: 77 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 29021
+Time: 97 seconds
+Starting obsid: 29022
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 100 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29022
+Time: 113 seconds
+Starting obsid: 29023
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 99 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29023
+Time: 112 seconds
+Starting obsid: 29024
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 100 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29024
+Time: 114 seconds
+Starting obsid: 29025
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 101 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29025
+Time: 114 seconds
+Starting obsid: 26848
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 41 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 26848
+Time: 51 seconds
+Starting obsid: 26900
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 69 seconds
+	Obsid data already searched
+Finished obsid: 26900
+Time: 77 seconds
+Starting obsid: 27323
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 42 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 27323
+Time: 57 seconds
+Starting obsid: 27335
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 52 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 27335
+Time: 63 seconds
+Starting obsid: 27336
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 24 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27336
+Time: 36 seconds
+Starting obsid: 27636
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 43 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 27636
+Time: 53 seconds
+Starting obsid: 27637
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 35 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 27637
+Time: 46 seconds
+Starting obsid: 28373
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 23 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 28373
+Time: 37 seconds
+Starting obsid: 27324
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 58 seconds
+	Obsid data already searched
+Finished obsid: 27324
+Time: 68 seconds
+Starting obsid: 27334
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 36 seconds
+	Obsid data already searched
+Finished obsid: 27334
+Time: 45 seconds
+Starting obsid: 27943
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 46 seconds
+	Obsid data already searched
+Finished obsid: 27943
+Time: 58 seconds
+Starting obsid: 27340
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 51 seconds
+	Obsid data already searched
+Finished obsid: 27340
+Time: 62 seconds
+Starting obsid: 27342
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 47 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27342
+Time: 59 seconds
+Starting obsid: 27365
+	Downloading
+	Finished downloading
+	Download time: 17 seconds
+	Processing
+	Finished processing
+	Processing time: 95 seconds
+	Obsid data already searched
+Finished obsid: 27365
+Time: 112 seconds
+Starting obsid: 28923
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 86 seconds
+	Obsid data already searched
+Finished obsid: 28923
+Time: 96 seconds
+Starting obsid: 27409
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 48 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27409
+Time: 63 seconds
+Starting obsid: 27410
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 76 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27410
+Time: 90 seconds
+Starting obsid: 27445
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 37 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27445
+Time: 47 seconds
+Starting obsid: 27455
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 59 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27455
+Time: 76 seconds
+Starting obsid: 27457
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 48 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27457
+Time: 60 seconds
+Starting obsid: 27460
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 73 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27460
+Time: 86 seconds
+Starting obsid: 27471
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 60 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27471
+Time: 73 seconds
+Starting obsid: 27472
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 64 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27472
+Time: 77 seconds
+Starting obsid: 27473
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 17 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27473
+Time: 27 seconds
+Starting obsid: 27483
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 45 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27483
+Time: 60 seconds
+Starting obsid: 27519
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 97 seconds
+	Obsid data already searched
+Finished obsid: 27519
+Time: 106 seconds
+Starting obsid: 27525
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 51 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27525
+Time: 63 seconds
+Starting obsid: 27537
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 71 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27537
+Time: 82 seconds
+Starting obsid: 27538
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 100 seconds
+	Obsid data already searched
+Finished obsid: 27538
+Time: 109 seconds
+Starting obsid: 27539
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 45 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27539
+Time: 57 seconds
+Starting obsid: 27551
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 58 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27551
+Time: 72 seconds
+Starting obsid: 27564
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 34 seconds
+	Obsid data already searched
+Finished obsid: 27564
+Time: 43 seconds
+Starting obsid: 27599
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 71 seconds
+	Obsid data already searched
+Finished obsid: 27599
+Time: 80 seconds
+Starting obsid: 27737
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 48 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27737
+Time: 59 seconds
+Starting obsid: 27738
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 65 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27738
+Time: 78 seconds
+Starting obsid: 27798
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 68 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27798
+Time: 80 seconds
+Starting obsid: 27820
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 25 seconds
+	Obsid data already searched
+Finished obsid: 27820
+Time: 34 seconds
+Starting obsid: 27821
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 83 seconds
+	Obsid data already searched
+Finished obsid: 27821
+Time: 92 seconds
+Starting obsid: 27870
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27870
+Time: 122 seconds
+Starting obsid: 27884
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 81 seconds
+	Obsid data already searched
+Finished obsid: 27884
+Time: 91 seconds
+Starting obsid: 27897
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 90 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27897
+Time: 108 seconds
+Starting obsid: 27901
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 126 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27901
+Time: 141 seconds
+Starting obsid: 27953
+	Downloading
+	Finished downloading
+	Download time: 20 seconds
+	Processing
+	Finished processing
+	Processing time: 85 seconds
+	Obsid data already searched
+Finished obsid: 27953
+Time: 105 seconds
+Starting obsid: 27961
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 21 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 27961
+Time: 30 seconds
+Starting obsid: 27970
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 85 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27970
+Time: 98 seconds
+Starting obsid: 27971
+	Downloading
+	Finished downloading
+	Download time: 20 seconds
+	Processing
+	Finished processing
+	Processing time: 139 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27971
+Time: 163 seconds
+Starting obsid: 27972
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 86 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 27972
+Time: 97 seconds
+Starting obsid: 28588
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 81 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 28588
+Time: 93 seconds
+Starting obsid: 29276
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 84 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29276
+Time: 96 seconds
+Starting obsid: 29277
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 84 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29277
+Time: 96 seconds
+Starting obsid: 28294
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 125 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28294
+Time: 138 seconds
+Starting obsid: 28972
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 93 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 28972
+Time: 105 seconds
+Starting obsid: 28481
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 68 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 28481
+Time: 80 seconds
+Starting obsid: 28486
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 48 seconds
+	Searching
+	Finished searching
+	Searching time: 1 seconds
+Finished obsid: 28486
+Time: 59 seconds
+Starting obsid: 28487
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 81 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28487
+Time: 93 seconds
+Starting obsid: 28878
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 94 seconds
+	Obsid data already searched
+Finished obsid: 28878
+Time: 103 seconds
+Starting obsid: 28906
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 52 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 28906
+Time: 64 seconds
+Starting obsid: 28914
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 62 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 28914
+Time: 72 seconds
+Starting obsid: 28915
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 47 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 28915
+Time: 59 seconds
+Starting obsid: 28916
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 69 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 28916
+Time: 79 seconds
+Starting obsid: 28929
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 42 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 28929
+Time: 54 seconds
+Starting obsid: 28974
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 70 seconds
+	Obsid data already searched
+Finished obsid: 28974
+Time: 78 seconds
+Starting obsid: 28989
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 62 seconds
+	Obsid data already searched
+Finished obsid: 28989
+Time: 71 seconds
+Starting obsid: 28990
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 62 seconds
+	Obsid data already searched
+Finished obsid: 28990
+Time: 71 seconds
+Starting obsid: 29012
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 29 seconds
+	Obsid data already searched
+Finished obsid: 29012
+Time: 39 seconds
+Starting obsid: 29037
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 77 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 29037
+Time: 94 seconds
+Starting obsid: 29038
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 58 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29038
+Time: 71 seconds
+Starting obsid: 29069
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 75 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29069
+Time: 87 seconds
+Starting obsid: 29039
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 111 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 29039
+Time: 125 seconds
+Starting obsid: 29040
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 106 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 29040
+Time: 121 seconds
+Starting obsid: 29071
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 38 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 29071
+Time: 49 seconds
+Starting obsid: 29072
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 18 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 29072
+Time: 29 seconds
+Starting obsid: 29087
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 115 seconds
+	Obsid data already searched
+Finished obsid: 29087
+Time: 125 seconds
+Starting obsid: 23157
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 23157
+Time: 124 seconds
+Starting obsid: 24338
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 92 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24338
+Time: 112 seconds
+Starting obsid: 26142
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 130 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 26142
+Time: 147 seconds
+Starting obsid: 23839
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 79 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 23839
+Time: 93 seconds
+Starting obsid: 24300
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 39 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24300
+Time: 52 seconds
+Starting obsid: 24301
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 36 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 24301
+Time: 47 seconds
+Starting obsid: 24302
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 43 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 24302
+Time: 55 seconds
+Starting obsid: 24303
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 81 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 24303
+Time: 97 seconds
+Starting obsid: 26134
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 79 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26134
+Time: 92 seconds
+Starting obsid: 23840
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 77 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 23840
+Time: 93 seconds
+Starting obsid: 26365
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 81 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 26365
+Time: 97 seconds
+Starting obsid: 26366
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 77 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 26366
+Time: 92 seconds
+Starting obsid: 23843
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 71 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 23843
+Time: 84 seconds
+Starting obsid: 24505
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 105 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24505
+Time: 122 seconds
+Starting obsid: 24506
+	Downloading
+	Finished downloading
+	Download time: 16 seconds
+	Processing
+	Finished processing
+	Processing time: 84 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 24506
+Time: 104 seconds
+Starting obsid: 24507
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 130 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 24507
+Time: 144 seconds
+Starting obsid: 24508
+	Downloading
+	Finished downloading
+	Download time: 18 seconds
+	Processing
+	Finished processing
+	Processing time: 124 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 24508
+Time: 146 seconds
+Starting obsid: 24509
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 151 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24509
+Time: 167 seconds
+Starting obsid: 24510
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 155 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 24510
+Time: 169 seconds
+Starting obsid: 26215
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 75 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 26215
+Time: 89 seconds
+Starting obsid: 26479
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 71 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26479
+Time: 83 seconds
+Starting obsid: 23856
+	Downloading
+	Finished downloading
+	Download time: 37 seconds
+	Processing
+	Finished processing
+	Processing time: 163 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 23856
+Time: 208 seconds
+Starting obsid: 26190
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 114 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 26190
+Time: 128 seconds
+Starting obsid: 23858
+	Downloading
+	Finished downloading
+	Download time: 18 seconds
+	Processing
+	Finished processing
+	Processing time: 158 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 23858
+Time: 183 seconds
+Starting obsid: 24327
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 137 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 24327
+Time: 150 seconds
+Starting obsid: 24328
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 97 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24328
+Time: 112 seconds
+Starting obsid: 24329
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 106 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24329
+Time: 121 seconds
+Starting obsid: 24969
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 101 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24969
+Time: 113 seconds
+Starting obsid: 23859
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 151 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 23859
+Time: 164 seconds
+Starting obsid: 24517
+	Downloading
+	Finished downloading
+	Download time: 23 seconds
+	Processing
+	Finished processing
+	Processing time: 195 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24517
+Time: 223 seconds
+Starting obsid: 26399
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 146 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 26399
+Time: 165 seconds
+Starting obsid: 26400
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 123 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26400
+Time: 136 seconds
+Starting obsid: 24740
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 132 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24740
+Time: 147 seconds
+Starting obsid: 24741
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 125 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24741
+Time: 140 seconds
+Starting obsid: 24742
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 101 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 24742
+Time: 115 seconds
+Starting obsid: 26234
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 101 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 26234
+Time: 117 seconds
+Starting obsid: 24744
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 170 seconds
+	Searching
+	Finished searching
+	Searching time: 11 seconds
+Finished obsid: 24744
+Time: 191 seconds
+Starting obsid: 24745
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 122 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 24745
+Time: 138 seconds
+Starting obsid: 26364
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 139 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 26364
+Time: 153 seconds
+Starting obsid: 26373
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 97 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 26373
+Time: 111 seconds
+Starting obsid: 24746
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 96 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24746
+Time: 108 seconds
+Starting obsid: 24928
+	Downloading
+	Finished downloading
+	Download time: 15 seconds
+	Processing
+	Finished processing
+	Processing time: 97 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24928
+Time: 115 seconds
+Starting obsid: 24929
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 98 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 24929
+Time: 110 seconds
+Starting obsid: 25481
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 126 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 25481
+Time: 140 seconds
+Starting obsid: 25483
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 98 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 25483
+Time: 111 seconds
+Starting obsid: 25488
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 139 seconds
+	Obsid data already searched
+Finished obsid: 25488
+Time: 150 seconds
+Starting obsid: 25827
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 181 seconds
+	Obsid data already searched
+Finished obsid: 25827
+Time: 190 seconds
+Starting obsid: 25828
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 160 seconds
+	Obsid data already searched
+Finished obsid: 25828
+Time: 169 seconds
+Starting obsid: 26207
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 144 seconds
+	Obsid data already searched
+Finished obsid: 26207
+Time: 153 seconds
+Starting obsid: 26208
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 161 seconds
+	Obsid data already searched
+Finished obsid: 26208
+Time: 170 seconds
+Starting obsid: 27530
+	Downloading
+	Finished downloading
+	Download time: 17 seconds
+	Processing
+	Finished processing
+	Processing time: 195 seconds
+	Obsid data already searched
+Finished obsid: 27530
+Time: 212 seconds
+Starting obsid: 27531
+	Downloading
+	Finished downloading
+	Download time: 19 seconds
+	Processing
+	Finished processing
+	Processing time: 167 seconds
+	Obsid data already searched
+Finished obsid: 27531
+Time: 185 seconds
+Starting obsid: 25491
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 105 seconds
+	Obsid data already searched
+Finished obsid: 25491
+Time: 114 seconds
+Starting obsid: 25492
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 86 seconds
+	Obsid data already searched
+Finished obsid: 25492
+Time: 100 seconds
+Starting obsid: 25493
+	Downloading
+	Finished downloading
+	Download time: 18 seconds
+	Processing
+	Finished processing
+	Processing time: 107 seconds
+	Obsid data already searched
+Finished obsid: 25493
+Time: 124 seconds
+Starting obsid: 26051
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 66 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26051
+Time: 83 seconds
+Starting obsid: 26053
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 96 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26053
+Time: 108 seconds
+Starting obsid: 26056
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 130 seconds
+	Obsid data already searched
+Finished obsid: 26056
+Time: 139 seconds
+Starting obsid: 26058
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Obsid data already searched
+Finished obsid: 26058
+Time: 118 seconds
+Starting obsid: 26059
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 100 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26059
+Time: 113 seconds
+Starting obsid: 26060
+	Downloading
+	Finished downloading
+	Download time: 14 seconds
+	Processing
+	Finished processing
+	Processing time: 115 seconds
+	Obsid data already searched
+Finished obsid: 26060
+Time: 129 seconds
+Starting obsid: 26061
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 80 seconds
+	Obsid data already searched
+Finished obsid: 26061
+Time: 89 seconds
+Starting obsid: 26064
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Obsid data already searched
+Finished obsid: 26064
+Time: 120 seconds
+Starting obsid: 26066
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 119 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 26066
+Time: 133 seconds
+Starting obsid: 26075
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 143 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 26075
+Time: 161 seconds
+Starting obsid: 26101
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 116 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 26101
+Time: 132 seconds
+Starting obsid: 26102
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 140 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 26102
+Time: 157 seconds
+Starting obsid: 26103
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 151 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 26103
+Time: 167 seconds
+Starting obsid: 26482
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 67 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 26482
+Time: 83 seconds
+Starting obsid: 26915
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 145 seconds
+	Obsid data already searched
+Finished obsid: 26915
+Time: 157 seconds
+Starting obsid: 26916
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 126 seconds
+	Obsid data already searched
+Finished obsid: 26916
+Time: 135 seconds
+Starting obsid: 26917
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 124 seconds
+	Obsid data already searched
+Finished obsid: 26917
+Time: 133 seconds
+Starting obsid: 26921
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 74 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26921
+Time: 87 seconds
+Starting obsid: 26925
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 186 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 26925
+Time: 199 seconds
+Starting obsid: 26927
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 167 seconds
+	Searching
+	Finished searching
+	Searching time: 9 seconds
+Finished obsid: 26927
+Time: 185 seconds
+Starting obsid: 26931
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 125 seconds
+	Obsid data already searched
+Finished obsid: 26931
+Time: 134 seconds
+Starting obsid: 27198
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 113 seconds
+	Obsid data already searched
+Finished obsid: 27198
+Time: 121 seconds
+Starting obsid: 27199
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 71 seconds
+	Obsid data already searched
+Finished obsid: 27199
+Time: 79 seconds
+Starting obsid: 27200
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 93 seconds
+	Obsid data already searched
+Finished obsid: 27200
+Time: 103 seconds
+Starting obsid: 27201
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 76 seconds
+	Obsid data already searched
+Finished obsid: 27201
+Time: 85 seconds
+Starting obsid: 27549
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 87 seconds
+	Obsid data already searched
+Finished obsid: 27549
+Time: 96 seconds
+Starting obsid: 27560
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 125 seconds
+	Obsid data already searched
+Finished obsid: 27560
+Time: 133 seconds
+Starting obsid: 27561
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 135 seconds
+	Obsid data already searched
+Finished obsid: 27561
+Time: 144 seconds
+Starting obsid: 27562
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 130 seconds
+	Obsid data already searched
+Finished obsid: 27562
+Time: 139 seconds
+Starting obsid: 27586
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 111 seconds
+	Obsid data already searched
+Finished obsid: 27586
+Time: 119 seconds
+Starting obsid: 29006
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 70 seconds
+	Obsid data already searched
+Finished obsid: 29006
+Time: 78 seconds
+Starting obsid: 29007
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 68 seconds
+	Obsid data already searched
+Finished obsid: 29007
+Time: 76 seconds
+Starting obsid: 29026
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 92 seconds
+	Obsid data already searched
+Finished obsid: 29026
+Time: 100 seconds
+Starting obsid: 29027
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 95 seconds
+	Obsid data already searched
+Finished obsid: 29027
+Time: 103 seconds
+Starting obsid: 26937
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 110 seconds
+	Obsid data already searched
+Finished obsid: 26937
+Time: 119 seconds
+Starting obsid: 28982
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 103 seconds
+	Obsid data already searched
+Finished obsid: 28982
+Time: 112 seconds
+Starting obsid: 28983
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 63 seconds
+	Obsid data already searched
+Finished obsid: 28983
+Time: 75 seconds
+Starting obsid: 28984
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 123 seconds
+	Obsid data already searched
+Finished obsid: 28984
+Time: 132 seconds
+Starting obsid: 26940
+	Downloading
+	Finished downloading
+	Download time: 17 seconds
+	Processing
+	Finished processing
+	Processing time: 222 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 26940
+Time: 247 seconds
+Starting obsid: 26941
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 160 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 26941
+Time: 175 seconds
+Starting obsid: 26946
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 109 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 26946
+Time: 121 seconds
+Starting obsid: 27215
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 111 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27215
+Time: 123 seconds
+Starting obsid: 28921
+	Downloading
+	Finished downloading
+	Download time: 23 seconds
+	Processing
+	Finished processing
+	Processing time: 154 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 28921
+Time: 181 seconds
+Starting obsid: 28922
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 170 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 28922
+Time: 186 seconds
+Starting obsid: 29065
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 76 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 29065
+Time: 88 seconds
+Starting obsid: 26949
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 125 seconds
+	Obsid data already searched
+Finished obsid: 26949
+Time: 134 seconds
+Starting obsid: 27221
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 137 seconds
+	Obsid data already searched
+Finished obsid: 27221
+Time: 146 seconds
+Starting obsid: 27222
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 145 seconds
+	Obsid data already searched
+Finished obsid: 27222
+Time: 154 seconds
+Starting obsid: 27223
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 147 seconds
+	Obsid data already searched
+Finished obsid: 27223
+Time: 156 seconds
+Starting obsid: 27224
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 134 seconds
+	Obsid data already searched
+Finished obsid: 27224
+Time: 143 seconds
+Starting obsid: 27571
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 146 seconds
+	Obsid data already searched
+Finished obsid: 27571
+Time: 155 seconds
+Starting obsid: 27582
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 119 seconds
+	Obsid data already searched
+Finished obsid: 27582
+Time: 127 seconds
+Starting obsid: 27598
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 166 seconds
+	Obsid data already searched
+Finished obsid: 27598
+Time: 175 seconds
+Starting obsid: 27607
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 147 seconds
+	Obsid data already searched
+Finished obsid: 27607
+Time: 156 seconds
+Starting obsid: 27608
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 119 seconds
+	Obsid data already searched
+Finished obsid: 27608
+Time: 128 seconds
+Starting obsid: 26950
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 155 seconds
+	Searching
+	Finished searching
+	Searching time: 8 seconds
+Finished obsid: 26950
+Time: 172 seconds
+Starting obsid: 29047
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 139 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 29047
+Time: 155 seconds
+Starting obsid: 27343
+	Downloading
+	Finished downloading
+	Download time: 12 seconds
+	Processing
+	Finished processing
+	Processing time: 85 seconds
+	Obsid data already searched
+Finished obsid: 27343
+Time: 97 seconds
+Starting obsid: 27404
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 153 seconds
+	Obsid data already searched
+Finished obsid: 27404
+Time: 163 seconds
+Starting obsid: 29048
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 147 seconds
+	Obsid data already searched
+Finished obsid: 29048
+Time: 155 seconds
+Starting obsid: 29049
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 143 seconds
+	Obsid data already searched
+Finished obsid: 29049
+Time: 152 seconds
+Starting obsid: 29050
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 146 seconds
+	Obsid data already searched
+Finished obsid: 29050
+Time: 155 seconds
+Starting obsid: 27446
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 80 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27446
+Time: 94 seconds
+Starting obsid: 27461
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 92 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27461
+Time: 106 seconds
+Starting obsid: 27462
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 96 seconds
+	Searching
+	Finished searching
+	Searching time: 7 seconds
+Finished obsid: 27462
+Time: 112 seconds
+Starting obsid: 27474
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 60 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27474
+Time: 73 seconds
+Starting obsid: 27526
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 79 seconds
+	Obsid data already searched
+Finished obsid: 27526
+Time: 88 seconds
+Starting obsid: 27723
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 116 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 27723
+Time: 132 seconds
+Starting obsid: 27790
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 138 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27790
+Time: 152 seconds
+Starting obsid: 27874
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 111 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27874
+Time: 125 seconds
+Starting obsid: 27885
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 116 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 27885
+Time: 130 seconds
+Starting obsid: 27924
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 123 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27924
+Time: 138 seconds
+Starting obsid: 27955
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 127 seconds
+	Searching
+	Finished searching
+	Searching time: 5 seconds
+Finished obsid: 27955
+Time: 140 seconds
+Starting obsid: 28818
+	Downloading
+	Finished downloading
+	Download time: 8 seconds
+	Processing
+	Finished processing
+	Processing time: 89 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 28818
+Time: 100 seconds
+Starting obsid: 28869
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 120 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 28869
+Time: 132 seconds
+Starting obsid: 28942
+	Downloading
+	Finished downloading
+	Download time: 9 seconds
+	Processing
+	Finished processing
+	Processing time: 75 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 28942
+Time: 89 seconds
+Starting obsid: 28960
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 81 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28960
+Time: 94 seconds
+Starting obsid: 28993
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 113 seconds
+	Searching
+	Finished searching
+	Searching time: 4 seconds
+Finished obsid: 28993
+Time: 127 seconds
+Starting obsid: 29060
+	Downloading
+	Finished downloading
+	Download time: 10 seconds
+	Processing
+	Finished processing
+	Processing time: 95 seconds
+	Obsid data already searched
+Finished obsid: 29060
+Time: 105 seconds
+Starting obsid: 29070
+	Downloading
+	Finished downloading
+	Download time: 13 seconds
+	Processing
+	Finished processing
+	Processing time: 112 seconds
+	Obsid data already searched
+Finished obsid: 29070
+Time: 125 seconds
+Starting obsid: 27864
+	Downloading
+	Finished downloading
+	Download time: 24 seconds
+	Processing
+	Finished processing
+	Processing time: 53 seconds
+	Obsid data already searched
+Finished obsid: 27864
+Time: 77 seconds
+Starting obsid: 27865
+	Downloading
+	Finished downloading
+	Download time: 22 seconds
+	Processing
+	Finished processing
+	Processing time: 53 seconds
+	Obsid data already searched
+Finished obsid: 27865
+Time: 75 seconds
+Starting obsid: 27866
+	Downloading
+	Finished downloading
+	Download time: 48 seconds
+	Processing
+	Finished processing
+	Processing time: 53 seconds
+	Obsid data already searched
+Finished obsid: 27866
+Time: 101 seconds
+Starting obsid: 27867
+	Downloading
+	Finished downloading
+	Download time: 61 seconds
+	Processing
+	Finished processing
+	Processing time: 55 seconds
+	Obsid data already searched
+Finished obsid: 27867
+Time: 117 seconds
+Starting obsid: 27868
+	Downloading
+	Finished downloading
+	Download time: 55 seconds
+	Processing
+	Finished processing
+	Processing time: 57 seconds
+	Obsid data already searched
+Finished obsid: 27868
+Time: 112 seconds
+Starting obsid: 27869
+	Downloading
+	Finished downloading
+	Download time: 51 seconds
+	Processing
+	Finished processing
+	Processing time: 53 seconds
+	Obsid data already searched
+Finished obsid: 27869
+Time: 104 seconds
+Starting obsid: 26696
+	Downloading
+	Finished downloading
+	Download time: 11 seconds
+	Processing
+	Finished processing
+	Processing time: 130 seconds
+	Searching
+	Finished searching
+	Searching time: 2 seconds
+Finished obsid: 26696
+Time: 143 seconds
+Starting obsid: 27942
+	Downloading
+	Finished downloading
+	Download time: 17 seconds
+	Processing
+	Finished processing
+	Processing time: 136 seconds
+	Searching
+	Finished searching
+	Searching time: 3 seconds
+Finished obsid: 27942
+Time: 156 seconds
+Starting obsid: 26697
+	Downloading
+	Finished downloading
+	Download time: 30 seconds
+	Processing
+	Finished processing
+	Processing time: 126 seconds
+	Searching
+	Finished searching
+	Searching time: 6 seconds
+Finished obsid: 26697
+Time: 162 seconds
