@@ -36,8 +36,10 @@ def filter_on_gaia(detection: pd.Series) -> bool:
 
     result = job.get_results()
 
-    if result is None or len(result) == 0:
-        return False
+    # check if it has non zero proper motion
+
+    if len(result) > 0:
+        print(result)
 
     return True
 
@@ -54,7 +56,7 @@ def filter_on_archival(detection: pd.Series) -> bool:
     """
 
     catalog_list = Vizier.find_catalogs([
-        'XMMSL2', '2SXPS', '4XMM-DR11'
+        'XMMSL2', '2SXPS', '4XMM-DR13'
     ])
 
     for catalog in catalog_list.keys():
@@ -64,7 +66,12 @@ def filter_on_archival(detection: pd.Series) -> bool:
             unit=(u.degree, u.degree),
             frame='icrs',
         )
-        result = Vizier.query_region(
+
+        v = Vizier(
+            row_limit=1,
+        )
+
+        result = v.query_region(
             coords,
             radius=u.Quantity(
                 3 * float(detection['POS_ERR']) + 0.5,
@@ -73,9 +80,10 @@ def filter_on_archival(detection: pd.Series) -> bool:
             catalog=catalog
         )
 
-        for table in result:
-            table.pprint()
-            # Q? What to do with these detections, can we just exclude the candidate if it has a match?
+        if result is None or len(result) == 0:
+            return False
+
+        return True
 
 
 def filter_on_chandra(detection: pd.Series) -> bool:
@@ -88,8 +96,9 @@ def filter_on_chandra(detection: pd.Series) -> bool:
     Returns:
         bool: True if the detection has a match in the Chandra catalog, False otherwise.
     """
-    command = f'search_csc pos=\'{detection["RA"]},{detection["DEC"]}\' radius={3 * detection["POS_ERR"] + 0.5} outfile=filter_on_chandra_result.csv radunit=arcsec catalog=csc2.1 clobber=yes verbose=5'
+    command = f'search_csc pos=\"{detection["RA"]},{detection["DEC"]}\" radius={3 * detection["POS_ERR"] + 0.5} outfile=\"filter_on_chandra_result.tsv\" radunit=arcsec catalog=csc2.1 clobber=yes verbose=5'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
     # Q? The process is not returning any output in the outfile.
-    result = pd.read_csv('filter_on_chandra_result.csv')
+    result = pd.read_csv('filter_on_chandra_result.tsv')
+    result.pprint()
