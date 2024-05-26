@@ -21,3 +21,5 @@ Presentatie:
 1 min per slide
 weinig tekst
 veel plaatjes
+
+long term light curves for detections that pass first criteria for showing it is indeed a transient like figure 6 in first paper
