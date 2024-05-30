@@ -7,9 +7,9 @@ from astroquery.simbad import Simbad
 from astroquery.vizier import Vizier
 from typing import Callable, Dict
 
-from filter_functions import filter_gaia, filter_archival, filter_chandra, filter_erosita
+from auxiliary.filter_functions import filter_gaia, filter_archival, filter_chandra, filter_erosita
 
-DETECTIONS_FILENAME = 'detections_w20.txt'
+DETECTIONS_FILENAME = 'output/detections_w20.txt'
 FILTERED_FILENAME = 'output/filtered_w20.csv'
 
 CATALOGS = {
