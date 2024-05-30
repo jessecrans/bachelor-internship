@@ -3,13 +3,17 @@ import pandas as pd
 
 from astropy.coordinates import SkyCoord
 import astropy.units as u
+from astropy.table import Table
 from astroquery.gaia import Gaia
 from astroquery.vizier import Vizier
+from astroquery.ipac.ned import Ned
+from astroquery.simbad import Simbad
 
+import requests
 import subprocess
 
 
-def filter_on_gaia(detection: pd.Series) -> bool:
+def filter_gaia(detection: pd.Series, verbose=False) -> bool:
     """
     Checks if the given detection has a match in the Gaia catalog.
 
@@ -36,15 +40,28 @@ def filter_on_gaia(detection: pd.Series) -> bool:
 
     result = job.get_results()
 
+    if verbose:
+        result.pprint()
+
     # check if it has non zero proper motion
 
     if len(result) > 0:
-        print(result)
+        proper_motion = result['pm']
+        proper_motion.fill_value = 0.0
+        proper_motion = proper_motion.filled()
+        # print(proper_motion[0])
+        if proper_motion[0] != 0.0:
+            # print('has pm')
+            return True  # has proper motion
 
-    return True
+        # print('no pm')
+        return False
+
+    # print('no result')    ehh
+    return False
 
 
-def filter_on_archival(detection: pd.Series) -> bool:
+def filter_archival(detection: pd.Series, verbose=False) -> bool:
     """
     Checks if the given detection has a match in archival x-ray data.
 
@@ -80,13 +97,16 @@ def filter_on_archival(detection: pd.Series) -> bool:
             catalog=catalog
         )
 
+        if verbose:
+            result.pprint()
+
         if result is None or len(result) == 0:
             return False
 
         return True
 
 
-def filter_on_chandra(detection: pd.Series) -> bool:
+def filter_chandra(detection: pd.Series, verbose=False) -> bool:
     """
     Checks if the given detection has a match in the Chandra catalog.
 
@@ -96,9 +116,121 @@ def filter_on_chandra(detection: pd.Series) -> bool:
     Returns:
         bool: True if the detection has a match in the Chandra catalog, False otherwise.
     """
-    command = f'search_csc pos=\"{detection["RA"]},{detection["DEC"]}\" radius={3 * detection["POS_ERR"] + 0.5} outfile=\"filter_on_chandra_result.tsv\" radunit=arcsec catalog=csc2.1 clobber=yes verbose=5'
+    command = f'search_csc pos=\"{float(detection["RA"])},{detection["DEC"]}\" radius={3 * float(detection["POS_ERR"]) + 0.5} outfile=\"query_results/search_csc_result.tsv\" radunit=arcsec catalog=csc2.1 clobber=yes verbose=5'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
     # Q? The process is not returning any output in the outfile.
-    result = pd.read_csv('filter_on_chandra_result.tsv')
-    result.pprint()
+    result = pd.read_csv('query_results/search_csc_result.tsv',
+                         sep='\t', header=64, dtype=str)
+    result['flux_significance_b'] = result['flux_significance_b'].astype(float)
+    result['flux_significance_b'] = result['flux_significance_b'].fillna(0.0)
+
+    significant_detections = result[
+        (result['flux_significance_b'] > 3.0) &
+        (result['obsid'].str.strip() != detection['ObsId'])
+    ]
+
+    if verbose:
+        print(result[['obsid', 'flux_significance_b']])
+
+    if len(significant_detections) > 0:
+        return True
+
+    return False
+
+
+def filter_ned(detection: pd.Series, verbose=False) -> bool:
+    """
+    Checks if the given detection has a match in the NED catalog.
+
+    Args:
+        detection (pd.Series): Detection to check if it has a match in the NED catalog.
+
+    Returns:
+        bool: True if the detection has a match in the NED catalog, False otherwise.
+    """
+    coords = SkyCoord(
+        ra=float(detection['RA']),
+        dec=float(detection['DEC']),
+        unit=(u.degree, u.degree),
+        frame='icrs',
+    )
+
+    result = Ned.query_region(
+        coords,
+        radius=u.Quantity(
+            3 * float(detection['POS_ERR']) + 0.5,
+            u.arcsec,
+        )
+    )
+
+    if verbose and result is not None:
+        result.pprint_all()
+
+    if result is None or len(result) == 0:
+        return False
+
+    return True
+
+
+def filter_simbad(detection: pd.Series, verbose=False) -> bool:
+    """
+    Checks if the given detection has a match in the Simbad catalog.
+
+    Args:
+        detection (pd.Series): Detection to check if it has a match in the Simbad catalog.
+
+    Returns:
+        bool: True if the detection has a match in the Simbad catalog, False otherwise.
+    """
+    coords = SkyCoord(
+        ra=float(detection['RA']),
+        dec=float(detection['DEC']),
+        unit=(u.degree, u.degree),
+        frame='icrs',
+    )
+
+    result = Simbad.query_region(
+        coords,
+        radius=u.Quantity(
+            3 * float(detection['POS_ERR']) + 0.5,
+            u.arcsec,
+        )
+    )
+
+    if verbose and result is not None:
+        result.pprint_all()
+
+    if result is None or len(result) == 0:
+        return False
+
+    return True
+
+
+def filter_erosita(detection: pd.Series, verbose=False) -> bool:
+    """
+    Checks if the given detection has a match in the eROSITA catalog.
+
+    Args:
+        detection (pd.Series): Detection to check if it has a match in the eROSITA catalog.
+
+    Returns:
+        bool: True if the detection has a match in the eROSITA catalog, False otherwise.
+    """
+    ra = float(detection['RA'])
+    dec = float(detection['DEC'])
+    radius = (3 * float(detection['POS_ERR']) + 0.5) / 60.0**2
+    link = f'https://erosita.mpe.mpg.de/dr1/erodat/catalogue/SCS?CAT=DR1_Main&RA={ra}&DEC={dec}&SR={radius}&VERB={1}'
+    response = requests.get(link)
+    with open('query_results/erosita_result.xml', 'w') as f:
+        f.write(response.text)
+    result = Table.read('query_results/erosita_result.xml', format='votable')
+
+    # TODO add verbose levels and print a message if the result is none for all filters
+    if verbose and result is not None:
+        result.pprint_all()
+
+    if result is None or len(result) == 0:
+        return False
+
+    return True

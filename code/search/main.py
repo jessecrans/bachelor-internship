@@ -150,8 +150,8 @@ def pipeline(obsid: str, logging: bool):
 
 
 filenames = [
-    'obsids_b+10_220401+.csv',
-    'obsids_b-10_220401+.csv',
+    'obsids_b+10_220401-.csv',
+    'obsids_b-10_220401-.csv',
 ]
 
 Obsids = []
@@ -161,6 +161,10 @@ for filename in filenames:
     ))
 
 Obsids = np.array(Obsids)
+
+# Obsids = [
+#     '8489'
+# ]
 
 for Obsid in Obsids:
     pipeline(Obsid, True)

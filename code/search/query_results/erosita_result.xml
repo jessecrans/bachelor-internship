@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE VOTABLE SYSTEM "http://us-vo.org/xml/VOTable.dtd">
+<VOTABLE version="1.0">
+  <DEFINITIONS>
+    <COOSYS system="ICRS" />
+  </DEFINITIONS>
+  <RESOURCE ID="TODO-12345">
+    <DESCRIPTION>
+      eROSITA catalogue search.
+      For problems visit https://erosita-forum.mpe.mpg.de/
+    </DESCRIPTION>
+
+    <TABLE ID="DR1_Main">
+      <DESCRIPTION>eROSITA DR1 eRASS1 Main Catalogue</DESCRIPTION>
+      <FIELD name="iauname" datatype="char" arraysize="*" ucd="ID_MAIN"><DESCRIPTION>Official IAU name of source</DESCRIPTION></FIELD>
+<FIELD name="detuid" datatype="char" arraysize="*"><DESCRIPTION>Unique detection ID</DESCRIPTION></FIELD>
+<FIELD name="ra" datatype="double" unit="deg" ucd="POS_EQ_RA_MAIN"><DESCRIPTION>Right ascension (ICRS), corrected</DESCRIPTION></FIELD>
+<FIELD name="dec" datatype="double" unit="deg" ucd="POS_EQ_DEC_MAIN"><DESCRIPTION>Declination (ICRS), corrected</DESCRIPTION></FIELD>
+<FIELD name="ext" datatype="float" unit="arcsec"><DESCRIPTION>Source extent parameter</DESCRIPTION></FIELD>
+<FIELD name="ext_like" datatype="float"><DESCRIPTION>Extent likelihood</DESCRIPTION></FIELD>
+<FIELD name="det_like_0" datatype="float"><DESCRIPTION>Detection likelihood (band 0)</DESCRIPTION></FIELD>
+<FIELD name="ml_rate_1" datatype="float" unit="count.s**-1"><DESCRIPTION>Source count rate (band 1)</DESCRIPTION></FIELD>
+<FIELD name="ml_flux_1" datatype="float" unit="cm**-2.erg.s**-1"><DESCRIPTION>Source flux (band 1)</DESCRIPTION></FIELD>
+      <DATA>
+        <TABLEDATA>
+        
+        </TABLEDATA>
+      </DATA>
+    </TABLE>
+
+  </RESOURCE>
+</VOTABLE>

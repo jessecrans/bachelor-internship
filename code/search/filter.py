@@ -7,21 +7,16 @@ from astroquery.simbad import Simbad
 from astroquery.vizier import Vizier
 from typing import Callable, Dict
 
-from filter_functions import filter_on_gaia
-
-"""
-workflow: 
-
-"""
-
-# we only need 1 row because we are only checking if there is a match or not
-Gaia.ROW_LIMIT = 1
+from filter_functions import filter_gaia, filter_archival, filter_chandra, filter_erosita
 
 DETECTIONS_FILENAME = 'detections_w20.txt'
-FILTERED_FILENAME = 'filtered_w20.csv'
+FILTERED_FILENAME = 'output/filtered_w20.csv'
 
 CATALOGS = {
-    'gaia': filter_on_gaia,
+    'gaia': filter_gaia,
+    'archival': filter_archival,
+    'chandra': filter_chandra,
+    'erosita': filter_erosita,
 }
 
 
@@ -38,7 +33,7 @@ def update_catalogs(dataframe: pd.DataFrame, catalogs: Dict[str, Callable], verb
     """
     dataframe = dataframe.copy()
 
-    for catalog, filter_func in catalogs.items():
+    for catalog, _ in catalogs.items():
         if f'{catalog}_match' not in dataframe.columns:
             dataframe.insert(len(dataframe.columns),
                              f'{catalog}_match', 'unknown')
@@ -103,7 +98,7 @@ def filter_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs
 
                     if verbose:
                         print(
-                            f'{i}: {detection["ObsId"]} - {catalog} match: {detection[f"{catalog}_match"]}')
+                            f'{i}: {detection["ObsId"]} - {catalog} match: {filtered[f"{catalog}_match"].loc[i]}')
                 except Exception as e:
                     print(f'{i}: {detection["ObsId"]} - {e}')
                     continue
