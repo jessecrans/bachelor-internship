@@ -252,7 +252,7 @@ def get_before_after_counts(events: pd.DataFrame, t_start: float, t_end: float, 
     R /= acis_pix_size
     R_src = R*1.5
     R_bkg = R_src+20
-    scl = (R_src**2)/(R_bkg**2-R_src**2)
+    scl = (R_src**2)/(R_bkg**2)
 
     # Get total and background counts
     total_counts = len(counts)
@@ -313,9 +313,9 @@ def get_transient_candidate(before_counts: int, after_counts: int) -> bool:
     """
     # Calculate counts upper and lower Poisson limit
     before_counts_lower_limit,  before_counts_upper_limit = poisson_conf_interval(before_counts,
-                                                                                  interval='frequentist-confidence', sigma=5)
+                                                                                  interval='frequentist-confidence', sigma=4)
     after_counts_lower_limit, after_counts_upper_limit = poisson_conf_interval(after_counts,
-                                                                               interval='frequentist-confidence', sigma=5)
+                                                                               interval='frequentist-confidence', sigma=4)
 
     # Select XT candidates
     is_transient_candidate = \
