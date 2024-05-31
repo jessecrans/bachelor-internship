@@ -7,7 +7,7 @@ from astropy.table import Table
 from astroquery.gaia import Gaia
 from astroquery.vizier import Vizier
 from astroquery.ipac.ned import Ned
-from astroquery.simbad import Simbad
+from astroquery.simbad import Simbad, SimbadClass
 
 import requests
 import subprocess
@@ -73,7 +73,7 @@ def filter_archival(detection: pd.Series, verbose=False) -> bool:
     """
 
     catalog_list = Vizier.find_catalogs([
-        'XMMSL2', '2SXPS', '4XMM-DR13'
+        'XMMSL2', '2SXPS', '4XMM-DR13', 'IX10A'
     ])
 
     for catalog in catalog_list.keys():
@@ -176,7 +176,7 @@ def filter_ned(detection: pd.Series, verbose=False) -> bool:
     result = result.to_pandas()
     filtered_result = result[
         result['Type'] in [
-            'EmLS', ''
+            'EmLS'
         ]
     ]
 
@@ -202,6 +202,8 @@ def filter_simbad(detection: pd.Series, verbose=False) -> bool:
         unit=(u.degree, u.degree),
         frame='icrs',
     )
+
+    Simbad.add_votable_fields('otype')
 
     result = Simbad.query_region(
         coords,
