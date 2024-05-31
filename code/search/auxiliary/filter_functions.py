@@ -85,7 +85,7 @@ def filter_archival(detection: pd.Series, verbose=False) -> bool:
         )
 
         v = Vizier(
-            row_limit=1,
+            row_limit=10,
         )
 
         result = v.query_region(
