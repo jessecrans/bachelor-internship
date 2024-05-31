@@ -84,6 +84,7 @@ def filter_archival(detection: pd.Series, verbose=False) -> bool:
             frame='icrs',
         )
 
+        # check
         v = Vizier(
             row_limit=1,
         )
@@ -139,6 +140,11 @@ def filter_chandra(detection: pd.Series, verbose=False) -> bool:
     return False
 
 
+'''
+supernova include because it will be discarded if galactic by other filters
+'''
+
+
 def filter_ned(detection: pd.Series, verbose=False) -> bool:
     """
     Checks if the given detection has a match in the NED catalog.
@@ -166,6 +172,13 @@ def filter_ned(detection: pd.Series, verbose=False) -> bool:
 
     if verbose and result is not None:
         result.pprint_all()
+
+    result = result.to_pandas()
+    filtered_result = result[
+        result['Type'] in [
+            'EmLS', ''
+        ]
+    ]
 
     if result is None or len(result) == 0:
         return False
@@ -229,6 +242,42 @@ def filter_erosita(detection: pd.Series, verbose=False) -> bool:
     # TODO add verbose levels and print a message if the result is none for all filters
     if verbose and result is not None:
         result.pprint_all()
+
+    if result is None or len(result) == 0:
+        return False
+
+    return True
+
+
+def filter_vizier(detection: pd.DataFrame, verbose: bool = False):
+    """
+    Checks if the given detection has a match in the Vizier catalog.
+
+    Args:
+        detection (pd.Series): Detection to check if it has a match in the Vizier catalog.
+
+    Returns:
+        bool: True if the detection has a match in the Vizier catalog, False otherwise.
+    """
+    coords = SkyCoord(
+        ra=detection['RA'],
+        dec=detection['DEC'],
+        unit=(u.degree, u.degree),
+        frame='icrs',
+    )
+
+    result = Vizier.query_region(
+        coords,
+        radius=u.Quantity(
+            3 * float(detection['POS_ERR']) + 0.5,
+            u.arcsec,
+        )
+    )
+
+    if verbose and result is not None:
+        for i, table in enumerate(result):
+            print('table', i)
+            table.pprint_all()
 
     if result is None or len(result) == 0:
         return False
