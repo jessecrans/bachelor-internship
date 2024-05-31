@@ -533,15 +533,19 @@ def search_candidates(src_file, event_file, window=20.0):
     Yang_search(event_file, RA, DEC, THETA, err_pos, significance, window)
 
 
-files = glob.glob('s3_expmap_src.fits', recursive=True)
-src_file = files[0]
+if __name__ == '__main__':
+    try:
+        files = glob.glob('s3_expmap_src.fits', recursive=True)
+        src_file = files[0]
 
-files = glob.glob('*evt2.fits', recursive=True)
-event_file = files[0]
+        files = glob.glob('*evt2.fits', recursive=True)
+        event_file = files[0]
 
-try:
-    window_value = float(sys.argv[2])
-except IndexError:
-    window_value = 20.0 # default value
+        try:
+            window_value = float(sys.argv[2])
+        except IndexError:
+            window_value = 20.0  # default value
 
-search_candidates(src_file, event_file, window_value)
+        search_candidates(src_file, event_file, window_value)
+    except IndexError:
+        print('Could not get source and event files. Skipping search.')
