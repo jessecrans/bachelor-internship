@@ -1,34 +1,39 @@
 import sys
 from search import start_search
 from filter import filter_detection_file
-
-# TODO: To make this work on the server copy the latest analysed detections and filtered files to the output folder.
-# TODO: Do this only when the server is done searching the entire archive.
+import os
 
 
-def main():
-    # sys.argv[]
-    # 0: main.py
-    # 1: actions: 'search' or 'filter' or 'both'
-    # 2: window_size: float
-    # 3: verbose: 'True' or 'False'
-    # 4+: filenames: list of filenames
+def main(action: str, window_size: float, verbose: int, filenames: list[str]):
+    """
+    Main function to run the search and filter functions. 
+    Search the given filenames for candidate detections and filter the complete list of detections.
 
-    action = sys.argv[1]
-    window_size = float(sys.argv[2])
-    verbose = sys.argv[3] == 'True'
-    filenames = sys.argv[4:]
+    Args:
+        action (str): The action to perform. Either 'search', 'filter', or 'all'.
+        window_size (float): The window size to use for the search.
+        verbose (int): Level of verbosity for the search and filter functions.
+        filenames (list[str]): List of filenames to search.
+    """
 
-    if action == 'search' or action == 'both':
+    if action == 'search' or action == 'all':
+        if filenames == ['default']:
+            filenames = os.listdir('obsid_lists')
+
         start_search(filenames, window_size, verbose)
 
-    if action == 'filter' or action == 'both':
+    if action == 'filter' or action == 'all':
         filter_detection_file(
-            f'output/detections_w{window_size}.txt',
-            f'output/filtered_w{window_size}.csv',
-            verbose
+            f'output/detections_w{int(window_size)}.txt',
+            f'output/filtered_w{int(window_size)}.csv',
+            verbose=verbose
         )
 
 
 if __name__ == '__main__':
-    main()
+    main(
+        sys.argv[1],
+        float(sys.argv[-2]),
+        int(sys.argv[-1]),
+        sys.argv[2:-2]
+    )

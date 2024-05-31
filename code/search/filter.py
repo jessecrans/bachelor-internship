@@ -20,7 +20,7 @@ CATALOGS = {
 }
 
 
-def update_catalogs(dataframe: pd.DataFrame, catalogs: Dict[str, Callable], verbose: bool = False) -> pd.DataFrame:
+def update_catalogs(dataframe: pd.DataFrame, catalogs: Dict[str, Callable], verbose: int = 0) -> pd.DataFrame:
     """
     Returns a new dataframe with columns added for each missing catalog.
 
@@ -38,13 +38,13 @@ def update_catalogs(dataframe: pd.DataFrame, catalogs: Dict[str, Callable], verb
             dataframe.insert(len(dataframe.columns),
                              f'{catalog}_match', 'unknown')
 
-            if verbose:
+            if verbose > 2:
                 print(f'Added {catalog}_match column.')
 
     return dataframe
 
 
-def update_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs: Dict[str, Callable], verbose: bool = False) -> pd.DataFrame:
+def update_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs: Dict[str, Callable], verbose: int = 0) -> pd.DataFrame:
     """
     Adds new detections to the filtered dataframe.
 
@@ -72,20 +72,20 @@ def update_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs
             detection['POS_ERR'] in filtered['POS_ERR'].values and
             detection['SIGNIFICANCE'] in filtered['SIGNIFICANCE'].values
         ):
-            if verbose:
+            if verbose > 2:
                 print(
                     f'{i}: {detection["ObsId"]} - Detection already in filtered.')
             continue
 
         filtered.loc[len(filtered)] = detection
 
-        if verbose:
+        if verbose > 2:
             print(f'{i}: {detection["ObsId"]} - Added detection to filtered.')
 
     return filtered
 
 
-def filter_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs: Dict[str, Callable], verbose: bool = False) -> pd.DataFrame:
+def filter_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs: Dict[str, Callable], verbose: int = 0) -> pd.DataFrame:
     # add new detections to filtered dataframe
     filtered = update_detections(detections, filtered, catalogs)
 
@@ -96,23 +96,28 @@ def filter_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs
                     result = 'yes' if filter_func(detection) else 'no'
                     filtered.loc[i, f'{catalog}_match'] = result
 
-                    if verbose:
+                    if verbose > 1:
                         print(
                             f'{i}: {detection["ObsId"]} - {catalog} match: {filtered[f"{catalog}_match"].loc[i]}')
                 except Exception as e:
                     print(f'{i}: {detection["ObsId"]} - {e}')
                     continue
             else:
-                if verbose:
+                if verbose > 1:
                     print(
                         f'{i}: {detection["ObsId"]} - {catalog} match: already known.')
 
     return filtered
 
 
-def filter_detection_file(detections_filename: str, filtered_filename: str, catalogs: Dict[str, Callable], verbose: bool = False) -> None:
+def filter_detection_file(detections_filename: str, filtered_filename: str, catalogs: Dict[str, Callable] = CATALOGS, verbose: int = 0) -> None:
     detections = pd.read_csv(detections_filename, sep=' ', header=0, dtype=str)
     filtered = pd.read_csv(filtered_filename, sep=',', header=0, dtype=str)
+
+    if verbose > 0:
+        print(
+            f'Analysing {len(detections)} detections from {detections_filename}'
+        )
 
     filtered = filter_detections(detections, filtered, catalogs, verbose)
 

@@ -8,8 +8,8 @@ CURRENT_PATH = os.getcwd()
 DATA_PATH = "/data/jcrans/fxrt-data"
 
 
-def download_data(obsid: str, logging: bool):
-    if logging:
+def download_data(obsid: str, verbose: int):
+    if verbose > 0:
         print(f"\tDownloading")
         start_time = time.perf_counter()
 
@@ -27,21 +27,22 @@ def download_data(obsid: str, logging: bool):
 
     os.chdir(f"{CURRENT_PATH}")
 
-    if logging:
+    if verbose > 0:
         end_time = time.perf_counter()
         print(f"\tFinished downloading")
         print(f"\tDownload time: {end_time - start_time:.0f} seconds")
 
 
-def process_data(obsid: str, logging: bool) -> bool:
-    if logging:
+def process_data(obsid: str, verbose: int) -> bool:
+    if verbose > 0:
         print(f"\tProcessing")
         start_time = time.perf_counter()
 
     try:  # try to change directory, skip if fails so that rest of the obsids can be processed
         os.chdir(f"{DATA_PATH}/obsids/{obsid}/")
     except FileNotFoundError:
-        print(f"\tNo data found")
+        if verbose > 0:
+            print(f"\tNo data found")
         return False
 
     event_file = glob.glob('*evt2.fits', recursive=True)
@@ -94,7 +95,7 @@ def process_data(obsid: str, logging: bool) -> bool:
 
     os.chdir(f"{CURRENT_PATH}")
 
-    if logging:
+    if verbose > 0:
         end_time = time.perf_counter()
         print(f"\tFinished processing")
         print(f"\tProcessing time: {end_time - start_time:.0f} seconds")
@@ -102,8 +103,8 @@ def process_data(obsid: str, logging: bool) -> bool:
     return True
 
 
-def search_data(obsid: str, logging: bool):
-    if logging:
+def search_data(obsid: str, window_size: float, verbose: int):
+    if verbose > 0:
         print(f"\tSearching")
         start_time = time.perf_counter()
 
@@ -112,46 +113,50 @@ def search_data(obsid: str, logging: bool):
 
     os.chdir(f"{DATA_PATH}/obsids/{obsid}/")
 
-    command = f"python search_algorithm.py {CURRENT_PATH} {20.0}"
+    command = f"python search_algorithm.py {CURRENT_PATH} {window_size}"
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
     os.chdir(f"{CURRENT_PATH}")
 
-    if logging:
+    if verbose > 0:
         end_time = time.perf_counter()
         print(f'\tFinished searching')
         print(f'\tSearching time: {end_time - start_time:.0f} seconds')
 
 
-def pipeline(obsid: str, logging: bool):
-    if logging:
+def pipeline(obsid: str, window_size: float, verbose: int):
+    if verbose > 0:
         print(f'Starting obsid: {obsid}')
         start_time = time.perf_counter()
 
     dirs = os.listdir(f"{DATA_PATH}/obsids/")
     if str(obsid) in dirs:
-        print(f'\tObsid data already downloaded')
+        if verbose > 0:
+            print(f'\tObsid data already downloaded')
     else:
-        download_data(obsid, logging)
-        if not process_data(obsid, logging):
+        download_data(obsid, verbose)
+        if not process_data(obsid, verbose):
             return
 
     analysed = np.genfromtxt(
         f'output/analysed_w20.txt', dtype='str', delimiter='\n')
     if str(obsid) in analysed:
-        print(f"\tObsid data already searched")
+        if verbose > 0:
+            print(f"\tObsid data already searched")
     else:
-        search_data(obsid, logging)
+        search_data(obsid, window_size, verbose)
 
-    if logging:
+    if verbose > 0:
         end_time = time.perf_counter()
         print(f'Finished obsid: {obsid}')
         print(f'Time: {end_time - start_time:.0f} seconds')
 
 
-def start_search(filenames: list, window_size: float, verbose: bool = False):
+def start_search(filenames: list, window_size: float, verbose: int = 0):
     Obsids = []
     for filename in filenames:
+        if verbose > 0:
+            print(f"Reading {filename}")
         Obsids.extend(np.genfromtxt(
             f"obsid_lists/{filename}", dtype='str', skip_header=1, delimiter=',', usecols=1
         ))
@@ -159,7 +164,7 @@ def start_search(filenames: list, window_size: float, verbose: bool = False):
     Obsids = np.array(Obsids)
 
     for Obsid in Obsids:
-        pipeline(Obsid, verbose)
+        pipeline(Obsid, window_size, verbose)
 
 
 filenames = [
@@ -168,4 +173,4 @@ filenames = [
 ]
 
 if __name__ == '__main__':
-    start_search(filenames, 20.0, True)
+    start_search(filenames, 20.0, 1)
