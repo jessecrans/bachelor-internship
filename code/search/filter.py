@@ -7,17 +7,7 @@ from astroquery.simbad import Simbad
 from astroquery.vizier import Vizier
 from typing import Callable, Dict
 
-from auxiliary.filter_functions import filter_gaia, filter_archival, filter_chandra, filter_erosita
-
-DETECTIONS_FILENAME = 'output/detections_w20.txt'
-FILTERED_FILENAME = 'output/filtered_w20.csv'
-
-CATALOGS = {
-    'gaia': filter_gaia,
-    'archival': filter_archival,
-    'chandra': filter_chandra,
-    'erosita': filter_erosita,
-}
+from auxiliary.filter_functions import filter_gaia, filter_archival, filter_chandra, filter_erosita, filter_ned, filter_simbad
 
 
 def update_catalogs(dataframe: pd.DataFrame, catalogs: Dict[str, Callable], verbose: int = 0) -> pd.DataFrame:
@@ -110,7 +100,7 @@ def filter_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs
     return filtered
 
 
-def filter_detection_file(detections_filename: str, filtered_filename: str, catalogs: Dict[str, Callable] = CATALOGS, verbose: int = 0) -> None:
+def filter_detection_file(detections_filename: str, filtered_filename: str, catalogs: Dict[str, Callable], verbose: int = 0) -> None:
     detections = pd.read_csv(detections_filename, sep=' ', header=0, dtype=str)
     filtered = pd.read_csv(filtered_filename, sep=',', header=0, dtype=str)
 
@@ -124,10 +114,33 @@ def filter_detection_file(detections_filename: str, filtered_filename: str, cata
     filtered.to_csv(filtered_filename, index=False)
 
 
+def clear_filter_matches(filtered_filename: str, catalog: str) -> None:
+    filtered = pd.read_csv(filtered_filename, sep=',', header=0, dtype=str)
+
+    for i, detection in filtered.iterrows():
+        if f'{catalog}_match' in filtered.columns:
+            filtered.loc[i, f'{catalog}_match'] = 'unknown'
+
+    filtered.to_csv(filtered_filename, index=False)
+
+
+DETECTIONS_FILENAME = 'output/detections_w20.txt'
+FILTERED_FILENAME = 'output/filtered_w20.csv'
+
+CATALOGS = {
+    'gaia': filter_gaia,
+    'archival': filter_archival,
+    'chandra': filter_chandra,
+    'erosita': filter_erosita,
+    'ned': filter_ned,
+    'simbad': filter_simbad,
+}
+
 if __name__ == '__main__':
     filter_detection_file(
         DETECTIONS_FILENAME,
         FILTERED_FILENAME,
         CATALOGS,
-        True
+        2
     )
+    # clear_filter_matches(FILTERED_FILENAME, 'simbad')

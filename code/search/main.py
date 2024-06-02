@@ -31,6 +31,7 @@ def main(action: str, window_size: float, verbose: int, filenames: list[str]):
 
 
 if __name__ == '__main__':
+
     main(
         sys.argv[1],
         float(sys.argv[-2]),

@@ -86,7 +86,7 @@ def filter_archival(detection: pd.Series, verbose=False) -> bool:
 
         # check
         v = Vizier(
-            row_limit=10,
+            row_limit=1,
         )
 
         result = v.query_region(
@@ -170,17 +170,40 @@ def filter_ned(detection: pd.Series, verbose=False) -> bool:
         )
     )
 
-    if verbose and result is not None:
-        result.pprint_all()
-
-    result = result.to_pandas()
-    filtered_result = result[
-        result['Type'] in [
-            'EmLS'
-        ]
+    object_types_include = [
+        'EmLS',
+        'EmObj',
+        'G',
+        'GammaS',
+        'GClstr',
+        'GGroup',
+        'GPair',
+        'GTrpl',
+        'G_Lens',
+        'IrS',
+        'Other',
+        'PofG',
+        'QGroup',
+        'QSO',
+        'Q_Lens',
+        'RadioS',
+        'SN',
+        'UvS',
+        'VisS',
+        'XrayS'
     ]
 
-    if result is None or len(result) == 0:
+    result: pd.DataFrame = result.to_pandas()
+    filtered_result = result[
+        ~result['Type'].isin(object_types_include)
+    ]
+
+    if verbose and result is not None:
+        print(filtered_result[
+            ['Object Name', 'RA', 'DEC', 'Type']
+        ])
+
+    if filtered_result is None or len(filtered_result) == 0:
         return False
 
     return True
@@ -203,7 +226,7 @@ def filter_simbad(detection: pd.Series, verbose=False) -> bool:
         frame='icrs',
     )
 
-    Simbad.add_votable_fields('otype')
+    Simbad.add_votable_fields('otype', 'otypes')
 
     result = Simbad.query_region(
         coords,
@@ -213,10 +236,27 @@ def filter_simbad(detection: pd.Series, verbose=False) -> bool:
         )
     )
 
-    if verbose and result is not None:
-        result.pprint_all()
+    object_types_include = [
+        '', 'G', 'LSB', 'bCG', 'SBG', 'H2G', 'EmG', 'AGN', 'SyG', 'Sy1', 'Sy2', 'rG', 'LIN', 'QSO', 'Bla', 'BLL', 'GiP', 'GiG', 'GiC', 'BiC', 'IG', 'PaG', 'GrG', 'CGG', 'ClG', 'PCG', 'SCG', 'vid', 'grv', 'Lev', 'gLS', 'gLe', 'Lel', 'LeG', 'LeQ', 'BH', 'GWE', 'ev', 'var', 'Rad', 'mR', 'cm', 'mm', 'smm', 'Hl', 'rB', 'Mas', 'IR', 'FIR', 'MIR', 'NIR', 'Opt', 'EmO', 'blu', 'UV', 'X', 'ULX', 'gam', 'gB', 'PoG'
+    ]
 
-    if result is None or len(result) == 0:
+    if result is None:
+        return False
+
+    result: pd.DataFrame = result.to_pandas()
+    filtered_result = result[
+        ~result['OTYPES'].str.split('|').apply(lambda x: any(
+            [otype in object_types_include for otype in x]
+        ))
+    ]
+    .0231
+
+    if verbose and filtered_result is not None:
+        print(filtered_result[
+            ['MAIN_ID', 'RA', 'DEC', 'OTYPE', 'OTYPES']
+        ])
+
+    if filtered_result is None or len(filtered_result) == 0:
         return False
 
     return True
