@@ -55,22 +55,23 @@ def update_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs
     # add new detections to filtered dataframe
     for i, detection in detections.iterrows():
         if (
-            detection['ObsId'] in filtered['ObsId'].values and
-            detection['RA'] in filtered['RA'].values and
-            detection['DEC'] in filtered['DEC'].values and
-            detection['THETA'] in filtered['THETA'].values and
-            detection['POS_ERR'] in filtered['POS_ERR'].values and
-            detection['SIGNIFICANCE'] in filtered['SIGNIFICANCE'].values
+            detection.at['ObsId'] in filtered.loc['ObsId'].values and
+            detection.at['RA'] in filtered.loc['RA'].values and
+            detection.at['DEC'] in filtered.loc['DEC'].values and
+            detection.at['THETA'] in filtered.loc['THETA'].values and
+            detection.at['POS_ERR'] in filtered.loc['POS_ERR'].values and
+            detection.at['SIGNIFICANCE'] in filtered.loc['SIGNIFICANCE'].values
         ):
             if verbose > 2:
                 print(
-                    f'{i}: {detection["ObsId"]} - Detection already in filtered.')
+                    f'{i}: {detection.at["ObsId"]} - Detection already in filtered.')
             continue
 
         filtered.loc[len(filtered)] = detection
 
         if verbose > 2:
-            print(f'{i}: {detection["ObsId"]} - Added detection to filtered.')
+            print(
+                f'{i}: {detection.at["ObsId"]} - Added detection to filtered.')
 
     return filtered
 
@@ -81,21 +82,21 @@ def filter_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs
 
     for i, detection in filtered.iterrows():
         for catalog, filter_func in catalogs.items():
-            if detection[f'{catalog}_match'] == 'unknown':
+            if detection.at[f'{catalog}_match'] == 'unknown':
                 try:
                     result = 'yes' if filter_func(detection) else 'no'
-                    filtered[f'{catalog}_match'].loc[i] = result
+                    filtered.at[i, f'{catalog}_match'] = result
 
                     if verbose > 1:
                         print(
-                            f'{i}: {detection["ObsId"]} - {catalog} match: {filtered[f"{catalog}_match"].loc[i]}')
+                            f'{i}: {detection.at["ObsId"]} - {catalog} match: {filtered.at[i, f"{catalog}_match"]}')
                 except Exception as e:
-                    print(f'{i}: {detection["ObsId"]} - {e}')
+                    print(f'{i}: {detection.at["ObsId"]} - {e}')
                     continue
             else:
                 if verbose > 1:
                     print(
-                        f'{i}: {detection["ObsId"]} - {catalog} match: already known.')
+                        f'{i}: {detection.at["ObsId"]} - {catalog} match: already known.')
 
     return filtered
 
@@ -119,7 +120,7 @@ def clear_filter_matches(filtered_filename: str, catalog: str) -> None:
 
     for i, detection in filtered.iterrows():
         if f'{catalog}_match' in filtered.columns:
-            filtered[f'{catalog}_match'].loc[i] = 'unknown'
+            filtered.at[i, f'{catalog}_match'] = 'unknown'
 
     filtered.to_csv(filtered_filename, index=False)
 

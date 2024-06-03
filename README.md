@@ -5,6 +5,7 @@ This repository is for organizing all code to do with my bachelor internship.
 In the `code/search` directory there are python files which can be run to analyse Chandra data.
 
 ### search.py
+
 With this script we can look for candidate detections in Chandra observations using the window search algorithm. 
 
 At the bottom of the script there are some parameters in uppercase which can be set depending the specific task.
@@ -30,6 +31,7 @@ At the bottom of the script there are some parameters in uppercase which can be 
   - `3`: Progress messages for filter setup code.
 
 ### filter.py
+
 With this script we can filter the candidate detections based on if their appearance in known catalogs.
 
 At the bottom of the script there are some parameters in uppercase which can be set depending on the specific task.
