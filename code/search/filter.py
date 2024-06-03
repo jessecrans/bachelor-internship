@@ -84,7 +84,7 @@ def filter_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs
             if detection[f'{catalog}_match'] == 'unknown':
                 try:
                     result = 'yes' if filter_func(detection) else 'no'
-                    filtered.loc[i, f'{catalog}_match'] = result
+                    filtered[f'{catalog}_match'].loc[i] = result
 
                     if verbose > 1:
                         print(
@@ -119,14 +119,13 @@ def clear_filter_matches(filtered_filename: str, catalog: str) -> None:
 
     for i, detection in filtered.iterrows():
         if f'{catalog}_match' in filtered.columns:
-            filtered.loc[i, f'{catalog}_match'] = 'unknown'
+            filtered[f'{catalog}_match'].loc[i] = 'unknown'
 
     filtered.to_csv(filtered_filename, index=False)
 
 
 DETECTIONS_FILENAME = 'output/detections_w20.txt'
 FILTERED_FILENAME = 'output/filtered_w20.csv'
-
 CATALOGS = {
     'gaia': filter_gaia,
     'archival': filter_archival,
@@ -135,12 +134,12 @@ CATALOGS = {
     'ned': filter_ned,
     'simbad': filter_simbad,
 }
+VERBOSE = 1
 
 if __name__ == '__main__':
     filter_detection_file(
         DETECTIONS_FILENAME,
         FILTERED_FILENAME,
         CATALOGS,
-        2
+        VERBOSE
     )
-    # clear_filter_matches(FILTERED_FILENAME, 'simbad')

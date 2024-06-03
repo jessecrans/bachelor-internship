@@ -4,16 +4,24 @@ import glob
 import os
 import time
 
-CURRENT_PATH = os.getcwd()
-DATA_PATH = "/data/jcrans/fxrt-data"
+DEFAULT_DATA_PATH = "/data/jcrans/fxrt-data/obsids"
 
 
-def download_data(obsid: str, verbose: int):
+def download_data(obsid: str, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH):
+    """
+    Download the data for a given obsid.
+
+    Args:
+        obsid (str): Obsid to download data for.
+        verbose (int, optional): Level of verbosity. Defaults to 0.
+        data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
+    """
     if verbose > 0:
         print(f"\tDownloading")
         start_time = time.perf_counter()
 
-    os.chdir(f"{DATA_PATH}/obsids/")
+    current_path = os.getcwd()
+    os.chdir(f"{data_path}")
 
     command = f'download_chandra_obsid {obsid} evt2,fov,asol,bpix,msk'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
@@ -25,7 +33,7 @@ def download_data(obsid: str, verbose: int):
     command = f'gunzip {obsid}/*.gz'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
-    os.chdir(f"{CURRENT_PATH}")
+    os.chdir(f"{current_path}")
 
     if verbose > 0:
         end_time = time.perf_counter()
@@ -33,13 +41,26 @@ def download_data(obsid: str, verbose: int):
         print(f"\tDownload time: {end_time - start_time:.0f} seconds")
 
 
-def process_data(obsid: str, verbose: int) -> bool:
+def process_data(obsid: str, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH) -> bool:
+    """
+    Process the data for a given obsid.
+
+    Args:
+        obsid (str): Obsid to process data for.
+        verbose (int, optional): Level of verbosity. Defaults to 0.
+        data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
+
+    Returns:
+        bool: Whether the data was processed successfully. Returns False if no data was found, True otherwise.
+    """
     if verbose > 0:
         print(f"\tProcessing")
         start_time = time.perf_counter()
 
+    current_path = os.getcwd()
+
     try:  # try to change directory, skip if fails so that rest of the obsids can be processed
-        os.chdir(f"{DATA_PATH}/obsids/{obsid}/")
+        os.chdir(f"{data_path}/{obsid}/")
     except FileNotFoundError:
         if verbose > 0:
             print(f"\tNo data found")
@@ -93,7 +114,7 @@ def process_data(obsid: str, verbose: int) -> bool:
     command = 'wavdetect scales="1 2 4 8 16 32" clobber=yes'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
-    os.chdir(f"{CURRENT_PATH}")
+    os.chdir(f"{current_path}")
 
     if verbose > 0:
         end_time = time.perf_counter()
@@ -103,20 +124,31 @@ def process_data(obsid: str, verbose: int) -> bool:
     return True
 
 
-def search_data(obsid: str, window_size: float, verbose: int):
+def search_data(obsid: str, window_size: float, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH):
+    """
+    Search the data for a given obsid.
+
+    Args:
+        obsid (str): Obsid to search data for.
+        window_size (float): Window size to use for the search.
+        verbose (int, optional): Level of verbosity. Defaults to 0.
+        data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
+    """
     if verbose > 0:
         print(f"\tSearching")
         start_time = time.perf_counter()
 
-    command = f"cp auxiliary/search_algorithm.py {DATA_PATH}/obsids/{obsid}/"
+    current_path = os.getcwd()
+
+    command = f"cp auxiliary/search_algorithm.py {data_path}/{obsid}/"
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
-    os.chdir(f"{DATA_PATH}/obsids/{obsid}/")
+    os.chdir(f"{data_path}/{obsid}/")
 
-    command = f"python search_algorithm.py {CURRENT_PATH} {window_size}"
+    command = f"python search_algorithm.py {current_path} {window_size}"
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
-    os.chdir(f"{CURRENT_PATH}")
+    os.chdir(f"{current_path}")
 
     if verbose > 0:
         end_time = time.perf_counter()
@@ -124,18 +156,28 @@ def search_data(obsid: str, window_size: float, verbose: int):
         print(f'\tSearching time: {end_time - start_time:.0f} seconds')
 
 
-def pipeline(obsid: str, window_size: float, verbose: int):
+def pipeline(obsid: str, window_size: float, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH) -> None:
+    """
+    Pipeline function to download, process, and search data for a given obsid.
+
+    Args:
+        obsid (str): Obsid to search data for.
+        window_size (float): Window size to use for the search.
+        verbose (int, optional): Level of verbosity. Defaults to 0.
+        data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
+    """
     if verbose > 0:
         print(f'Starting obsid: {obsid}')
         start_time = time.perf_counter()
 
-    dirs = os.listdir(f"{DATA_PATH}/obsids/")
+    dirs = os.listdir(f"{data_path}/")
     if str(obsid) in dirs:
         if verbose > 0:
             print(f'\tObsid data already downloaded')
     else:
-        download_data(obsid, verbose)
-        if not process_data(obsid, verbose):
+        download_data(obsid, verbose, data_path)
+        if not process_data(obsid, verbose, data_path):
+            # message printed in process_data
             return
 
     analysed = np.genfromtxt(
@@ -144,7 +186,7 @@ def pipeline(obsid: str, window_size: float, verbose: int):
         if verbose > 0:
             print(f"\tObsid data already searched")
     else:
-        search_data(obsid, window_size, verbose)
+        search_data(obsid, window_size, verbose, data_path)
 
     if verbose > 0:
         end_time = time.perf_counter()
@@ -152,25 +194,37 @@ def pipeline(obsid: str, window_size: float, verbose: int):
         print(f'Time: {end_time - start_time:.0f} seconds')
 
 
-def start_search(filenames: list, window_size: float, verbose: int = 0):
+def start_search(filenames: list, window_size: float, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH) -> None:
+    """
+    Start a search for candidate detections in a list of filenames.
+
+    Args:
+        filenames (list): List of filenames to search.
+        window_size (float): Window size to use for the search.
+        verbose (int, optional): Level of verbosity. Defaults to 0.
+        data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
+    """
     Obsids = []
     for filename in filenames:
         if verbose > 0:
             print(f"Reading {filename}")
         Obsids.extend(np.genfromtxt(
-            f"obsid_lists/{filename}", dtype='str', skip_header=1, delimiter=',', usecols=1
+            f"{filename}", dtype='str', skip_header=1, delimiter=',', usecols=[1]
         ))
 
     Obsids = np.array(Obsids)
 
     for Obsid in Obsids:
-        pipeline(Obsid, window_size, verbose)
+        pipeline(Obsid, window_size, verbose, data_path)
 
 
-filenames = [
-    'obsids_b+10_220401-.csv',
-    'obsids_b-10_220401-.csv',
+DATA_PATH = "/data/jcrans/fxrt-data/obsids"
+FILENAMES = [  # List of filenames to search
+    'obsid_lists/obsids_b+10_220401-.csv',
+    'obsid_lists/obsids_b-10_220401-.csv',
 ]
+WINDOW_SIZE = 20.0  # The window size to use for the search
+VERBOSE = 1  # Level of verbosity for the search functions
 
 if __name__ == '__main__':
-    start_search(filenames, 20.0, 1)
+    start_search(FILENAMES, WINDOW_SIZE, VERBOSE, DATA_PATH)

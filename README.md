@@ -1,18 +1,16 @@
 # Bachelor Internship
 This repository is for organizing all code to do with my bachelor internship.
 
-### code/search
-In the code/search directory there is a main.py file. With this file we can search through given chandra obsids by running this file in the command line. Below is explained the way to do this.
+## code/search
+In the `code/search` directory there are python files which can be run to analyse Chandra data.
 
-```
-python main.py [action] [filenames] [window_size] [verbose]
-```
+### search.py
+With this script we can look for candidate detections in Chandra observations using the window search algorithm. 
 
-- `action (str)`: This parameter decides which action to perform on the given filenames.
-    - `search`: Will perform the search algorithm on the given filenames with the given window_size and given verbosity level.
-    - `filter`: Will perform the candidate filtering on the output detections with the given window size and given verbosity level.
-    - `all`: Will perform all of the above.
-- `filenames (list[str])`: Is a list of filenames obtained from the [Chandra Archive](https://cda.harvard.edu/chaser/mainEntry) using the options mentioned below. These options give the best observations to detect FXTs. The suggested options leave out the Galactic Disk but are not strictly necessary.
+At the bottom of the script there are some parameters in uppercase which can be set depending the specific task.
+
+- `DATA_PATH`: Where to store the downloaded Chandra data. Make sure this directory has enough space.
+- `FILENAMES`: A list of Obsids obtained from the [Chandra Archive](https://cda.harvard.edu/chaser/mainEntry) using the options mentioned below. These options give the best observations to detect FXTs. The suggested options leave out the Galactic Disk but are not strictly necessary.
   - `Status: Archived`
   - `Instrument: ACIS`
   - `Grating: None`
@@ -24,8 +22,22 @@ python main.py [action] [filenames] [window_size] [verbose]
       - `DEC(_, -10) or DEC(10, _)`
       - `Coord System: Galactic`
     - `Public Release Date`: The bigger the range the more observations there will be, so mind space for data and time for execution.
-- `window_size (float)`: This parameter decides the window size with which to perform the search algorithm. It also decides which files to perform the filtering on.
-- `verbose (int)`:
+- `WINDOW_SIZE`: Size of the window in the window search algorithm.
+- `VERBOSE`: Level of verbosity
+  - `0`: No print messages.
+  - `1`: Progress messages for the search pipeline. Number of detections being filtered from what file.
+  - `2`: Filter status of every filtered detection.
+  - `3`: Progress messages for filter setup code.
+
+### filter.py
+With this script we can filter the candidate detections based on if their appearance in known catalogs.
+
+At the bottom of the script there are some parameters in uppercase which can be set depending on the specific task.
+
+- `DETECTIONS_FILENAME`: File name of the candidate detections found by the `search.py` script. Normally, this filename should be of the form: `output/detections_w{WINDOW_SIZE}.txt`. Where `WINDOW_SIZE` is then the same as chosen when running `search.py`.
+- `FILTERED_FILENAME`: File name of filtered candidate detections. This is the output file for this script. Normally, this filename should be of the form: `output/filtered_w{WINDOW_SIZE}.txt`. Where `WINDOW_SIZE` is then the same as chosen when running `search.py`.
+- `CATALOGS`: All catalogs that can be filtered on. Simply (un)comment catalogs to decide which ones are taken into account in the filtering.
+- `VERBOSE`: Level of verbosity
   - `0`: No print messages.
   - `1`: Progress messages for the search pipeline. Number of detections being filtered from what file.
   - `2`: Filter status of every filtered detection.
