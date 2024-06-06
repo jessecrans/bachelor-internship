@@ -124,13 +124,13 @@ def process_data(obsid: str, verbose: int = 0, data_path: str = DEFAULT_DATA_PAT
     return True
 
 
-def search_data(obsid: str, window_size: float, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH):
+def search_data(obsid: str, window_size: float = 20.0, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH):
     """
     Search the data for a given obsid.
 
     Args:
         obsid (str): Obsid to search data for.
-        window_size (float): Window size to use for the search.
+        window_size (float): Window size to use for the search. Defaults to 20.0.
         verbose (int, optional): Level of verbosity. Defaults to 0.
         data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
     """
@@ -156,13 +156,13 @@ def search_data(obsid: str, window_size: float, verbose: int = 0, data_path: str
         print(f'\tSearching time: {end_time - start_time:.0f} seconds')
 
 
-def pipeline(obsid: str, window_size: float, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH) -> None:
+def pipeline(obsid: str, window_size: float = 20.0, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH) -> None:
     """
     Pipeline function to download, process, and search data for a given obsid.
 
     Args:
         obsid (str): Obsid to search data for.
-        window_size (float): Window size to use for the search.
+        window_size (float): Window size to use for the search. Defaults to 20.0.
         verbose (int, optional): Level of verbosity. Defaults to 0.
         data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
     """
@@ -194,13 +194,13 @@ def pipeline(obsid: str, window_size: float, verbose: int = 0, data_path: str = 
         print(f'Time: {end_time - start_time:.0f} seconds')
 
 
-def start_search(filenames: list, window_size: float, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH) -> None:
+def start_search(filenames: list, window_size: float = 20.0, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH) -> None:
     """
     Start a search for candidate detections in a list of filenames.
 
     Args:
         filenames (list): List of filenames to search.
-        window_size (float): Window size to use for the search.
+        window_size (float): Window size to use for the search. Defaults to 20.0.
         verbose (int, optional): Level of verbosity. Defaults to 0.
         data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
     """
@@ -228,3 +228,4 @@ VERBOSE = 1  # Level of verbosity for the search functions
 
 if __name__ == '__main__':
     start_search(FILENAMES, WINDOW_SIZE, VERBOSE, DATA_PATH)
+    # pipeline('10722', WINDOW_SIZE, VERBOSE, DATA_PATH)
