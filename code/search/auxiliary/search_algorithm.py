@@ -504,6 +504,7 @@ def off_axis(event_file, ra, dec):
         if (line == b'THETA,PHI'):
             z = output[i + 1]
             break
+    # what should z be if the line of 'THETA,PHI' is not found?
     return z
 
 

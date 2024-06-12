@@ -222,6 +222,8 @@ DATA_PATH = "/data/jcrans/fxrt-data/obsids"
 FILENAMES = [  # List of filenames to search
     'obsid_lists/obsids_b+10_220401-.csv',
     'obsid_lists/obsids_b-10_220401-.csv',
+    'obsid_lists/obsids_b+10_220401+.csv',
+    'obsid_lists/obsids_b-10_220401+.csv'
 ]
 WINDOW_SIZE = 20.0  # The window size to use for the search
 VERBOSE = 1  # Level of verbosity for the search functions

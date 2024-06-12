@@ -7,7 +7,7 @@ from astroquery.simbad import Simbad
 from astroquery.vizier import Vizier
 from typing import Callable, Dict
 
-from auxiliary.filter_functions import filter_gaia, filter_archival, filter_chandra, filter_erosita, filter_ned, filter_simbad
+from auxiliary.filter_functions import filter_gaia, filter_archival, filter_chandra, filter_erosita, filter_ned, filter_simbad, filter_vizier
 
 
 def update_catalogs(dataframe: pd.DataFrame, catalogs: Dict[str, Callable], verbose: int = 0) -> pd.DataFrame:
@@ -55,12 +55,12 @@ def update_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs
     # add new detections to filtered dataframe
     for i, detection in detections.iterrows():
         if (
-            detection.at['ObsId'] in filtered.loc['ObsId'].values and
-            detection.at['RA'] in filtered.loc['RA'].values and
-            detection.at['DEC'] in filtered.loc['DEC'].values and
-            detection.at['THETA'] in filtered.loc['THETA'].values and
-            detection.at['POS_ERR'] in filtered.loc['POS_ERR'].values and
-            detection.at['SIGNIFICANCE'] in filtered.loc['SIGNIFICANCE'].values
+            detection.at['ObsId'] in filtered['ObsId'].values and
+            detection.at['RA'] in filtered['RA'].values and
+            detection.at['DEC'] in filtered['DEC'].values and
+            detection.at['THETA'] in filtered['THETA'].values and
+            detection.at['POS_ERR'] in filtered['POS_ERR'].values and
+            detection.at['SIGNIFICANCE'] in filtered['SIGNIFICANCE'].values
         ):
             if verbose > 2:
                 print(
@@ -116,6 +116,13 @@ def filter_detection_file(detections_filename: str, filtered_filename: str, cata
 
 
 def clear_filter_matches(filtered_filename: str, catalog: str) -> None:
+    """
+    Clear the matches for a specific catalog in the filtered file.
+
+    Args:
+        filtered_filename (str): Filename of the filtered candidates.
+        catalog (str): Catalog to clear the matches for.
+    """
     filtered = pd.read_csv(filtered_filename, sep=',', header=0, dtype=str)
 
     for i, detection in filtered.iterrows():
@@ -134,8 +141,9 @@ CATALOGS = {
     'erosita': filter_erosita,
     'ned': filter_ned,
     'simbad': filter_simbad,
+    'vizier': filter_vizier
 }
-VERBOSE = 1
+VERBOSE = 2
 
 if __name__ == '__main__':
     filter_detection_file(
