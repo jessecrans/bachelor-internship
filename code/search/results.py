@@ -150,40 +150,64 @@ def get_candidate_numbers(from_date: str = '', to_date: str = '') -> pd.DataFram
 
     # observations
     candidate_numbers.at['Observations', 'Total'] = len(obsids)
-    if from_date:
-        candidate_numbers.at['Observations', 'After'] = len(
-            obsids[obsids['Public Release Date'] >= from_date])
-    if to_date:
-        candidate_numbers.at['Observations', 'Before'] = len(
-            obsids[obsids['Public Release Date'] < to_date])
     if from_date and to_date:
         candidate_numbers.at['Observations', 'In'] = len(
             obsids[(obsids['Public Release Date'] >= from_date) & (obsids['Public Release Date'] < to_date)])
+        candidate_numbers.at['Observations', 'Before'] = len(
+            obsids[obsids['Public Release Date'] < from_date])
+        candidate_numbers.at['Observations', 'After'] = len(
+            obsids[obsids['Public Release Date'] >= to_date])
+    elif from_date:
+        candidate_numbers.at['Observations', 'Before'] = len(
+            obsids[obsids['Public Release Date'] < from_date])
+        candidate_numbers.at['Observations', 'After'] = len(
+            obsids[obsids['Public Release Date'] >= from_date])
+    elif to_date:
+        candidate_numbers.at['Observations', 'Before'] = len(
+            obsids[obsids['Public Release Date'] < to_date])
+        candidate_numbers.at['Observations', 'After'] = len(
+            obsids[obsids['Public Release Date'] >= to_date])
 
     # detections
     candidate_numbers.at['Detections', 'Total'] = len(filtered)
-    if from_date:
-        candidate_numbers.at['Detections', 'After'] = len(
-            filtered[filtered['ObsId'].isin(obsids[obsids['Public Release Date'] >= from_date]['Obs ID'])])
-    if to_date:
-        candidate_numbers.at['Detections', 'Before'] = len(
-            filtered[filtered['ObsId'].isin(obsids[obsids['Public Release Date'] < to_date]['Obs ID'])])
     if from_date and to_date:
         candidate_numbers.at['Detections', 'In'] = len(
             filtered[filtered['ObsId'].isin(obsids[(obsids['Public Release Date'] >= from_date) & (obsids['Public Release Date'] < to_date)]['Obs ID'])])
+        candidate_numbers.at['Detections', 'Before'] = len(
+            filtered[filtered['ObsId'].isin(obsids[obsids['Public Release Date'] < from_date]['Obs ID'])])
+        candidate_numbers.at['Detections', 'After'] = len(
+            filtered[filtered['ObsId'].isin(obsids[obsids['Public Release Date'] >= to_date]['Obs ID'])])
+    elif from_date:
+        candidate_numbers.at['Detections', 'Before'] = len(
+            filtered[filtered['ObsId'].isin(obsids[obsids['Public Release Date'] < from_date]['Obs ID'])])
+        candidate_numbers.at['Detections', 'After'] = len(
+            filtered[filtered['ObsId'].isin(obsids[obsids['Public Release Date'] >= from_date]['Obs ID'])])
+    elif to_date:
+        candidate_numbers.at['Detections', 'Before'] = len(
+            filtered[filtered['ObsId'].isin(obsids[obsids['Public Release Date'] < to_date]['Obs ID'])])
+        candidate_numbers.at['Detections', 'After'] = len(
+            filtered[filtered['ObsId'].isin(obsids[obsids['Public Release Date'] >= to_date]['Obs ID'])])
 
     # candidates no match
     candidate_numbers.at['Candidates no match', 'Total'] = len(
         filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1)])
-    if from_date:
-        candidate_numbers.at['Candidates no match', 'After'] = len(
-            filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1) & filtered['ObsId'].isin(obsids[obsids['Public Release Date'] >= from_date]['Obs ID'])])
-    if to_date:
-        candidate_numbers.at['Candidates no match', 'Before'] = len(
-            filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1) & filtered['ObsId'].isin(obsids[obsids['Public Release Date'] < to_date]['Obs ID'])])
     if from_date and to_date:
         candidate_numbers.at['Candidates no match', 'In'] = len(
             filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1) & filtered['ObsId'].isin(obsids[(obsids['Public Release Date'] >= from_date) & (obsids['Public Release Date'] < to_date)]['Obs ID'])])
+        candidate_numbers.at['Candidates no match', 'Before'] = len(
+            filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1) & filtered['ObsId'].isin(obsids[obsids['Public Release Date'] < from_date]['Obs ID'])])
+        candidate_numbers.at['Candidates no match', 'After'] = len(
+            filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1) & filtered['ObsId'].isin(obsids[obsids['Public Release Date'] >= to_date]['Obs ID'])])
+    elif from_date:
+        candidate_numbers.at['Candidates no match', 'Before'] = len(
+            filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1) & filtered['ObsId'].isin(obsids[obsids['Public Release Date'] < from_date]['Obs ID'])])
+        candidate_numbers.at['Candidates no match', 'After'] = len(
+            filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1) & filtered['ObsId'].isin(obsids[obsids['Public Release Date'] >= from_date]['Obs ID'])])
+    elif to_date:
+        candidate_numbers.at['Candidates no match', 'Before'] = len(
+            filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1) & filtered['ObsId'].isin(obsids[obsids['Public Release Date'] < to_date]['Obs ID'])])
+        candidate_numbers.at['Candidates no match', 'After'] = len(
+            filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1) & filtered['ObsId'].isin(obsids[obsids['Public Release Date'] >= to_date]['Obs ID'])])
 
     return candidate_numbers
 
@@ -227,7 +251,7 @@ def get_criteria_table(
 
     if to_date:
         to_date = pd.to_datetime(to_date)
-        obsids = obsids[obsids['Public Release Date'] <= to_date]
+        obsids = obsids[obsids['Public Release Date'] < to_date]
 
     filtered = filtered[filtered['ObsId'].isin(obsids['Obs ID'])]
 
@@ -236,7 +260,7 @@ def get_criteria_table(
         all_criteria += columns
 
     criteria_table = pd.DataFrame(
-        columns=['Matched', 'Unique Matched', 'Remaining'])
+        columns=['Matched', 'Unique Matched', 'Removed', 'Remaining'])
 
     for i, (criterion, columns) in enumerate(criteria):
         # candidates that are matched by this criterion
@@ -251,12 +275,26 @@ def get_criteria_table(
         ]
         criteria_table.at[criterion, 'Unique Matched'] = len(unique_matched)
 
-        # candidates remaining after this stage, that have no matches by previous criteria
-        remaining = filtered
-        for _, columns in criteria[:i+1]:
-            remaining = remaining[
-                (remaining[columns] == 'no').all(axis=1)
+        # candidates that are removed by this criterion but not any before
+        removed = filtered
+        for _, columns_before in criteria[:i]:
+            removed = removed[
+                (removed[columns_before] == 'no').all(axis=1)
             ]
+        removed = removed[
+            (removed[columns] == 'yes').all(axis=1)
+        ]
+        criteria_table.at[criterion, 'Removed'] = len(removed)
+
+        # candidates remaining after this stage, that have no matches by previous criteria and current criterion
+        remaining = filtered
+        for _, columns_before in criteria[:i]:
+            remaining = remaining[
+                (remaining[columns_before] == 'no').all(axis=1)
+            ]
+        remaining = remaining[
+            (remaining[columns] == 'no').all(axis=1)
+        ]
         criteria_table.at[criterion, 'Remaining'] = len(remaining)
 
     return criteria_table
