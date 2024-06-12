@@ -5,6 +5,26 @@ from auxiliary.search_algorithm import get_wcs_event, off_axis, get_chandra_eef,
 import glob
 import numpy as np
 from astropy.stats import poisson_conf_interval
+from typing import Dict, List, Tuple
+
+CRITERIA = [
+    ('Archival X-ray date', [
+        'archival_match',
+        'chandra_match',
+        'erosita_match',
+    ]),
+    ('Cross-match with stars/Gaia', [
+        'gaia_match',
+    ]),
+    ('NED + SIMBAD + VizieR', [
+        'ned_match',
+        'simbad_match',
+        'vizier_match',
+    ]),
+]
+ALL_FILTERS = [
+    filter for _, filters in CRITERIA for filter in filters
+]
 
 
 def gen_light_curve(obsid: int, fxt_ra: float, fxt_dec: float, fxt_theta: float, fxt_pos_err: float) -> pd.DataFrame:
@@ -93,52 +113,153 @@ def gen_light_curve(obsid: int, fxt_ra: float, fxt_dec: float, fxt_theta: float,
     })
 
 
-def get_candidate_numbers():
-    filterd = pd.read_csv('output/filtered_w20.csv', header=0, dtype=str)
+def get_candidate_numbers(from_date: str = '', to_date: str = '') -> pd.DataFrame:
+    """
+    Get the number of observations, detections and candidates within a date range.
 
-    obsids_after1 = pd.read_csv('obsid_lists/obsids_b+10_220401+.csv',
-                                header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_after2 = pd.read_csv('obsid_lists/obsids_b-10_220401+.csv',
-                                header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_after = pd.concat([obsids_after1, obsids_after2], ignore_index=True)
-    print(f'after total: {len(obsids_after)}')
+    Args:
+        from_date (str, optional): Start date of the range. Defaults to ''. Format: 'YYYY-MM-DD'. If empty, no lower bound. Inclusive.
+        to_date (str, optional): End date of the range. Defaults to ''. Format: 'YYYY-MM-DD'. If empty, no upper bound. Exclusive.
 
-    obsids_before1 = pd.read_csv('obsid_lists/obsids_b+10_220401-.csv',
-                                 header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_before2 = pd.read_csv('obsid_lists/obsids_b-10_220401-.csv',
-                                 header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_before = pd.concat(
-        [obsids_before1, obsids_before2], ignore_index=True)
-    print(f'before total: {len(obsids_before)}')
+    Returns:
+        pd.DataFrame: DataFrame with the number of observations, detections and candidates within the date range.
+    """
+    filtered = pd.read_csv('output/filtered_w20.csv', header=0, dtype=str)
 
-    filtered_post = filterd[filterd['ObsId'].isin(obsids_after['Obs ID'])]
-    filtered_pre = filterd[filterd['ObsId'].isin(obsids_before['Obs ID'])]
-    filtered_post.to_csv('output/filtered_w20_new.csv', index=False)
-    filtered_pre.to_csv('output/filtered_w20_old.csv', index=False)
+    obsids_1 = pd.read_csv('obsid_lists/obsids_b+10_220401+.csv',
+                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
+    obsids_2 = pd.read_csv('obsid_lists/obsids_b-10_220401+.csv',
+                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
+    obsids_3 = pd.read_csv('obsid_lists/obsids_b+10_220401-.csv',
+                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
+    obsids_4 = pd.read_csv('obsid_lists/obsids_b-10_220401-.csv',
+                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
+    obsids = pd.concat([obsids_1, obsids_2, obsids_3,
+                       obsids_4], ignore_index=True)
+    obsids['Public Release Date'] = pd.to_datetime(
+        obsids['Public Release Date'])
 
-    print(f'after detec: {len(filtered_post)}')
-    print(f'before detec: {len(filtered_pre)}')
+    if from_date:
+        from_date = pd.to_datetime(from_date)
 
-    filtered_post_all_no = filtered_post[
-        (filtered_post['gaia_match'] == 'no') &
-        (filtered_post['simbad_match'] == 'no') &
-        (filtered_post['ned_match'] == 'no') &
-        (filtered_post['archival_match'] == 'no') &
-        (filtered_post['chandra_match'] == 'no') &
-        (filtered_post['erosita_match'] == 'no')
-    ]
+    if to_date:
+        to_date = pd.to_datetime(to_date)
 
-    filtered_pre_all_no = filtered_pre[
-        (filtered_pre['gaia_match'] == 'no') &
-        (filtered_pre['simbad_match'] == 'no') &
-        (filtered_pre['ned_match'] == 'no') &
-        (filtered_pre['archival_match'] == 'no') &
-        (filtered_pre['chandra_match'] == 'no') &
-        (filtered_pre['erosita_match'] == 'no')
-    ]
+    candidate_numbers = pd.DataFrame(
+        columns=['Total', 'Before', 'In', 'After'])
 
-    print(f'after no match: {len(filtered_post_all_no)}')
-    print(f'before no match: {len(filtered_pre_all_no)}')
+    # observations
+    candidate_numbers.at['Observations', 'Total'] = len(obsids)
+    if from_date:
+        candidate_numbers.at['Observations', 'After'] = len(
+            obsids[obsids['Public Release Date'] >= from_date])
+    if to_date:
+        candidate_numbers.at['Observations', 'Before'] = len(
+            obsids[obsids['Public Release Date'] < to_date])
+    if from_date and to_date:
+        candidate_numbers.at['Observations', 'In'] = len(
+            obsids[(obsids['Public Release Date'] >= from_date) & (obsids['Public Release Date'] < to_date)])
+
+    # detections
+    candidate_numbers.at['Detections', 'Total'] = len(filtered)
+    if from_date:
+        candidate_numbers.at['Detections', 'After'] = len(
+            filtered[filtered['ObsId'].isin(obsids[obsids['Public Release Date'] >= from_date]['Obs ID'])])
+    if to_date:
+        candidate_numbers.at['Detections', 'Before'] = len(
+            filtered[filtered['ObsId'].isin(obsids[obsids['Public Release Date'] < to_date]['Obs ID'])])
+    if from_date and to_date:
+        candidate_numbers.at['Detections', 'In'] = len(
+            filtered[filtered['ObsId'].isin(obsids[(obsids['Public Release Date'] >= from_date) & (obsids['Public Release Date'] < to_date)]['Obs ID'])])
+
+    # candidates no match
+    candidate_numbers.at['Candidates no match', 'Total'] = len(
+        filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1)])
+    if from_date:
+        candidate_numbers.at['Candidates no match', 'After'] = len(
+            filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1) & filtered['ObsId'].isin(obsids[obsids['Public Release Date'] >= from_date]['Obs ID'])])
+    if to_date:
+        candidate_numbers.at['Candidates no match', 'Before'] = len(
+            filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1) & filtered['ObsId'].isin(obsids[obsids['Public Release Date'] < to_date]['Obs ID'])])
+    if from_date and to_date:
+        candidate_numbers.at['Candidates no match', 'In'] = len(
+            filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1) & filtered['ObsId'].isin(obsids[(obsids['Public Release Date'] >= from_date) & (obsids['Public Release Date'] < to_date)]['Obs ID'])])
+
+    return candidate_numbers
+
+
+def get_criteria_table(
+    from_date: str = '',
+    to_date: str = '',
+    criteria: List[Tuple[str, List[str]]] = CRITERIA,
+):
+    """
+    Get the number of candidates that match each criterion, the number of candidates that are only matched by that criterion and the number of candidates remaining after that criterion.
+    As in the paper.
+
+    Args:
+        from_date (str, optional): Start date of range. Defaults to ''. Format: 'YYYY-MM-DD'. If empty, no lower bound. Inclusive.
+        to_date (str, optional): End date of range. Defaults to ''. Format: 'YYYY-MM-DD'. If empty, no upper bound. Exclusive.
+        criteria (List[Tuple[str, List[str]]], optional): List of criteria and their filter functions. Defaults to [ ('Archival X-ray date', [ 'archival_match', 'chandra_match', 'erosita_match', ]), ('Cross-match with stars/Gaia', [ 'gaia_match', ]), ('NED + SIMBAD + VizieR', [ 'ned_match', 'simbad_match', 'vizier_match', ]), ].
+        verbose (int, optional): Verbosity. Defaults to 0.
+
+    Returns:
+        pd.DataFrame: Criteria table as in the paper.
+    """
+    filtered = pd.read_csv('output/filtered_w20.csv', header=0, dtype=str)
+
+    obsids_1 = pd.read_csv('obsid_lists/obsids_b+10_220401+.csv',
+                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
+    obsids_2 = pd.read_csv('obsid_lists/obsids_b-10_220401+.csv',
+                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
+    obsids_3 = pd.read_csv('obsid_lists/obsids_b+10_220401-.csv',
+                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
+    obsids_4 = pd.read_csv('obsid_lists/obsids_b-10_220401-.csv',
+                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
+    obsids = pd.concat([obsids_1, obsids_2, obsids_3,
+                       obsids_4], ignore_index=True)
+    obsids['Public Release Date'] = pd.to_datetime(
+        obsids['Public Release Date'])
+
+    if from_date:
+        from_date = pd.to_datetime(from_date)
+        obsids = obsids[obsids['Public Release Date'] >= from_date]
+
+    if to_date:
+        to_date = pd.to_datetime(to_date)
+        obsids = obsids[obsids['Public Release Date'] <= to_date]
+
+    filtered = filtered[filtered['ObsId'].isin(obsids['Obs ID'])]
+
+    all_criteria = []
+    for _, columns in criteria:
+        all_criteria += columns
+
+    criteria_table = pd.DataFrame(
+        columns=['Matched', 'Unique Matched', 'Remaining'])
+
+    for i, (criterion, columns) in enumerate(criteria):
+        # candidates that are matched by this criterion
+        matched = filtered[
+            (filtered[columns] == 'yes').any(axis=1)
+        ]
+        criteria_table.at[criterion, 'Matched'] = len(matched)
+
+        # candidates that are only matched by this criterion and not any other
+        unique_matched = matched[
+            (matched[all_criteria] == 'yes').sum(axis=1) == 1
+        ]
+        criteria_table.at[criterion, 'Unique Matched'] = len(unique_matched)
+
+        # candidates remaining after this stage, that have no matches by previous criteria
+        remaining = filtered
+        for _, columns in criteria[:i+1]:
+            remaining = remaining[
+                (remaining[columns] == 'no').all(axis=1)
+            ]
+        criteria_table.at[criterion, 'Remaining'] = len(remaining)
+
+    return criteria_table
 
 
 def get_obsid_dates():
