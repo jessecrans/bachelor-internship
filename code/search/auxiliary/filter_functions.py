@@ -84,7 +84,7 @@ def filter_archival(detection: pd.Series, verbose=False) -> bool:
     )
 
     radius = u.Quantity(
-        3 * float(detection['POS_ERR']) + 0.5,
+        5 * float(detection['POS_ERR']) + 0.5,
         u.arcsec,
     )
 
@@ -247,7 +247,7 @@ def filter_erosita(detection: pd.Series, verbose=False) -> bool:
     """
     ra = float(detection['RA'])
     dec = float(detection['DEC'])
-    radius = (3 * float(detection['POS_ERR']) + 0.5) / 60.0**2
+    radius = (5 * float(detection['POS_ERR'])) / 60.0**2
     link = f'https://erosita.mpe.mpg.de/dr1/erodat/catalogue/SCS?CAT=DR1_Main&RA={ra}&DEC={dec}&SR={radius}&VERB={1}'
     response = requests.get(link)
     with open('query_results/erosita_result.xml', 'w') as f:
@@ -443,3 +443,5 @@ def filter_Xray_binaries(detection: pd.Series, verbose=False) -> bool:
         result[0].pprint_all()
 
     return True
+
+# TODO: take out 0.5 boresight correction

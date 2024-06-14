@@ -6,6 +6,7 @@ import glob
 import numpy as np
 from astropy.stats import poisson_conf_interval
 from typing import Dict, List, Tuple
+import matplotlib.pyplot as plt
 
 CRITERIA = [
     ('Archival X-ray date', [
@@ -27,7 +28,7 @@ ALL_FILTERS = [
 ]
 
 
-def gen_light_curve(obsid: int, fxt_ra: float, fxt_dec: float, fxt_theta: float, fxt_pos_err: float) -> pd.DataFrame:
+def gen_light_curve(obsid: str, fxt_ra: float, fxt_dec: float, fxt_theta: float, fxt_pos_err: float, verbose: int = 0) -> pd.DataFrame:
     t1 = time.perf_counter()
 
     # get files
@@ -90,9 +91,8 @@ def gen_light_curve(obsid: int, fxt_ra: float, fxt_dec: float, fxt_theta: float,
 
         light_curve_total[i] = total_counts
         light_curve_background[i] = background_counts
-
-    # subtract background from total counts
-    light_curve = light_curve_total - light_curve_background
+        light_curve_without_background = light_curve_total - light_curve_background
+        # TODO: subtract background within source from source counts
 
     # get errors
     average_background_count_rate = np.mean(light_curve_background) / time_step
@@ -101,13 +101,14 @@ def gen_light_curve(obsid: int, fxt_ra: float, fxt_dec: float, fxt_theta: float,
 
     t4 = time.perf_counter()
 
-    print(f't2-t1: {t2-t1:.2f}')
-    print(f't3-t2: {t3-t2:.2f}')
-    print(f't4-t3: {t4-t3:.2f}')
+    if verbose:
+        print(f't2-t1: {t2-t1:.2f}')
+        print(f't3-t2: {t3-t2:.2f}')
+        print(f't4-t3: {t4-t3:.2f}')
 
     return pd.DataFrame({
         'time': time_bins[:-1],
-        'counts': light_curve,
+        'counts': light_curve_total,
         'error_low': light_curve_error[0],
         'error_high': light_curve_error[1]
     })
@@ -218,8 +219,7 @@ def get_criteria_table(
     criteria: List[Tuple[str, List[str]]] = CRITERIA,
 ):
     """
-    Get the number of candidates that match each criterion, the number of candidates that are only matched by that criterion and the number of candidates remaining after that criterion.
-    As in the paper.
+    Get the number of candidates that match each criterion, the number of candidates that are only matched by that criterion, the number of candidates removed after that criterion and the number of candidates remaining after that criterion.
 
     Args:
         from_date (str, optional): Start date of range. Defaults to ''. Format: 'YYYY-MM-DD'. If empty, no lower bound. Inclusive.
@@ -298,33 +298,6 @@ def get_criteria_table(
         criteria_table.at[criterion, 'Remaining'] = len(remaining)
 
     return criteria_table
-
-
-def get_obsid_dates():
-    obsids_after1 = pd.read_csv('obsid_lists/obsids_b+10_220401+.csv',
-                                header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_after2 = pd.read_csv('obsid_lists/obsids_b-10_220401+.csv',
-                                header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_after = pd.concat([obsids_after1, obsids_after2], ignore_index=True)
-
-    obsids_before1 = pd.read_csv('obsid_lists/obsids_b+10_220401-.csv',
-                                 header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_before2 = pd.read_csv('obsid_lists/obsids_b-10_220401-.csv',
-                                 header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_before = pd.concat(
-        [obsids_before1, obsids_before2], ignore_index=True)
-
-    # calculating newest obsid date
-    obsids_after['Public Release Date'] = pd.to_datetime(
-        obsids_after['Public Release Date'])
-    print(f'newest obsid date: {obsids_after["Public Release Date"].max()}')
-    print(f'oldest obsid date: {obsids_after["Public Release Date"].min()}')
-
-    # calculating oldest obsid date
-    obsids_before['Public Release Date'] = pd.to_datetime(
-        obsids_before['Public Release Date'])
-    print(f'newest obsid date: {obsids_before["Public Release Date"].max()}')
-    print(f'oldest obsid date: {obsids_before["Public Release Date"].min()}')
 
 
 if __name__ == '__main__':

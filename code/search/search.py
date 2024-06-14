@@ -145,7 +145,7 @@ def search_data(obsid: str, window_size: float = 20.0, verbose: int = 0, data_pa
 
     os.chdir(f"{data_path}/{obsid}/")
 
-    command = f"python search_algorithm.py {current_path} {window_size}"
+    command = f"python search_algorithm.py {current_path} {window_size} {verbose}"
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
     os.chdir(f"{current_path}")

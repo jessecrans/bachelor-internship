@@ -55,13 +55,13 @@ def get_wcs_event(fname: str) -> wcs.WCS:
     return wcs_evt2
 
 
-def get_chandra_eef(thetas: list[float], R0: float = 1.32, R10: float = 10.1, alpha: float = 2.42) -> list:
+def get_chandra_eef(thetas: np.ndarray, R0: float = 1.32, R10: float = 10.1, alpha: float = 2.42) -> list:
     """
     ## Calculates Chandra EEF (encircled energy fraction) radius from Vito+16
 
 
     ### Args:
-        thetas `list[float]`: A list of off-axis angle (') in arcmin.
+        thetas `np.ndarray`: A list of off-axis angle (') in arcmin.
         R0 `float` (optional): EEF radius (") for off-axis angle = 0. Defaults to `1.32`. 1.07 (90% EEF, from Table A1 of Vito+16)
         R10 `float` (optional): EEF radius (") for off-axis angle = 0. Defaults to `10.1`. 9.65 (90% EEF, from Table A1 of Vito+16)
         alpha `float` (optional): Powerlaw index. Defaults to `2.42`.
@@ -141,6 +141,8 @@ def get_before_after_counts(
     source_xs: list[float],
     source_ys: list[float],
     aperture_radii: list[int],
+    t_begin: float,
+    t_end: float,
     lower_energy: float = 5e2,
     upper_energy: float = 7e3
 ) -> tuple[np.ndarray[int], np.ndarray[int], np.ndarray[int], np.ndarray[int]]:
@@ -153,6 +155,8 @@ def get_before_after_counts(
         src_xs `list[float]`: The physical x coordinate of sources in the observation.
         src_ys `list[float]`: The physical y coordinate of sources in the observation.
         R_apers `list[int]`: The aperture size for each source (px).
+        t_begin `float`: The start time of the exposure.
+        t_end `float`: The end time of the exposure.
         E_low `float` (optional): The lower limit of the Chandra energy band used. Defaults to `5e2`.
         E_up `float` (optional): The upper limit of the Chandra energy band used. Defaults to `7e3`.
 
@@ -167,8 +171,8 @@ def get_before_after_counts(
         )]
 
     # Get the time bins, divided into quartiles
-    t_start, t_1, t_2, t_3, t_end = np.percentile(
-        event_data['time'], [0, 25, 50, 75, 100]
+    t_start, t_1, t_2, t_3, t_stop = np.percentile(
+        [t_begin, t_end], [0, 25, 50, 75, 100]
     )
 
     # Event data before/after the middle of the given frame of the exposure
@@ -203,7 +207,7 @@ def get_before_after_counts(
             )
 
         # Check if background is too strong
-        if total_counts < 5 * background_counts:
+        if total_counts < 5 * background_counts:  # condition i in paper
             before_counts.append(-99)
             after_counts.append(-99)
             edge_counts.append(-99)
@@ -260,30 +264,31 @@ def get_transient_candidates(
     transient_candidates = np.zeros(len(counts_1), dtype=bool)
 
     # Only calculate sources with S/N not too low
-    good_sources = np.where(counts_1 >= 0)[0]
+    good_sources = np.where(counts_1 >= 0 | counts_2 >= 0)[0]
 
     # Calculate counts upper and lower Poisson limit
     counts_1_lower,  counts_1_upper = \
         poisson_conf_interval(
             counts_1[good_sources],
             interval='frequentist-confidence',
-            sigma=4
+            sigma=5
         )
     counts_2_lower, counts_2_upper = \
         poisson_conf_interval(
             counts_2[good_sources],
             interval='frequentist-confidence',
-            sigma=4
+            sigma=5
         )
 
     # Select XT candidates
     transient_candidates[good_sources] = (
-        (counts_2[good_sources] > counts_1_upper) |
+        (counts_2[good_sources] > counts_1_upper) |  # condition ii in paper
         (counts_2[good_sources] < counts_1_lower)
     ) & (
-        (counts_1[good_sources] > counts_2_upper) |
+        (counts_1[good_sources] > counts_2_upper) |  # condition ii in paper
         (counts_1[good_sources] < counts_2_lower)
     ) & (
+        # condition iii in paper
         (counts_1[good_sources] > 5 * counts_2[good_sources]) |
         (counts_2[good_sources] > 5 * counts_1[good_sources])
     )
@@ -292,16 +297,18 @@ def get_transient_candidates(
 
 
 def transient_selection(
-    event_data_raw: dict,
+    event_data_raw: Table,
     source_xs: list[float],
     source_ys: list[float],
-    aperture_radii: list[int]
+    aperture_radii: list[int],
+    t_begin: float,
+    t_end: float
 ) -> np.ndarray[bool]:
     """
     Select transient candidates based on the counts before and after the event.
 
     Args:
-        event_data_raw (dict): The raw event 2 table.
+        event_data_raw (Table): The raw event 2 table.
         source_xs (list[float]): list of x coordinates of sources.
         source_ys (list[float]): list of y coordinates of sources.
         aperture_radii (list[int]): list of aperture sizes, in pixels.
@@ -315,6 +322,8 @@ def transient_selection(
             source_xs,
             source_ys,
             aperture_radii,
+            t_begin,
+            t_end,
             lower_energy=5e2,
             upper_energy=7e3
         )
@@ -409,11 +418,11 @@ def Yang_search(
 
     Args:
         filename (str): Filename of the event file.
-        ra (float): Right ascension of the source.
-        dec (float): Declination of the source.
-        theta (float): Off-axis angle of the source.
-        position_error (float): Error in the position of the source.
-        significance (float): Significance of the source.
+        ra (float): Right ascension of the sources.
+        dec (float): Declination of the sources.
+        theta (float): Off-axis angle of the sources.
+        position_error (float): Error in the position of the sources.
+        significance (float): Significance of the sources.
         window (float, optional): Window size to divide the search into. Defaults to 20.0.
     """
     with fits.open(filename) as hdul:
@@ -479,7 +488,9 @@ def Yang_search(
             event_data,
             source_xs,
             source_ys,
-            aperture_radii
+            aperture_radii,
+            t_begin,
+            t_end
         )
         candidates.extend(new_candidates)
 
@@ -547,6 +558,7 @@ if __name__ == '__main__':
         except IndexError:
             window_value = 20.0  # default value
 
-        search_candidates(src_file, event_file, window_value)
+        search_candidates(src_file, event_file,
+                          window_value, verbose=sys.argv[3])
     except IndexError:
         print('Could not get source and event files. Skipping search.')

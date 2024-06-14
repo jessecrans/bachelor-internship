@@ -1,5 +1,5 @@
 code/search/obsids/*
-code/original_search_code/
+# code/original_search_code/
 papers/
 internship_application.pdf
 internship_application.md
@@ -9,3 +9,6 @@ PID.txt
 presentatie_aantekeningen.md
 presentatie_aantekeningen.pdf
 errorbars_jonathan.py
+*.png
+*.jpg
+*.pdf
