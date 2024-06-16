@@ -23,7 +23,8 @@ def get_random_light_curves(n: int = 10, from_date: str = '', to_date: str = '')
     Returns:
         Dict[int, pd.DataFrame]: Dictionary of random light curves.
     """
-    filtered = pd.read_csv('output/filtered_w20.csv', header=0, dtype=str)
+    filtered = pd.read_csv('output/detections_w20.txt',
+                           header=0, dtype=str, sep=' ')
 
     obsids_1 = pd.read_csv('obsid_lists/obsids_b+10_220401+.csv',
                            header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
@@ -106,6 +107,9 @@ def plot_random_light_curves(random_detections: pd.DataFrame, random_light_curve
 
 
 def get_min_max_dates():
+    """
+    ## Prints the minimum and maximum public release dates of the observations.
+    """
     obsids_1 = pd.read_csv('obsid_lists/obsids_b+10_220401+.csv',
                            header=0, dtype=str, sep=',', usecols=['Public Release Date'])
     obsids_2 = pd.read_csv('obsid_lists/obsids_b-10_220401+.csv',
@@ -131,16 +135,20 @@ def transient_selection_test(
     t_end: float
 ) -> np.ndarray[bool]:
     """
-    Select transient candidates based on the counts before and after the event.
+    ## Transient selection test function to manually check what the algorithm is doing.
 
-    Args:
-        event_data_raw (Table): The raw event 2 table.
-        source_xs (list[float]): list of x coordinates of sources.
-        source_ys (list[float]): list of y coordinates of sources.
-        aperture_radii (list[int]): list of aperture sizes, in pixels.
+    The function is adapted from the `transient_selection` function in `search_algorithm.py`. So, the code is suboptimally written.
 
-    Returns:
-        np.ndarray[bool]: A boolean array indicating whether the source is a transient candidate.
+    ### Args:
+        event_data_raw `Table`: Raw event data.
+        source_xs `list[float]`: X coordinate of the source.
+        source_ys `list[float]`: y coordinate of the source.
+        aperture_radii `list[int]`: aperture radius of the source.
+        t_begin `float`: Start time of the observation.
+        t_end `float`: End time of the observation.
+
+    ### Returns:
+        `np.ndarray[bool]`: Array of boolean value indicating if the source is a candidate.
     """
     before_counts, after_counts, edge_counts, center_counts = \
         get_before_after_counts(
@@ -154,15 +162,6 @@ def transient_selection_test(
             upper_energy=7e3
         )
 
-    print(
-        'from function:',
-        f"\tq1 + q2: {before_counts[0]}",
-        f"\tq3 + q4: {after_counts[0]}",
-        f"\tq1 + q4: {edge_counts[0]}",
-        f"\tq2 + q3: {center_counts[0]}",
-        sep='\n'
-    )
-
     # Select candidate
     # By N1 and N2
     candidates_1 = get_transient_candidates(before_counts, after_counts)
@@ -173,16 +172,29 @@ def transient_selection_test(
     # Combine the results
     transient_candidates = np.where(candidates_1 | candidates_2)[0]
 
+    if len(transient_candidates) > 0:
+        print(
+            f"\tq1 + q2: {before_counts[0]}",
+            f"\tq3 + q4: {after_counts[0]}",
+            f"\tq1 + q4: {edge_counts[0]}",
+            f"\tq2 + q3: {center_counts[0]}",
+            sep='\n'
+        )
+
     return transient_candidates
 
 
-def test_search_algorithm(detection: pd.Series, window: int = 20):
-    obsid = detection['ObsId']
-    fxt_ra = float(detection['RA'])
-    fxt_dec = float(detection['DEC'])
-    fxt_theta = float(detection['THETA'])
-    fxt_pos_err = float(detection['POS_ERR'])
+def test_search_algorithm(obsid: str, fxt_ra: float, fxt_dec: float, fxt_theta: float, window: int = 20):
+    """
+    ## Test the search algorithm for a given source.
 
+    ### Args:
+        obsid `str`: Obsid where the source is located.
+        fxt_ra `float`: Right ascension of the source.
+        fxt_dec `float`: Declination of the source.
+        fxt_theta `float`: Off-axis angle of the source.
+        window `int` (optional): Defaults to `20`. Window size to use for the search.
+    """
     current_dir = os.getcwd()
 
     os.chdir(f'/data/jcrans/fxrt-data/obsids/{obsid}')
@@ -255,7 +267,9 @@ def test_search_algorithm(detection: pd.Series, window: int = 20):
             event_data,
             [fxt_x],
             [fxt_y],
-            [aperture_radius]
+            [aperture_radius],
+            t_begin,
+            t_end
         )
 
         if len(is_candidate) > 0:

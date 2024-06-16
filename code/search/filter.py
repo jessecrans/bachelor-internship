@@ -7,7 +7,7 @@ from astroquery.simbad import Simbad
 from astroquery.vizier import Vizier
 from typing import Callable, Dict
 
-from auxiliary.filter_functions import filter_gaia, filter_archival, filter_chandra, filter_erosita, filter_ned, filter_simbad, filter_vizier
+from auxiliary.filter_functions import filter_gaia, filter_archival, filter_chandra, filter_erosita, filter_ned, filter_simbad, filter_vizier, filter_Xray_binaries
 
 
 def update_catalogs(dataframe: pd.DataFrame, catalogs: Dict[str, Callable], verbose: int = 0) -> pd.DataFrame:
@@ -141,7 +141,8 @@ CATALOGS = {
     'erosita': filter_erosita,
     'ned': filter_ned,
     'simbad': filter_simbad,
-    'vizier': filter_vizier
+    'vizier': filter_vizier,
+    'xray-binaries': filter_Xray_binaries
 }
 VERBOSE = 2
 

@@ -9,12 +9,12 @@ DEFAULT_DATA_PATH = "/data/jcrans/fxrt-data/obsids"
 
 def download_data(obsid: str, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH):
     """
-    Download the data for a given obsid.
+    ## Download data for a given obsid.
 
-    Args:
-        obsid (str): Obsid to download data for.
-        verbose (int, optional): Level of verbosity. Defaults to 0.
-        data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
+    ### Args:
+        obsid `str`: Obsid to download data for.
+        verbose `int` (optional): Defaults to `0`. Level of verbosity.
+        data_path `str` (optional): Defaults to `DEFAULT_DATA_PATH`. Path where all downloaded data is stored.
     """
     if verbose > 0:
         print(f"\tDownloading")
@@ -43,15 +43,15 @@ def download_data(obsid: str, verbose: int = 0, data_path: str = DEFAULT_DATA_PA
 
 def process_data(obsid: str, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH) -> bool:
     """
-    Process the data for a given obsid.
+    ## Process the data for a given obsid.
 
-    Args:
-        obsid (str): Obsid to process data for.
-        verbose (int, optional): Level of verbosity. Defaults to 0.
-        data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
+    ### Args:
+        obsid `str`: Obsid to process data for.
+        verbose `int` (optional): Defaults to `0`. Level of verbosity.
+        data_path `str` (optional): Defaults to `DEFAULT_DATA_PATH`. Path where all downloaded data is stored.
 
-    Returns:
-        bool: Whether the data was processed successfully. Returns False if no data was found, True otherwise.
+    ### Returns:
+        `bool`: Whether the data was processed successfully. Returns `False` if no data was found, `True` otherwise.
     """
     if verbose > 0:
         print(f"\tProcessing")
@@ -126,14 +126,23 @@ def process_data(obsid: str, verbose: int = 0, data_path: str = DEFAULT_DATA_PAT
 
 def search_data(obsid: str, window_size: float = 20.0, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH):
     """
-    Search the data for a given obsid.
+    ## Search the data for a given obsid.
 
-    Args:
-        obsid (str): Obsid to search data for.
-        window_size (float): Window size to use for the search. Defaults to 20.0.
-        verbose (int, optional): Level of verbosity. Defaults to 0.
-        data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
+    ### Args:
+        obsid `str`: Obsid to search data for.
+        window_size `float` (optional): Defaults to `20.0`. Size of the window to use for the search.
+        verbose `int` (optional): Defaults to `0`. Level of verbosity.
+        data_path `str` (optional): Defaults to `DEFAULT_DATA_PATH`. Path where all downloaded data is stored.
     """
+    # """
+    # Search the data for a given obsid.
+
+    # Args:
+    #     obsid (str): Obsid to search data for.
+    #     window_size (float): Window size to use for the search. Defaults to 20.0.
+    #     verbose (int, optional): Level of verbosity. Defaults to 0.
+    #     data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
+    # """
     if verbose > 0:
         print(f"\tSearching")
         start_time = time.perf_counter()
@@ -147,6 +156,8 @@ def search_data(obsid: str, window_size: float = 20.0, verbose: int = 0, data_pa
 
     command = f"python search_algorithm.py {current_path} {window_size} {verbose}"
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
+    if verbose > 1:
+        print(proc.stdout)
 
     os.chdir(f"{current_path}")
 
@@ -158,13 +169,13 @@ def search_data(obsid: str, window_size: float = 20.0, verbose: int = 0, data_pa
 
 def pipeline(obsid: str, window_size: float = 20.0, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH) -> None:
     """
-    Pipeline function to download, process, and search data for a given obsid.
+    ## Pipeline to download, process and search data for a given obsid.
 
-    Args:
-        obsid (str): Obsid to search data for.
-        window_size (float): Window size to use for the search. Defaults to 20.0.
-        verbose (int, optional): Level of verbosity. Defaults to 0.
-        data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
+    ### Args:
+        obsid `str`: Obsid to search data for.
+        window_size `float` (optional): Defaults to `20.0`. Window size to use for the search.
+        verbose `int` (optional): Defaults to `0`. Level of verbosity.
+        data_path `str` (optional): Defaults to `DEFAULT_DATA_PATH`. Path where all downloaded data is stored.
     """
     if verbose > 0:
         print(f'Starting obsid: {obsid}')
@@ -214,20 +225,21 @@ def start_search(filenames: list, window_size: float = 20.0, verbose: int = 0, d
 
     Obsids = np.array(Obsids)
 
-    for Obsid in Obsids:
+    for i, Obsid in enumerate(Obsids):
+        print(f"progress: {(i+1)/len(Obsids) * 100:.2f}%")
         pipeline(Obsid, window_size, verbose, data_path)
 
 
 DATA_PATH = "/data/jcrans/fxrt-data/obsids"
 FILENAMES = [  # List of filenames to search
+    'obsid_lists/obsids_b+10_220401+.csv',
+    'obsid_lists/obsids_b-10_220401+.csv',
     'obsid_lists/obsids_b+10_220401-.csv',
     'obsid_lists/obsids_b-10_220401-.csv',
-    'obsid_lists/obsids_b+10_220401+.csv',
-    'obsid_lists/obsids_b-10_220401+.csv'
 ]
 WINDOW_SIZE = 20.0  # The window size to use for the search
 VERBOSE = 1  # Level of verbosity for the search functions
 
 if __name__ == '__main__':
-    start_search(FILENAMES, WINDOW_SIZE, VERBOSE, DATA_PATH)
-    # pipeline('10722', WINDOW_SIZE, VERBOSE, DATA_PATH)
+    pipeline('24604', 20.0, 1)
+    # start_search(FILENAMES, WINDOW_SIZE, VERBOSE, DATA_PATH)
