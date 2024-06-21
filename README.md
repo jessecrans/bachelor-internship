@@ -2,7 +2,7 @@
 This repository is for organizing all code to do with my bachelor internship.
 
 ## conda environment
-- ```conda create -n ciao-4.16 -c https://cxc.cfa.harvard.edu/conda/ciao -c conda-forge ciao pyciao sherpa ds9 ciao-contrib caldb_main marx astropy scipy astroquery python=3.11```
+- ```conda create -n ciao-4.16 -c https://cxc.cfa.harvard.edu/conda/ciao -c conda-forge ciao pyciao sherpa ds9 ciao-contrib caldb_main marx astropy scipy astroquery pandas glob python=3.11```
 - ```conda activate ciao-4.16```
 
 ## code/search
