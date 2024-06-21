@@ -12,14 +12,15 @@ from auxiliary.filter_functions import filter_gaia, filter_archival, filter_chan
 
 def update_catalogs(dataframe: pd.DataFrame, catalogs: Dict[str, Callable], verbose: int = 0) -> pd.DataFrame:
     """
-    Returns a new dataframe with columns added for each missing catalog.
+    ## Return a new dataframe with the catalog match columns added.
 
-    Args:
-        dataframe (pd.DataFrame): Dataframe to update with missing columns.
-        catalogs (Dict[str, Callable]): Dictionary of catalogs to add to the dataframe.
+    ### Args:
+        dataframe `pd.DataFrame`: Dataframe to add the catalog match columns to.
+        catalogs `Dict[str, Callable]`: Catalogs to add to the dataframe.
+        verbose `int` (optional): Defaults to `0`. Level of verbosity.
 
-    Returns:
-        pd.DataFrame: The updated dataframe with missing columns added.
+    ### Returns:
+        `pd.DataFrame`: Dataframe with the catalog match columns added.
     """
     dataframe = dataframe.copy()
 
@@ -36,15 +37,15 @@ def update_catalogs(dataframe: pd.DataFrame, catalogs: Dict[str, Callable], verb
 
 def update_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs: Dict[str, Callable], verbose: int = 0) -> pd.DataFrame:
     """
-    Adds new detections to the filtered dataframe.
+    ## Adds new detections to the filtered dataframe.
 
-    Args:
-        detections (pd.DataFrame): Dataframe of detections to add to the filtered dataframe.
-        filtered (pd.DataFrame): Dataframe of filtered detections.
-        catalogs (Dict[str, Callable]): Dictionary of catalogs to add to the dataframe.
+    ### Args:
+        detections `pd.DataFrame`: Dataframe of detections to add to the filtered dataframe.
+        filtered `pd.DataFrame`: Dataframe of filtered detections.
+        catalogs `Dict[str, Callable]`: Dictionary of catalogs to add to the dataframe.
 
-    Returns:
-        pd.DataFrame: The updated filtered dataframe with new detections added.
+    ### Returns:
+        `pd.DataFrame`: The updated filtered dataframe with new detections added.
     """
     detections = detections.copy()
     filtered = filtered.copy()
@@ -77,6 +78,18 @@ def update_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs
 
 
 def filter_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs: Dict[str, Callable], verbose: int = 0) -> pd.DataFrame:
+    """
+    ## Filter the detections in the detections dataframe.
+
+    ### Args:
+        detections `pd.DataFrame`: Dataframe of detections to filter.
+        filtered `pd.DataFrame`: Dataframe of filtered detections.
+        catalogs `Dict[str, Callable]`: Catalogs to filter the detections with.
+        verbose `int` (optional): Defaults to `0`. Level of verbosity.
+
+    ### Returns:
+        `pd.DataFrame`: Filtered dataframe of detections.
+    """
     # add new detections to filtered dataframe
     filtered = update_detections(detections, filtered, catalogs)
 
@@ -102,6 +115,15 @@ def filter_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs
 
 
 def filter_detection_file(detections_filename: str, filtered_filename: str, catalogs: Dict[str, Callable], verbose: int = 0) -> None:
+    """
+    ## Filter the detections in the detections file.
+
+    ### Args:
+        detections_filename `str`: Filename of the detections file.
+        filtered_filename `str`: Filename of the filtered file.
+        catalogs `Dict[str, Callable]`: Catalogs to filter the detections with.
+        verbose `int` (optional): Defaults to `0`. Level of verbosity.
+    """
     detections = pd.read_csv(detections_filename, sep=' ', header=0, dtype=str)
     filtered = pd.read_csv(filtered_filename, sep=',', header=0, dtype=str)
 
@@ -117,11 +139,11 @@ def filter_detection_file(detections_filename: str, filtered_filename: str, cata
 
 def clear_filter_matches(filtered_filename: str, catalog: str) -> None:
     """
-    Clear the matches for a specific catalog in the filtered file.
+    ## Clear the matches for a specific catalog in the filtered file.
 
-    Args:
-        filtered_filename (str): Filename of the filtered candidates.
-        catalog (str): Catalog to clear the matches for.
+    ### Args:
+        filtered_filename `str`: Filename of the filtered file.
+        catalog `str`: Catalog to clear the matches for.
     """
     filtered = pd.read_csv(filtered_filename, sep=',', header=0, dtype=str)
 

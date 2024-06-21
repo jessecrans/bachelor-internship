@@ -32,8 +32,8 @@ def filter_gaia(detection: pd.Series, verbose=False) -> bool:
     job = Gaia.cone_search_async(
         coords,
         radius=u.Quantity(
-            # 3sigma + 0.5" boresight correction + 5" proper motion margin
-            3 * float(detection['POS_ERR']) + 0.5 + 5,
+            # 3sigma + 5" proper motion margin
+            3 * float(detection['POS_ERR']) + 5,
             u.arcsec
         )
     )
@@ -73,7 +73,7 @@ def filter_archival(detection: pd.Series, verbose=False) -> bool:
     """
 
     catalog_list = Vizier.find_catalogs([
-        'XMMSL2', '2SXPS', '4XMM-DR13', '1SXPS', 'IX/30'  # IX/30 is ROSAT
+        'XMMSL2', '2SXPS', '4XMM-DR13', '1SXPS', '2RXS'  # IX/30 is ROSAT
     ])
 
     coords = SkyCoord(
@@ -84,7 +84,7 @@ def filter_archival(detection: pd.Series, verbose=False) -> bool:
     )
 
     radius = u.Quantity(
-        5 * float(detection['POS_ERR']) + 0.5,
+        5 * float(detection['POS_ERR']),
         u.arcsec,
     )
 
@@ -115,7 +115,7 @@ def filter_chandra(detection: pd.Series, verbose=False) -> bool:
     Returns:
         bool: True if the detection has a match in the Chandra catalog, False otherwise.
     """
-    command = f'search_csc pos=\"{float(detection["RA"])},{detection["DEC"]}\" radius={3 * float(detection["POS_ERR"]) + 0.5} outfile=\"query_results/search_csc_result.tsv\" radunit=arcsec catalog=csc2.1 clobber=yes verbose=5'
+    command = f'search_csc pos=\"{float(detection["RA"])},{detection["DEC"]}\" radius={3 * float(detection["POS_ERR"])} outfile=\"query_results/search_csc_result.tsv\" radunit=arcsec catalog=csc2.1 clobber=yes verbose=5'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
 
     # Q? The process is not returning any output in the outfile.
@@ -158,7 +158,7 @@ def filter_ned(detection: pd.Series, verbose=False) -> bool:
     result = Ned.query_region(
         coords,
         radius=u.Quantity(
-            3 * float(detection['POS_ERR']) + 0.5,
+            3 * float(detection['POS_ERR']),
             u.arcsec,
         )
     )
@@ -205,7 +205,7 @@ def filter_simbad(detection: pd.Series, verbose=False) -> bool:
     result = Simbad.query_region(
         coords,
         radius=u.Quantity(
-            3 * float(detection['POS_ERR']) + 0.5,
+            3 * float(detection['POS_ERR']),
             u.arcsec,
         )
     )
@@ -375,7 +375,7 @@ def filter_vizier(detection: pd.DataFrame, verbose: bool = False):
     )
 
     radius = u.Quantity(
-        3 * float(detection['POS_ERR']) + 0.5,
+        3 * float(detection['POS_ERR']),
         u.arcsec,
     )
 
@@ -426,7 +426,7 @@ def filter_Xray_binaries(detection: pd.Series, verbose=False) -> bool:
     )
 
     radius = u.Quantity(
-        3 * float(detection['POS_ERR']) + 0.5,
+        3 * float(detection['POS_ERR']),
         u.arcsec,
     )
 

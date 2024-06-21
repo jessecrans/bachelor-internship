@@ -15,6 +15,7 @@ from astropy.io import fits
 import numpy as np
 import glob
 from typing import List, Tuple
+import time
 
 
 def get_wcs_event(fname: str) -> wcs.WCS:
@@ -376,7 +377,7 @@ def get_start_end_times(exposure_time: float, window: float) -> list[tuple[float
         current_start += window
         current_end += window
     else:  # residual window
-        if exposure_time - current_end > residual_limit:
+        if exposure_time - current_start > residual_limit:
             start_end_times.append((current_start, exposure_time))
 
     # backward
@@ -404,6 +405,8 @@ def get_start_end_times(exposure_time: float, window: float) -> list[tuple[float
         if exposure_time - current_start > residual_limit:
             start_end_times.append((current_start, exposure_time))
 
+    print(start_end_times)
+
     return start_end_times
 
 
@@ -418,7 +421,7 @@ def Yang_search(
     verbose: int = 0
 ) -> None:
     """
-    ## Search for transient candidates in the given observation.    
+    ## Search for transient candidates in the given observation.
 
     ### Args:
         filename `str`: The filename of the event file.
@@ -525,16 +528,25 @@ def off_axis(event_file: str, ra: float, dec: float) -> float:
     ### Returns:
         `float`: Off-axis angle of the source.
     """
-    command = f'dmcoords {event_file} op=cel ra={ra} dec={dec} verbose=1'
-    proc = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
-    (out, err) = proc.communicate()
-    output = out.split()
-    for i, line in enumerate(output):
-        if (line == b'THETA,PHI'):
-            z = output[i + 1]
-            break
-    # what should z be if the line of 'THETA,PHI' is not found?
-    return z
+    t1 = time.perf_counter()
+
+    command = f'dmcoords {event_file} op=cel ra={ra} dec={dec} verbose=0'
+    proc = subprocess.run(command, shell=True)
+
+    t2 = time.perf_counter()
+
+    command = f'pget dmcoords theta'
+    proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
+    out = proc.stdout
+
+    # for i, line in enumerate(output):
+    #     if (line == b'THETA,PHI'):
+    #         z = output[i + 1]
+    #         break
+
+    print(f"\tproc: {t2-t1:.2f} seconds")
+
+    return float(out)
 
 
 def search_candidates(src_file: str, event_file: str, window: float = 20.0, verbose: int = 0):
@@ -559,14 +571,16 @@ def search_candidates(src_file: str, event_file: str, window: float = 20.0, verb
     THETA = []
     err_pos = []
 
+    t1 = time.perf_counter()
+
     for i, _ in enumerate(RA):
         a = off_axis(event_file, RA[i], DEC[i])
-        b = a.decode("utf-8")
-        if (b[-1] == '"'):
-            THETA.append(float(b[:-1])/60.0)
-        else:
-            THETA.append(float(b[:-1]))
+        THETA.append(a)
         err_pos.append(np.sqrt(X_err[i]**2+Y_err[i]**2)*0.492)
+
+    t2 = time.perf_counter()
+
+    print(f"off_axis calc: {t2-t1:.2f} seconds")
 
     Yang_search(event_file, RA, DEC, THETA, err_pos,
                 significance, window, verbose)

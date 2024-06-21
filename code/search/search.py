@@ -134,15 +134,6 @@ def search_data(obsid: str, window_size: float = 20.0, verbose: int = 0, data_pa
         verbose `int` (optional): Defaults to `0`. Level of verbosity.
         data_path `str` (optional): Defaults to `DEFAULT_DATA_PATH`. Path where all downloaded data is stored.
     """
-    # """
-    # Search the data for a given obsid.
-
-    # Args:
-    #     obsid (str): Obsid to search data for.
-    #     window_size (float): Window size to use for the search. Defaults to 20.0.
-    #     verbose (int, optional): Level of verbosity. Defaults to 0.
-    #     data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
-    # """
     if verbose > 0:
         print(f"\tSearching")
         start_time = time.perf_counter()
@@ -207,13 +198,13 @@ def pipeline(obsid: str, window_size: float = 20.0, verbose: int = 0, data_path:
 
 def start_search(filenames: list, window_size: float = 20.0, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH) -> None:
     """
-    Start a search for candidate detections in a list of filenames.
+    ## Start the search for a list of filenames.
 
-    Args:
-        filenames (list): List of filenames to search.
-        window_size (float): Window size to use for the search. Defaults to 20.0.
-        verbose (int, optional): Level of verbosity. Defaults to 0.
-        data_path (str, optional): Path to store all downloaded data in. Defaults to DEFAULT_DATA_PATH.
+    ### Args:
+        filenames `list`: List of filenames to search.
+        window_size `float` (optional): Defaults to `20.0`. Window size to use for the search.
+        verbose `int` (optional): Defaults to `0`. Level of verbosity.
+        data_path `str` (optional): Defaults to `DEFAULT_DATA_PATH`. Path where all downloaded data is stored.
     """
     Obsids = []
     for filename in filenames:
@@ -241,5 +232,5 @@ WINDOW_SIZE = 20.0  # The window size to use for the search
 VERBOSE = 1  # Level of verbosity for the search functions
 
 if __name__ == '__main__':
-    pipeline('24604', 20.0, 1)
-    # start_search(FILENAMES, WINDOW_SIZE, VERBOSE, DATA_PATH)
+    start_search(FILENAMES, WINDOW_SIZE, VERBOSE, DATA_PATH)
+    # pipeline('8490', WINDOW_SIZE, VERBOSE, DATA_PATH)

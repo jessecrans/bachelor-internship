@@ -28,14 +28,20 @@ CRITERIA = [
 ALL_FILTERS = [
     filter for _, filters in CRITERIA for filter in filters
 ]
+FILENAMES = [  # List of obsids from Chandra
+    'obsid_lists/obsids_b+10_220401+.csv',
+    'obsid_lists/obsids_b-10_220401+.csv',
+    'obsid_lists/obsids_b+10_220401-.csv',
+    'obsid_lists/obsids_b-10_220401-.csv',
+]
 
 
-def gen_light_curve(obsid: str, fxt_ra: float, fxt_dec: float, fxt_theta: float, verbose: int = 0) -> pd.DataFrame:
+def gen_light_curve(obsid: str, ra: float, dec: float, theta: float, verbose: int = 0) -> pd.DataFrame:
     """
     ## Generate a light curve for a given source.
 
     ### Args:
-        obsid `str`: Observation ID.
+        obsid `str`: ObsId where source is in.
         fxt_ra `float`: Right ascension of the source.
         fxt_dec `float`: Declination of the source.
         fxt_theta `float`: Off-axis angle of the source.
@@ -69,11 +75,11 @@ def gen_light_curve(obsid: str, fxt_ra: float, fxt_dec: float, fxt_theta: float,
     event_wcs = get_wcs_event(event_file)
 
     # convert ra, dec to x, y
-    fxt_x, fxt_y = event_wcs.all_world2pix(fxt_ra, fxt_dec, 1)
+    x, y = event_wcs.all_world2pix(ra, dec, 1)
 
     # Get R90 size
     r90_size = get_chandra_eef(
-        np.array([fxt_theta]), R0=1.07, R10=9.65, alpha=2.22)[0]
+        np.array([theta]), R0=1.07, R10=9.65, alpha=2.22)[0]
 
     # Convert to pixel scale
     acis_pix_size = 0.492
@@ -87,28 +93,28 @@ def gen_light_curve(obsid: str, fxt_ra: float, fxt_dec: float, fxt_theta: float,
         (event_data_raw['energy'] <= 7e3)
     )]
 
+    _, background_counts = get_counts_from_event(
+        event_data, x, y, aperture_radii, aperture_radii+22
+    )
+    background_rate = background_counts / (t_stop - t_start)
+
     time_step = 1000
     time_bins = np.arange(t_start, t_stop, time_step)
     light_curve_total = np.zeros(len(time_bins)-1, dtype=int)
-    light_curve_background = np.zeros(len(time_bins)-1, dtype=int)
 
+    # counts per time bin
     for i in range(len(time_bins)-1):
         event_data_bin = event_data[np.where(
             (event_data['time'] >= time_bins[i]) &
             (event_data['time'] < time_bins[i+1])
         )]
 
-        total_counts, background_counts = get_counts_from_event(
-            event_data_bin, fxt_x, fxt_y, aperture_radii, aperture_radii+22)
+        total_counts_i, _ = get_counts_from_event(
+            event_data_bin, x, y, aperture_radii, aperture_radii+22)
 
-        # print('counts', total_counts, background_counts)
-
-        light_curve_total[i] = total_counts
-        light_curve_background[i] = background_counts
-        # TODO: subtract background within source from source counts, still needs to be discussed
+        light_curve_total[i] = total_counts_i - background_rate * time_step
 
     # get errors
-    average_background_count_rate = np.mean(light_curve_background) / time_step
     light_curve_error = poisson_conf_interval(
         light_curve_total,
         interval='frequentist-confidence',
@@ -128,7 +134,7 @@ def plot_light_curve(obsid: str, fxt_ra: float, fxt_dec: float, fxt_theta: float
     ## Plots light curve of a source.
 
     ### Args:
-        obsid `str`: Observation ID.
+        obsid `str`: ObsId where the source is in.
         fxt_ra `float`: Right ascension of the source.
         fxt_dec `float`: Declination of the source.
         fxt_theta `float`: Off-axis angle of the source.
@@ -139,7 +145,8 @@ def plot_light_curve(obsid: str, fxt_ra: float, fxt_dec: float, fxt_theta: float
     plt.errorbar(
         (lc['time'] - lc['time'][0]) / 1000,
         lc['counts'],
-        yerr=[lc['error_low'], lc['error_high']],
+        yerr=[['counts'] - lc['error_low'],
+              lc['error_high'] - lc['counts']],
         fmt='o'
     )
     plt.xlabel('Time (ks)')
@@ -166,16 +173,11 @@ def get_candidate_numbers(from_date: str = '', to_date: str = '', window: int = 
     analysed = pd.read_csv(f'output/analysed_w{int(window)}.txt',
                            header=0, dtype=str, sep=' ')
 
-    obsids_1 = pd.read_csv('obsid_lists/obsids_b+10_220401+.csv',
-                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_2 = pd.read_csv('obsid_lists/obsids_b-10_220401+.csv',
-                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_3 = pd.read_csv('obsid_lists/obsids_b+10_220401-.csv',
-                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_4 = pd.read_csv('obsid_lists/obsids_b-10_220401-.csv',
-                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids = pd.concat([obsids_1, obsids_2, obsids_3,
-                       obsids_4], ignore_index=True)
+    obsids = pd.DataFrame(columns=['Obs ID', 'Public Release Date'])
+    for file in FILENAMES:
+        inter_obsids = pd.read_csv(file, header=0, dtype=str, usecols=[
+                                   'Obs ID', 'Public Release Date'])
+        obsids = pd.concat([obsids, inter_obsids], ignore_index=True)
     obsids['Public Release Date'] = pd.to_datetime(
         obsids['Public Release Date'])
 
@@ -273,12 +275,7 @@ def get_candidate_numbers(from_date: str = '', to_date: str = '', window: int = 
     return candidate_numbers
 
 
-def get_criteria_table(
-    from_date: str = '',
-    to_date: str = '',
-    criteria: List[Tuple[str, List[str]]] = CRITERIA,
-    window: int = 20,
-):
+def get_criteria_table(from_date: str = '', to_date: str = '', criteria: list[tuple[str, list[str]]] = CRITERIA, window: int = 20) -> pd.DataFrame:
     """
     Get the number of candidates that match each criterion, the number of candidates that are only matched by that criterion, the number of candidates removed after that criterion and the number of candidates remaining after that criterion.
 
@@ -286,25 +283,19 @@ def get_criteria_table(
         from_date (str, optional): Start date of range. Defaults to ''. Format: 'YYYY-MM-DD'. If empty, no lower bound. Inclusive.
         to_date (str, optional): End date of range. Defaults to ''. Format: 'YYYY-MM-DD'. If empty, no upper bound. Exclusive.
         criteria (List[Tuple[str, List[str]]], optional): List of criteria and their filter functions. Defaults to [ ('Archival X-ray date', [ 'archival_match', 'chandra_match', 'erosita_match', ]), ('Cross-match with stars/Gaia', [ 'gaia_match', ]), ('NED + SIMBAD + VizieR', [ 'ned_match', 'simbad_match', 'vizier_match', ]), ].
-        verbose (int, optional): Verbosity. Defaults to 0.
         window (int, optional): Window size candidates were detected in. Defaults to 20.
 
     Returns:
-        pd.DataFrame: Criteria table as in the paper.
+        pd.DataFrame: Criteria table.
     """
     filtered = pd.read_csv(
         f'output/filtered_w{int(window)}.csv', header=0, dtype=str)
 
-    obsids_1 = pd.read_csv('obsid_lists/obsids_b+10_220401+.csv',
-                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_2 = pd.read_csv('obsid_lists/obsids_b-10_220401+.csv',
-                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_3 = pd.read_csv('obsid_lists/obsids_b+10_220401-.csv',
-                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_4 = pd.read_csv('obsid_lists/obsids_b-10_220401-.csv',
-                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids = pd.concat([obsids_1, obsids_2, obsids_3,
-                       obsids_4], ignore_index=True)
+    obsids = pd.DataFrame(columns=['Obs ID', 'Public Release Date'])
+    for file in FILENAMES:
+        inter_obsids = pd.read_csv(file, header=0, dtype=str, usecols=[
+                                   'Obs ID', 'Public Release Date'])
+        obsids = pd.concat([obsids, inter_obsids], ignore_index=True)
     obsids['Public Release Date'] = pd.to_datetime(
         obsids['Public Release Date'])
 
@@ -363,24 +354,25 @@ def get_criteria_table(
     return criteria_table
 
 
-def get_detections(obsid: str, ra: float = None, dec: float = None, filtered: bool = False):
+def get_detections(obsid: str, ra: float = None, dec: float = None, filtered: bool = False, window: int = 20) -> pd.DataFrame:
     """
-    Get the detections for an observation within a radius around given coordinates.
+    ## Get the detections matching the given obsid and coordinates.
 
-    Args:
-        obsid (str): Observation ID.
-        ra (float, optional): RA of the source. Defaults to None.
-        dec (float, optional): Dec of the source. Defaults to None.
-        filtered (bool, optional): Whether to use the filtered detections. Defaults to False.
+    ### Args:
+        obsid `str`: Obsid the detections should match.
+        ra `float` (optional): Defaults to `None`. Right ascension of the source.
+        dec `float` (optional): Defaults to `None`. Declination of the source.
+        filtered `bool` (optional): Defaults to `False`. Whether to return the filtered detections.
+        window `int` (optional): Defaults to `20`. Window size candidates were detected in.
 
-    Returns:
-        pd.DataFrame: Detections for the observation.
+    ### Returns:
+        `pd.DataFrame`: Detections matching the given obsid and coordinates.
     """
     if filtered:
         detections = pd.read_csv(
-            'output/filtered_w20.csv', header=0, dtype=str)
+            f'output/filtered_w{window}.csv', header=0, dtype=str)
     else:
-        detections = pd.read_csv('output/detections_w20.txt',
+        detections = pd.read_csv(f'output/detections_w{window}.txt',
                                  header=0, dtype=str, sep=' ')
 
     detections = detections[detections['ObsId'] == obsid]
@@ -395,9 +387,9 @@ def get_detections(obsid: str, ra: float = None, dec: float = None, filtered: bo
     return detections
 
 
-def get_no_match_fxts(window: int = 20, from_date: str = '', to_date: str = ''):
+def get_no_match_fxts(window: int = 20, from_date: str = '', to_date: str = '') -> pd.DataFrame:
     """
-    ## Get the FXTs that have no matches.
+    ## Get the FXTs that have no matches in any filter.
 
     ### Args:
         window `int` (optional): Defaults to `20`. Window size candidates were detected in.
@@ -407,16 +399,12 @@ def get_no_match_fxts(window: int = 20, from_date: str = '', to_date: str = ''):
     """
     filtered = pd.read_csv(f'output/filtered_w{int(window)}.csv',
                            header=0, dtype=str)
-    obsids_1 = pd.read_csv('obsid_lists/obsids_b+10_220401+.csv',
-                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_2 = pd.read_csv('obsid_lists/obsids_b-10_220401+.csv',
-                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_3 = pd.read_csv('obsid_lists/obsids_b+10_220401-.csv',
-                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids_4 = pd.read_csv('obsid_lists/obsids_b-10_220401-.csv',
-                           header=0, dtype=str, sep=',', usecols=['Obs ID', 'Public Release Date'])
-    obsids = pd.concat([obsids_1, obsids_2, obsids_3,
-                       obsids_4], ignore_index=True)
+
+    obsids = pd.DataFrame(columns=['Obs ID', 'Public Release Date'])
+    for filename in FILENAMES:
+        inter_obsids = pd.read_csv(filename, header=0, dtype=str, sep=',', usecols=[
+                                   'Obs ID', 'Public Release Date'])
+        obsids = pd.concat([obsids, inter_obsids], ignore_index=True)
     obsids['Public Release Date'] = pd.to_datetime(
         obsids['Public Release Date'])
 
@@ -434,5 +422,4 @@ def get_no_match_fxts(window: int = 20, from_date: str = '', to_date: str = ''):
 
 
 if __name__ == '__main__':
-    get_candidate_numbers()
-    # get_obsid_dates()
+    get_candidate_numbers(window=20)

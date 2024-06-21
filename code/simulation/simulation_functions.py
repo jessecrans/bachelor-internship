@@ -69,7 +69,7 @@ def generate_light_curve(
     return light_curve
 
 
-def generate_light_curve_2(
+def generate_light_curve_no_break(
         t: list[float],
         t_0: float,
         peak: float,
@@ -217,8 +217,8 @@ def simulate_FXRT(
     function = np.array(generate_light_curve(t, t_0, peak, background,
                         t_1_offset, t_2_offset, alpha_1, alpha_2))
     if not broken_power_law:
-        function = np.array(generate_light_curve_2(t, t_0, peak, background,
-                                                   t_1_offset, alpha_1))
+        function = np.array(generate_light_curve_no_break(t, t_0, peak, background,
+                                                          t_1_offset, alpha_1))
     # get temporal and spectral distributions from the light curve
     temporal_dist, spectral_dist, wave = get_distributions(function)
     # generate random light curve and spectrum with total_counts counts from the temporal and spectral distributions
@@ -326,7 +326,7 @@ def get_transient_candidate(before_counts: int, after_counts: int) -> bool:
     return is_transient_candidate
 
 
-def get_start_end_times(T_exp: float, window: float) -> list[tuple[float, float]]:
+def get_start_end_times(exposure_time: float, window: float) -> list[tuple[float, float]]:
     """
     ## Get every start and end time for the given exposure time and window size.
 
@@ -335,39 +335,41 @@ def get_start_end_times(T_exp: float, window: float) -> list[tuple[float, float]
     2. Backward split into windows of the given size plus a residual window.
     3. A window of half size, then split into windows of the given size plus a residual window.
 
-
     ### Args:
-        t_exp `float`: Exposure time, in kiloseconds.
+        exposure_time `float`: Exposure time, in kiloseconds.
         window `float`: Window size, in kiloseconds.
 
     ### Returns:
         `list[tuple[float, float]]`: List of start and end times for the given exposure time and window size.
     """
+    residual_limit = 8.0
     start_end_times = []
 
     current_start = 0.0
     current_end = window
 
-    if T_exp < window:
-        return [(0, T_exp)]
+    if exposure_time < window:
+        return [(0, exposure_time)]
 
     # forward
-    while current_end < T_exp:
+    while current_end < exposure_time:
         start_end_times.append((current_start, current_end))
         current_start += window
         current_end += window
     else:  # residual window
-        start_end_times.append((current_start, T_exp))
+        if exposure_time - current_start > residual_limit:
+            start_end_times.append((current_start, exposure_time))
 
     # backward
-    current_start = T_exp - window
-    current_end = T_exp
+    current_start = exposure_time - window
+    current_end = exposure_time
     while current_start > 0:
         start_end_times.append((current_start, current_end))
         current_start -= window
         current_end -= window
     else:  # residual window
-        start_end_times.append((0, current_end))
+        if current_end > residual_limit:
+            start_end_times.append((0, current_end))
 
     # shift
     shift = window / 2
@@ -375,12 +377,13 @@ def get_start_end_times(T_exp: float, window: float) -> list[tuple[float, float]
 
     current_start = shift
     current_end = shift + window
-    while current_end < T_exp:
+    while current_end < exposure_time:
         start_end_times.append((current_start, current_end))
         current_start += window
         current_end += window
     else:  # residual window
-        start_end_times.append((current_start, T_exp))
+        if exposure_time - current_start > residual_limit:
+            start_end_times.append((current_start, exposure_time))
 
     return start_end_times
 
