@@ -16,6 +16,7 @@ import numpy as np
 import glob
 from typing import List, Tuple
 import time
+from concurrent.futures import ThreadPoolExecutor
 
 
 def get_wcs_event(fname: str) -> wcs.WCS:
@@ -537,16 +538,8 @@ def off_axis(event_file: str, ra: float, dec: float) -> float:
 
     command = f'pget dmcoords theta'
     proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
-    out = proc.stdout
 
-    # for i, line in enumerate(output):
-    #     if (line == b'THETA,PHI'):
-    #         z = output[i + 1]
-    #         break
-
-    print(f"\tproc: {t2-t1:.2f} seconds")
-
-    return float(out)
+    return float(proc.stdout)
 
 
 def search_candidates(src_file: str, event_file: str, window: float = 20.0, verbose: int = 0):
@@ -574,8 +567,7 @@ def search_candidates(src_file: str, event_file: str, window: float = 20.0, verb
     t1 = time.perf_counter()
 
     for i, _ in enumerate(RA):
-        a = off_axis(event_file, RA[i], DEC[i])
-        THETA.append(a)
+        THETA.append(off_axis(event_file, RA[i], DEC[i]))
         err_pos.append(np.sqrt(X_err[i]**2+Y_err[i]**2)*0.492)
 
     t2 = time.perf_counter()
