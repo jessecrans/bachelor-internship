@@ -196,15 +196,16 @@ def pipeline(obsid: str, window_size: float = 20.0, verbose: int = 0, data_path:
         print(f'Time: {end_time - start_time:.0f} seconds')
 
 
-def start_search(filenames: list, window_size: float = 20.0, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH) -> None:
+def start_search(filenames: list, window_size: float = 20.0, data_path: str = DEFAULT_DATA_PATH, limit_observations: bool = False, verbose: int = 0) -> None:
     """
     ## Start the search for a list of filenames.
 
     ### Args:
         filenames `list`: List of filenames to search.
         window_size `float` (optional): Defaults to `20.0`. Window size to use for the search.
-        verbose `int` (optional): Defaults to `0`. Level of verbosity.
         data_path `str` (optional): Defaults to `DEFAULT_DATA_PATH`. Path where all downloaded data is stored.
+        limit_observations `bool` (optional): Defaults to `False`. Whether to only search observations with an exposure time longer than window_size.
+        verbose `int` (optional): Defaults to `0`. Level of verbosity.
     """
     Obsids = []
     for filename in filenames:
