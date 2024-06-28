@@ -228,5 +228,5 @@ WINDOW_SIZE = 20.0  # The window size to use for the search
 VERBOSE = 2  # Level of verbosity for the search functions
 
 if __name__ == '__main__':
-    # start_search(FILENAMES, WINDOW_SIZE, VERBOSE, DATA_PATH)
-    pipeline('8490', WINDOW_SIZE, VERBOSE, DATA_PATH)
+    start_search(FILENAMES, WINDOW_SIZE, VERBOSE, DATA_PATH)
+    # pipeline('8490', WINDOW_SIZE, VERBOSE, DATA_PATH)
