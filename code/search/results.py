@@ -155,6 +155,25 @@ def plot_light_curve(obsid: str, fxt_ra: float, fxt_dec: float, fxt_theta: float
     plt.show()
 
 
+def read_obsids(filenames: list[str], columns: list[str] = ['Obs ID', 'Public Release Date']) -> pd.DataFrame:
+    """
+    ## Read obsids from a list of files.
+
+    ### Args:
+        filenames `list[str]`: List of filenames to read obsids from.
+        columns `list[str]` (optional): Defaults to `['Obs ID', 'Public Release Date']`. Columns to read from the files.
+
+    ### Returns:
+        `pd.DataFrame`: DataFrame with the obsids.
+    """
+    obsids = pd.DataFrame(columns=columns)
+    for filename in filenames:
+        inter_obsids = pd.read_csv(
+            filename, header=0, dtype=str, usecols=columns)
+        obsids = pd.concat([obsids, inter_obsids], ignore_index=True)
+    return obsids
+
+
 def get_candidate_numbers(from_date: str = '', to_date: str = '', window: int = 20) -> pd.DataFrame:
     """
     ## Get the number of observations, analysed observations, detections and candidates that match no criteria.
@@ -173,11 +192,7 @@ def get_candidate_numbers(from_date: str = '', to_date: str = '', window: int = 
     analysed = pd.read_csv(f'output/analysed_w{int(window)}.txt',
                            header=0, dtype=str, sep=' ')
 
-    obsids = pd.DataFrame(columns=['Obs ID', 'Public Release Date'])
-    for file in FILENAMES:
-        inter_obsids = pd.read_csv(file, header=0, dtype=str, usecols=[
-                                   'Obs ID', 'Public Release Date'])
-        obsids = pd.concat([obsids, inter_obsids], ignore_index=True)
+    obsids = read_obsids(FILENAMES)
     obsids['Public Release Date'] = pd.to_datetime(
         obsids['Public Release Date'])
 
@@ -291,11 +306,7 @@ def get_criteria_table(from_date: str = '', to_date: str = '', criteria: list[tu
     filtered = pd.read_csv(
         f'output/filtered_w{int(window)}.csv', header=0, dtype=str)
 
-    obsids = pd.DataFrame(columns=['Obs ID', 'Public Release Date'])
-    for file in FILENAMES:
-        inter_obsids = pd.read_csv(file, header=0, dtype=str, usecols=[
-                                   'Obs ID', 'Public Release Date'])
-        obsids = pd.concat([obsids, inter_obsids], ignore_index=True)
+    obsids = read_obsids(FILENAMES)
     obsids['Public Release Date'] = pd.to_datetime(
         obsids['Public Release Date'])
 
@@ -400,11 +411,7 @@ def get_no_match_fxts(window: int = 20, from_date: str = '', to_date: str = '') 
     filtered = pd.read_csv(f'output/filtered_w{int(window)}.csv',
                            header=0, dtype=str)
 
-    obsids = pd.DataFrame(columns=['Obs ID', 'Public Release Date'])
-    for filename in FILENAMES:
-        inter_obsids = pd.read_csv(filename, header=0, dtype=str, sep=',', usecols=[
-                                   'Obs ID', 'Public Release Date'])
-        obsids = pd.concat([obsids, inter_obsids], ignore_index=True)
+    obsids = read_obsids(FILENAMES)
     obsids['Public Release Date'] = pd.to_datetime(
         obsids['Public Release Date'])
 
