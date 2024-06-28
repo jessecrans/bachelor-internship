@@ -1,12 +1,6 @@
 import subprocess
-import os
 import sys
-import re
 from astropy.stats import poisson_conf_interval
-import requests
-from io import BytesIO
-from astropy.io import votable
-from astropy.coordinates import SkyCoord
 from astropy.table import Table
 import math as math
 import pandas as pd
@@ -14,9 +8,7 @@ from astropy import wcs
 from astropy.io import fits
 import numpy as np
 import glob
-from typing import List, Tuple
 import time
-from concurrent.futures import ThreadPoolExecutor
 
 
 def get_wcs_event(fname: str) -> wcs.WCS:
@@ -72,14 +64,14 @@ def get_chandra_eef(thetas: np.ndarray, R0: float = 1.32, R10: float = 10.1, alp
         `list`: EEF radia from thetas (") in arcmin.
     """
     # create EEF array
-    EEF_radius = np.zeros(len(thetas)) - 99.
+    EEF_radius = np.zeros(len(thetas)) - 99.0
 
     # get sources with a positive off-axis angle
     positive_theta_sources = np.where(thetas >= 0)[0]
 
     # calculate eef
     EEF_radius[positive_theta_sources] = \
-        R0 + R10 * (thetas[positive_theta_sources] / 10.)**alpha
+        R0 + R10 * (thetas[positive_theta_sources] / 10.0)**alpha
 
     # get number of sources with negative off-axis angle
     bad_source_count = len(thetas) - len(positive_theta_sources)
@@ -102,11 +94,11 @@ def get_counts_from_event(
 
 
     ### Args:
-        evt_data `dict`: The raw event 2 table.
-        src_x `float`: The physical x coordinate of the source in the observation.
-        src_y `float`: The physical y coordinate of the source in the observation.
-        Rsrc `int`: Source is extracted within a circle Rin=Rsrc (px).
-        Rbkg `int`: Background is an annulus, Rout=Rbkg (px).
+        event_data `dict`: The raw event 2 table.
+        source_x `float`: The physical x coordinate of the source in the observation.
+        source_y `float`: The physical y coordinate of the source in the observation.
+        source_radius `int`: Source is extracted within a circle Rin=Rsrc (px).
+        background_radius `int`: Background is an annulus, Rout=Rbkg (px).
 
     ### Returns:
         `tuple[int, int]`: A tuple of total counts and background counts.
@@ -139,10 +131,10 @@ def get_counts_from_event(
 
 
 def get_before_after_counts(
-    event_data_raw: dict,
-    source_xs: list[float],
-    source_ys: list[float],
-    aperture_radii: list[int],
+    event_data: dict,
+    source_xs: pd.Series,
+    source_ys: pd.Series,
+    aperture_radii: pd.Series,
     t_begin: float,
     t_end: float,
     lower_energy: float = 5e2,
@@ -154,9 +146,9 @@ def get_before_after_counts(
 
     ### Args:
         event_data_raw `dict`: The raw event 2 table.
-        source_xs `list[float]`: The physical x coordinate of sources in the observation.
-        source_ys `list[float]`: The physical y coordinate of sources in the observation.
-        aperture_radii `list[int]`: The aperture size for each source (px).
+        source_xs `pd.Series`: The physical x coordinate of sources in the observation.
+        source_ys `pd.Series`: The physical y coordinate of sources in the observation.
+        aperture_radii `pd.Series`: The aperture size for each source (px).
         t_begin `float`: The start time of the exposure.
         t_end `float`: The end time of the exposure.
         lower_energy `float` (optional): Defaults to `5e2`. The lower limit of the Chandra energy band used.
@@ -166,11 +158,10 @@ def get_before_after_counts(
         `tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]`: A tuple of N1 (counts before med_exp), N2 (counts after med_exp), N1' (counts at the edge), N2' (counts at the center).
     """
     # Only use 0.5-7 keV range
-    event_data = \
-        event_data_raw[np.where(
-            (event_data_raw['energy'] >= lower_energy) &
-            (event_data_raw['energy'] <= upper_energy)
-        )]
+    event_data = event_data[
+        (event_data['energy'] >= lower_energy) &
+        (event_data['energy'] <= upper_energy)
+    ]
 
     # Get the time bins, divided into quartiles
     t_start, t_1, t_2, t_3, t_stop = np.percentile(
@@ -190,9 +181,6 @@ def get_before_after_counts(
         (event_data['time'] >= t_1) &
         (event_data['time'] < t_3)
     )[0]
-
-    # Extract event x, y
-    event_xs, event_ys = event_data['x'], event_data['y']
 
     # Calculate events before and after
     before_counts,  after_counts, edge_counts, center_counts = [], [], [], []
@@ -217,8 +205,8 @@ def get_before_after_counts(
         else:
             # Calculate distance square
             distance_to_source_squared = \
-                (event_xs - source_x)**2 + \
-                (event_ys - source_y)**2
+                (event_data['x'] - source_x)**2 + \
+                (event_data['y'] - source_y)**2
 
             # Select events within the aperture
             events_in_aperture = np.where(
@@ -248,13 +236,13 @@ def get_before_after_counts(
     return before_counts, after_counts, edge_counts, center_counts
 
 
-def get_transient_candidates(counts_1: np.ndarray[int], counts_2: np.ndarray[int]) -> np.ndarray:
+def get_transient_candidates(counts_1: np.ndarray, counts_2: np.ndarray) -> np.ndarray:
     """
     ## Select transient candidates based on the counts before and after events.
 
     ### Args:
-        counts_1 `np.ndarray[int]`: The counts before the events.
-        counts_2 `np.ndarray[int]`: The counts after the events.
+        counts_1 `np.ndarray`: The counts before the events.
+        counts_2 `np.ndarray`: The counts after the events.
 
     ### Returns:
         `np.ndarray`: A boolean array indicating whether a source is a transient candidate.
@@ -297,10 +285,8 @@ def get_transient_candidates(counts_1: np.ndarray[int], counts_2: np.ndarray[int
 
 
 def transient_selection(
-    event_data_raw: Table,
-    source_xs: List[float],
-    source_ys: List[float],
-    aperture_radii: List[int],
+    event_data: pd.DataFrame,
+    sources: pd.DataFrame,
     t_begin: float,
     t_end: float
 ) -> np.ndarray:
@@ -308,10 +294,8 @@ def transient_selection(
     ## Select transient candidates based on the counts before and after the event.
 
     ### Args:
-        event_data_raw `Table`: Raw event 2 table.
-        source_xs `List[float]`: List of x coordinates of sources.
-        source_ys `List[float]`: List of y coordinates of sources.
-        aperture_radii `List[int]`: List of aperture sizes, in pixels.
+        event_data_raw `pd.DataFrame`: Event data.
+        sources `pd.DataFrame`: Sources in the observation.
         t_begin `float`: Start time of (part of the) observation.
         t_end `float`: End time of (part of the) observation.
 
@@ -320,10 +304,10 @@ def transient_selection(
     """
     before_counts, after_counts, edge_counts, center_counts = \
         get_before_after_counts(
-            event_data_raw,
-            source_xs,
-            source_ys,
-            aperture_radii,
+            event_data,
+            sources['X'],
+            sources['Y'],
+            sources['aperture_radius'],
             t_begin,
             t_end,
             lower_energy=5e2,
@@ -406,18 +390,12 @@ def get_start_end_times(exposure_time: float, window: float) -> list[tuple[float
         if exposure_time - current_start > residual_limit:
             start_end_times.append((current_start, exposure_time))
 
-    print(start_end_times)
-
     return start_end_times
 
 
 def Yang_search(
     filename: str,
-    ra: List[float],
-    dec: List[float],
-    theta: List[float],
-    position_error: List[float],
-    significance: List[float],
+    sources: pd.DataFrame,
     window: float = 20.0,
     verbose: int = 0
 ) -> None:
@@ -425,12 +403,8 @@ def Yang_search(
     ## Search for transient candidates in the given observation.
 
     ### Args:
-        filename `str`: The filename of the event file.
-        ra `List[float]`: The right ascension of the sources.
-        dec `List[float]`: The declination of the sources.
-        theta `List[float]`: The off-axis angle of the sources.
-        position_error `List[float]`: The position error of the sources.
-        significance `List[float]`: The significance of the sources.
+        filename `str`: Name of the event file.
+        sources `pd.DataFrame`: Sources in the observation.
         window `float` (optional): Defaults to `20.0`. The window size in kiloseconds.
         verbose `int` (optional): Defaults to `0`. The level of verbosity.
     """
@@ -448,36 +422,26 @@ def Yang_search(
     # Read the event file
     event_data_raw = Table.read(filename, hdu=1)
 
-    # Read the wcs of the event file
-    event_wcs = get_wcs_event(filename)
-
-    # Extract ra, dec of sources in the observation
-    source_ras, source_decs, source_thetas = \
-        np.array(ra), np.array(dec), np.array(theta)
-    source_pos_err, source_sig = \
-        np.array(position_error), np.array(significance)
-
-    # Convert ra,dec to x,y
-    source_xs, source_ys = \
-        event_wcs.all_world2pix(source_ras, source_decs, 1)
+    colnames = [col for col in event_data_raw.colnames if len(
+        event_data_raw[col].shape) <= 1]
+    event_data_raw = event_data_raw[colnames].to_pandas()
 
     # Get R90 size
-    r90_size = get_chandra_eef(source_thetas, R0=1.07, R10=9.65, alpha=2.22)
+    r90_size = get_chandra_eef(
+        sources['theta'], R0=1.07, R10=9.65, alpha=2.22)
 
     # Convert to pixel scale
     r90_size /= acis_pix_size
 
     # Get the aperture size
-    aperture_radii = r90_size * 1.5
+    sources['aperture_radius'] = r90_size * 1.5
 
     candidates = []
 
     # full observation
     new_candidates = transient_selection(
         event_data_raw,
-        source_xs,
-        source_ys,
-        aperture_radii,
+        sources,
         t_start,
         t_stop
     )
@@ -487,19 +451,17 @@ def Yang_search(
     for t_begin, t_end in get_start_end_times((t_stop - t_start) / 1000.0, window):
         t_begin, t_end = t_begin * 1000.0 + t_start, t_end * 1000.0 + t_start
 
-        event_data = event_data_raw[np.where(
+        event_data = event_data_raw[
             (event_data_raw['time'] >= t_begin) &
-            (event_data_raw['time'] < t_end)
-        )]
+            (event_data_raw['time'] <= t_end)
+        ]
 
         if (len(event_data) == 0):
             continue
 
         new_candidates = transient_selection(
             event_data,
-            source_xs,
-            source_ys,
-            aperture_radii,
+            sources,
             t_begin,
             t_end
         )
@@ -510,7 +472,7 @@ def Yang_search(
     with open(f"{sys.argv[1]}/output/detections_w{int(window)}.txt", "a") as f:
         for i, candidate in enumerate(candidates):
             f.write(
-                f'{obs_id} {source_ras[candidate]} {source_decs[candidate]} {source_thetas[candidate]} {source_pos_err[candidate]} {source_sig[candidate]}\n'
+                f"{obs_id} {sources.at[candidate, 'RA']} {sources.at[candidate, 'DEC']} {sources.at[candidate, 'theta']} {sources.at[candidate, 'position_err']} {sources.at[candidate, 'significance']}\n"
             )
 
     with open(f"{sys.argv[1]}/output/analysed_w{int(window)}.txt", "a") as f:
@@ -551,31 +513,25 @@ def search_candidates(src_file: str, event_file: str, window: float = 20.0, verb
         event_file `str`: Event file to search for candidates.
         window `float` (optional): Defaults to `20.0`. Window size in kiloseconds.
     """
+    sources = pd.DataFrame()
+
     with fits.open(src_file) as hdul:
-        RA = hdul[1].data['RA']
-        RA_err = hdul[1].data['RA_err']
-        DEC = hdul[1].data['DEC']
-        DEC_err = hdul[1].data['DEC_err']
-        X = hdul[1].data['X']
-        Y = hdul[1].data['Y']
-        X_err = hdul[1].data['X_err']
-        Y_err = hdul[1].data['Y_err']
-        significance = hdul[1].data['SRC_SIGNIFICANCE']
-    THETA = []
-    err_pos = []
+        sources['RA'] = hdul[1].data['RA']
+        sources['RA_err'] = hdul[1].data['RA_err']
+        sources['DEC'] = hdul[1].data['DEC']
+        sources['DEC_err'] = hdul[1].data['DEC_err']
+        sources['X'] = hdul[1].data['X']
+        sources['Y'] = hdul[1].data['Y']
+        sources['X_err'] = hdul[1].data['X_err']
+        sources['Y_err'] = hdul[1].data['Y_err']
+        sources['significance'] = hdul[1].data['SRC_SIGNIFICANCE']
 
-    t1 = time.perf_counter()
+    sources['theta'] = [off_axis(event_file, ra, dec) for ra, dec in zip(
+        sources['RA'], sources['DEC'])]
+    sources['position_err'] = np.sqrt(
+        sources['X_err']**2 + sources['Y_err']**2) * 0.492
 
-    for i, _ in enumerate(RA):
-        THETA.append(off_axis(event_file, RA[i], DEC[i]))
-        err_pos.append(np.sqrt(X_err[i]**2+Y_err[i]**2)*0.492)
-
-    t2 = time.perf_counter()
-
-    print(f"off_axis calc: {t2-t1:.2f} seconds")
-
-    Yang_search(event_file, RA, DEC, THETA, err_pos,
-                significance, window, verbose)
+    Yang_search(event_file, sources, window, verbose)
 
 
 if __name__ == '__main__':
@@ -592,6 +548,6 @@ if __name__ == '__main__':
             window_value = 20.0  # default value
 
         search_candidates(src_file, event_file,
-                          window_value, verbose=sys.argv[3])
+                        window_value, verbose=sys.argv[3])
     except Exception as e:
         print('Error with search - ', e)
