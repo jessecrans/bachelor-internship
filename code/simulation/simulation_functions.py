@@ -189,7 +189,7 @@ def simulate_FXRT(
     alpha_1: float = -0.1,
     alpha_2: float = -2.0,
     broken_power_law: bool = True
-) -> tuple[np.ndarray[float], np.ndarray[float], np.ndarray[int], np.ndarray[int]]:
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     """
     ## Simulate the light curve and spectrum of an X-ray transient (XT) with a given start time, peak and background.
 
@@ -226,6 +226,36 @@ def simulate_FXRT(
         t, wave, temporal_dist, spectral_dist, total_counts)
 
     return t, function, time, energy
+
+
+def generate_random_GRB_light_curve() -> np.ndarray:
+    DF1 = pd.read_csv('Long_FXT/Files/A-0-2-20.csv', index_col=0)
+    DF2 = pd.read_csv('Long_FXT/Files/A-angles-20.csv', index_col=0)
+    DFSGRB = pd.concat([DF1, DF2])
+    DFSGRB = DFSGRB[DFSGRB['Post-break slope'] != 0.0]
+    DFSGRB[['Pre-peak slope', 'Intermediate slope',
+            'Post-break slope', 'Peak time', 'Break time']]
+    means = [
+        np.mean(DFSGRB['Pre-peak slope']),
+        np.mean(DFSGRB['Intermediate slope']),
+        np.mean(DFSGRB['Post-break slope']),
+        np.mean(DFSGRB['Peak time']),
+        np.mean(DFSGRB['Break time'])
+    ]
+    stds = [
+        np.std(DFSGRB['Pre-peak slope']),
+        np.std(DFSGRB['Intermediate slope']),
+        np.std(DFSGRB['Post-break slope']),
+        np.std(DFSGRB['Peak time']),
+        np.std(DFSGRB['Break time'])
+    ]
+
+    # generate random parameters based on mean and std
+    random_params = np.zeros(5)
+    for i in range(5):
+        random_params[i] = np.random.normal(means[i], stds[i])
+
+    return random_params
 
 
 def get_before_after_counts(events: pd.DataFrame, t_start: float, t_end: float, background: float, theta: float) -> tuple[float, float, float, float]:
