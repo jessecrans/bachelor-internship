@@ -4,13 +4,83 @@ import pandas as pd
 import math
 import time
 import random
-from astropy.stats import *
+from astropy.stats import poisson_conf_interval
 from scipy.integrate import simps
 from concurrent.futures import ProcessPoolExecutor
+from numpy.typing import NDArray
+
+
+def get_means_GRB() -> pd.DataFrame:
+    """
+    ## Get the means of the GRB parameters from the data files.
+    """
+    DF1 = pd.read_csv('Long_FXT/Files/A-0-2-20.csv', index_col=0)
+    DF2 = pd.read_csv('Long_FXT/Files/A-angles-20.csv', index_col=0)
+    DFSGRB = pd.concat([
+        DF1,
+        DF2
+    ])
+
+    Q = [
+        1.2, 1.4, 1.6, 1.8, 2, 2.2,
+        # 2.4, 2.6, 2.8, 3, 4, 5, 6, 7, 8
+    ]
+
+    means = {}
+
+    for q in Q:
+        DFSGRB_q = DFSGRB[DFSGRB['q'] == q]
+
+        F0 = DFSGRB_q[DFSGRB_q['Pre-peak slope'] != 0]
+        mean0s = np.mean(F0['Pre-peak slope'])
+        neg0s = np.mean(F0['APP_neg'])
+        pos0s = np.mean(F0['APP_pos'])
+
+        F1 = DFSGRB_q[DFSGRB_q['Intermediate slope'] != 0]
+        mean1s = np.mean(F1['Intermediate slope'])
+        neg1s = np.mean(F1['APR_neg'])
+        pos1s = np.mean(F1['APR_pos'])
+
+        F2 = DFSGRB_q[DFSGRB_q['Post-break slope'] != 0]
+        mean2s = np.mean(F2['Post-break slope'])
+        neg2s = np.mean(F2['APB_neg'])
+        pos2s = np.mean(F2['APB_pos'])
+
+        F3 = DFSGRB_q[(DFSGRB_q['Peak time'] != 0) &
+                      (DFSGRB_q['Intermediate slope'] != 0)]
+        mean3s = np.mean(F3['Peak time'])
+        neg3s = np.mean(F3['P_neg'])
+        pos3s = np.mean(F3['P_pos'])
+
+        F4 = DFSGRB_q[(DFSGRB_q['Break time'] != 0) &
+                      (DFSGRB_q['Post-break slope'] != 0)]
+        mean4s = np.mean(F4['Break time'])
+        neg4s = np.mean(F4['B_neg'])
+        pos4s = np.mean(F4['B_pos'])
+
+        means[q] = {
+            'Pre-peak slope': mean0s,
+            'Pre-peak slope neg': neg0s,
+            'Pre-peak slope pos': pos0s,
+            'Intermediate slope': mean1s,
+            'Intermediate slope neg': neg1s,
+            'Intermediate slope pos': pos1s,
+            'Post-break slope': mean2s,
+            'Post-break slope neg': neg2s,
+            'Post-break slope pos': pos2s,
+            'Peak time': mean3s,
+            'Peak time neg': neg3s,
+            'Peak time pos': pos3s,
+            'Break time': mean4s,
+            'Break time neg': neg4s,
+            'Break time pos': pos4s
+        }
+
+    return pd.DataFrame(means)
 
 
 def generate_light_curve(
-        t: list[float],
+        t: np.ndarray,
         t_0: float,
         peak: float,
         background: float,
@@ -70,7 +140,7 @@ def generate_light_curve(
 
 
 def generate_light_curve_no_break(
-        t: list[float],
+        t: np.ndarray,
         t_0: float,
         peak: float,
         background: float,
@@ -113,7 +183,66 @@ def generate_light_curve_no_break(
     return light_curve
 
 
-def get_distributions(light_curve: list[float]) -> tuple[list[float], list[float], list[float]]:
+def generate_random_GRB_params() -> tuple[float, float, float, float, float] | None:
+    pass
+
+
+def generate_GRB_light_curve(
+    t: list[float],
+    t_0: float,
+    peak: float,
+    background: float,
+    pre_peak_slope: float,
+    intermediate_slope: float,
+    post_break_slope: float,
+    peak_time: float,
+    break_time: float
+) -> list[float]:
+    """
+    ## Generate a light curve of a Gamma-Ray Burst (GRB) with a given start time, peak and background.
+
+
+    ### Args:
+        t `list[float]`: List of time values, in seconds.
+        t_0 `float`: Start time of the GRB, in kiloseconds.
+        peak `float`: Peak count rate of the GRB, in counts per second.
+        background `float`: Background count rate of the GRB, in counts per second.
+        pre_peak_slope `float`: Power law index for the pre-peak slope of the GRB.
+        intermediate_slope `float`: Power law index for the intermediate slope of the GRB.
+        post_break_slope `float`: Power law index for the post-break slope of the GRB.
+        peak_time `float`: Time of the peak of the GRB, in seconds.
+        break_time `float`: Time of the break of the GRB, in seconds.
+
+    ### Returns:
+        `list[float]`: The simulated light curve as the count rate as a function of time.
+    """
+
+    t_0 = t_0 * 1000.0  # convert start time to seconds
+    peak_time = peak_time + t_0  # convert peak time to seconds
+    break_time += t_0
+
+    light_curve = []  # list to store the simulated light curve
+
+    for t_i in t:
+        if t_i < t_0:  # before the GRB starts
+            y = 0.0
+        elif t_0 <= t_i < peak_time:  # during pre-peak slope
+            A = peak / (peak_time - t_0)**pre_peak_slope
+            y = A * (t_i - t_0)**pre_peak_slope
+        elif peak_time <= t_i < break_time:  # during intermediate slope
+            A = peak / (peak_time - t_0)**intermediate_slope
+            y = A * (t_i - t_0)**intermediate_slope
+        else:  # during post-break slope
+            A = peak / (peak_time - t_0)**intermediate_slope * \
+                (break_time - t_0)**(intermediate_slope - post_break_slope)
+            y = A * (t_i - t_0)**post_break_slope
+
+        light_curve.append(y + background)  # add background to the light curve
+
+    return light_curve
+
+
+def get_distributions(light_curve: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     """
     ## Distribution of counts and spectra of CDF-S XT1.
 
@@ -138,18 +267,21 @@ def get_distributions(light_curve: list[float]) -> tuple[list[float], list[float
         wav.append((data[i][0] + data[i][1]) / 2.0)
         flux.append(data[i][2])
 
+    flux = np.array(flux)
+    wav = np.array(wav)
+
     spectral_dist = flux / sum(flux)
 
     return temporal_dist, spectral_dist, wav
 
 
 def generate_counts(
-    t: list[float],
-    wav: list[float],
-    temporal_dist: list[float],
-    spectral_dist: list[float],
+    t: np.ndarray,
+    wav: np.ndarray,
+    temporal_dist: np.ndarray,
+    spectral_dist: np.ndarray,
     total_counts: int
-) -> tuple[np.ndarray[int], np.ndarray[int]]:
+) -> tuple[np.ndarray, np.ndarray]:
     """
     ## Generate random light curve and spectrum with total_counts counts from the temporal and spectral distributions.
 
@@ -169,10 +301,11 @@ def generate_counts(
     energy = []
 
     # generate random light curve with N_net total counts from t and temporal_dist
-    time = np.array(random.choices(t, weights=temporal_dist, k=total_counts))
+    time = np.array(random.choices(
+        t, weights=temporal_dist.tolist(), k=total_counts))
     # generate random spectrum with N_net total counts from wav and spectral_dist
     energy = np.array(random.choices(
-        wav, weights=spectral_dist, k=total_counts)) * 1000
+        wav, weights=spectral_dist.tolist(), k=total_counts)) * 1000
 
     return time, energy
 
@@ -214,11 +347,11 @@ def simulate_FXRT(
     t = np.arange(0, T_exp, t_bin)
 
     # simulate light curve with given start time, peak and background
-    function = np.array(generate_light_curve(t, t_0, peak, background,
-                        t_1_offset, t_2_offset, alpha_1, alpha_2))
+    function = np.array(generate_light_curve(
+        t, t_0, peak, background, t_1_offset, t_2_offset, alpha_1, alpha_2))
     if not broken_power_law:
-        function = np.array(generate_light_curve_no_break(t, t_0, peak, background,
-                                                          t_1_offset, alpha_1))
+        function = np.array(generate_light_curve_no_break(
+            t, t_0, peak, background, t_1_offset, alpha_1))
     # get temporal and spectral distributions from the light curve
     temporal_dist, spectral_dist, wave = get_distributions(function)
     # generate random light curve and spectrum with total_counts counts from the temporal and spectral distributions
@@ -228,37 +361,7 @@ def simulate_FXRT(
     return t, function, time, energy
 
 
-def generate_random_GRB_light_curve() -> np.ndarray:
-    DF1 = pd.read_csv('Long_FXT/Files/A-0-2-20.csv', index_col=0)
-    DF2 = pd.read_csv('Long_FXT/Files/A-angles-20.csv', index_col=0)
-    DFSGRB = pd.concat([DF1, DF2])
-    DFSGRB = DFSGRB[DFSGRB['Post-break slope'] != 0.0]
-    DFSGRB[['Pre-peak slope', 'Intermediate slope',
-            'Post-break slope', 'Peak time', 'Break time']]
-    means = [
-        np.mean(DFSGRB['Pre-peak slope']),
-        np.mean(DFSGRB['Intermediate slope']),
-        np.mean(DFSGRB['Post-break slope']),
-        np.mean(DFSGRB['Peak time']),
-        np.mean(DFSGRB['Break time'])
-    ]
-    stds = [
-        np.std(DFSGRB['Pre-peak slope']),
-        np.std(DFSGRB['Intermediate slope']),
-        np.std(DFSGRB['Post-break slope']),
-        np.std(DFSGRB['Peak time']),
-        np.std(DFSGRB['Break time'])
-    ]
-
-    # generate random parameters based on mean and std
-    random_params = np.zeros(5)
-    for i in range(5):
-        random_params[i] = np.random.normal(means[i], stds[i])
-
-    return random_params
-
-
-def get_before_after_counts(events: pd.DataFrame, t_start: float, t_end: float, background: float, theta: float) -> tuple[float, float, float, float]:
+def get_before_after_counts(events: pd.DataFrame, t_start: float, t_end: float, background: float, theta: float) -> tuple[int, int, int, int]:
     """
     ## Get the counts before and after the mid value, as well as at the edge and center quartiles.
 
@@ -356,7 +459,7 @@ def get_transient_candidate(before_counts: int, after_counts: int) -> bool:
     return is_transient_candidate
 
 
-def get_start_end_times(exposure_time: float, window: float) -> list[tuple[float, float]]:
+def get_start_end_times(exposure_time: float, window: float, forward: bool = True, backward: bool = True, shifted: bool = True) -> list[tuple[float, float]]:
     """
     ## Get every start and end time for the given exposure time and window size.
 
@@ -372,53 +475,58 @@ def get_start_end_times(exposure_time: float, window: float) -> list[tuple[float
     ### Returns:
         `list[tuple[float, float]]`: List of start and end times for the given exposure time and window size.
     """
-    residual_limit = 8.0
+    residual_limit = 0.0
     start_end_times = []
 
     current_start = 0.0
     current_end = window
 
+    start_end_times.append((0, exposure_time))
+
     if exposure_time < window:
-        return [(0, exposure_time)]
+        return start_end_times
 
-    # forward
-    while current_end < exposure_time:
-        start_end_times.append((current_start, current_end))
-        current_start += window
-        current_end += window
-    else:  # residual window
-        if exposure_time - current_start > residual_limit:
-            start_end_times.append((current_start, exposure_time))
+    if forward:
+        # forward
+        while current_end < exposure_time:
+            start_end_times.append((current_start, current_end))
+            current_start += window
+            current_end += window
+        else:  # residual window
+            if exposure_time - current_start > residual_limit:
+                start_end_times.append((current_start, exposure_time))
 
-    # backward
-    current_start = exposure_time - window
-    current_end = exposure_time
-    while current_start > 0:
-        start_end_times.append((current_start, current_end))
-        current_start -= window
-        current_end -= window
-    else:  # residual window
-        if current_end > residual_limit:
-            start_end_times.append((0, current_end))
+    if backward:
+        # backward
+        current_start = exposure_time - window
+        current_end = exposure_time
+        while current_start > 0:
+            start_end_times.append((current_start, current_end))
+            current_start -= window
+            current_end -= window
+        else:  # residual window
+            if current_end > residual_limit:
+                start_end_times.append((0, current_end))
 
-    # shift
-    shift = window / 2
-    start_end_times.append((0, shift))
+    if shifted:
+        # shift
+        shift = window / 2
+        start_end_times.append((0, shift))
 
-    current_start = shift
-    current_end = shift + window
-    while current_end < exposure_time:
-        start_end_times.append((current_start, current_end))
-        current_start += window
-        current_end += window
-    else:  # residual window
-        if exposure_time - current_start > residual_limit:
-            start_end_times.append((current_start, exposure_time))
+        current_start = shift
+        current_end = shift + window
+        while current_end < exposure_time:
+            start_end_times.append((current_start, current_end))
+            current_start += window
+            current_end += window
+        else:  # residual window
+            if exposure_time - current_start > residual_limit:
+                start_end_times.append((current_start, exposure_time))
 
     return start_end_times
 
 
-def transient_selection(time: list[float], energy: list[float], T_exp: float, background: float, theta: float, e_lower: float, e_upper: float, window: float = 20.0) -> bool:
+def transient_selection(time: np.ndarray, energy: np.ndarray, T_exp: float, background: float, theta: float, e_lower: float, e_upper: float, window: float = 20.0, forward: bool = True, backward: bool = True, shifted: bool = True) -> bool:
     """
     ## Calculate if the given time and energy values indicate a transient candidate.
 
@@ -431,6 +539,9 @@ def transient_selection(time: list[float], energy: list[float], T_exp: float, ba
         e_lower `float`: Lower energy band, in keV.
         e_upper `float`: Upper energy band, in keV.
         window `float` (optional): Window size, in kiloseconds. Defaults to `20.0`.
+        forward `bool` (optional): Whether to simulate forward windows. Defaults to `True`.
+        backward `bool` (optional): Whether to simulate backward windows. Defaults to `True`.
+        shifted `bool` (optional): Whether to simulate shifted windows. Defaults to `True`.
 
     ### Returns:
         `bool`: Whether the given time and energy values indicate a transient candidate. True if it is, False if it is not.
@@ -446,7 +557,7 @@ def transient_selection(time: list[float], energy: list[float], T_exp: float, ba
     # selects the elements of events_total that correspond to a true value in aux
     events_total = events_total[aux]
 
-    for t_start, t_end in get_start_end_times(T_exp, window):
+    for t_start, t_end in get_start_end_times(T_exp, window, forward, backward, shifted):
         # Convert to seconds
         t_start *= 1000
         t_end *= 1000
@@ -513,7 +624,7 @@ def simulate_detection(T_exp: float, F_peak: float, background: float, theta: fl
     return probability
 
 
-def simulate_detection_parallel_simulations_helper(T_exp: float, F_peak: float, background: float, theta: float, window: float = 20.0):
+def simulate_detection_parallel_simulations_helper(T_exp: float, F_peak: float, background: float, theta: float, window: float = 20.0, forward: bool = True, backward: bool = True, shifted: bool = True):
     # convert F_peak to net counts: Yang et al. 2019
     total_counts = int(1.6e14*F_peak)
     e_lower = 5e2  # ev
@@ -523,12 +634,12 @@ def simulate_detection_parallel_simulations_helper(T_exp: float, F_peak: float, 
     t, _, simulated_time, energy = simulate_FXRT(
         T_exp, t_bin, t_start, background, total_counts)
     xt_idxs = transient_selection(
-        simulated_time, energy, T_exp, background, theta, e_lower, e_upper, window
+        simulated_time, energy, T_exp, background, theta, e_lower, e_upper, window, forward, backward, shifted
     )
     return xt_idxs
 
 
-def simulate_detection_parallel_simulations(T_exp: float, F_peak: float, background: float, theta: float, simulations: int, window: float = 20.0):
+def simulate_detection_parallel_simulations(T_exp: float, F_peak: float, background: float, theta: float, simulations: int, window: float = 20.0, forward: bool = True, backward: bool = True, shifted: bool = True):
     """
     ## Simulate the detection of an X-ray transient (XT) with a given peak flux and background.
 
@@ -538,6 +649,10 @@ def simulate_detection_parallel_simulations(T_exp: float, F_peak: float, backgro
         background `float`: Background count rate of the transient, in counts per second.
         theta `float`: Instrumental off-axis angle.
         simulations `int`: Number of simulations to run.
+        window `float` (optional): Window size, in kiloseconds. Defaults to `20.0`.
+        forward `bool` (optional): Whether to simulate forward windows. Defaults to `True`.
+        backward `bool` (optional): Whether to simulate backward windows. Defaults to `True`.
+        shifted `bool` (optional): Whether to simulate shifted windows. Defaults to `True`.
 
     ### Returns:
         `float`: The probability of detecting the XT.
@@ -549,7 +664,10 @@ def simulate_detection_parallel_simulations(T_exp: float, F_peak: float, backgro
             [F_peak]*simulations,
             [background]*simulations,
             [theta]*simulations,
-            [window]*simulations
+            [window]*simulations,
+            [forward]*simulations,
+            [backward]*simulations,
+            [shifted]*simulations
         ))
 
     probability = detections / simulations
