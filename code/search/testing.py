@@ -9,6 +9,9 @@ from typing import Dict, List, Tuple
 import matplotlib.pyplot as plt
 from results import gen_light_curve
 from auxiliary.search_algorithm import *
+from search import download_data, process_data, DATA_PATH
+from results import find_obsids_matching_detection, get_new_detections, get_no_match_fxts
+import os
 
 
 def get_random_light_curves(n: int = 10, from_date: str = '', to_date: str = '') -> Tuple[pd.DataFrame, Dict[int, pd.DataFrame]]:
@@ -122,8 +125,73 @@ def get_min_max_dates():
                         obsids_4], ignore_index=True)
     obsids['Public Release Date'] = pd.to_datetime(
         obsids['Public Release Date'])
-    print(obsids['Public Release Date'].min())
-    print(obsids['Public Release Date'].max())
+
+    # print(obsids['Public Release Date'].min())
+    # print(obsids['Public Release Date'].max())
+
+    return obsids['Public Release Date'].min(), obsids['Public Release Date'].max()
+
+
+def get_start_end_times(exposure_time: float, window: float) -> list[tuple[float, float]]:
+    """
+    ## Get every start and end time for the given exposure time and window size.
+
+    Calculated by splitting the exposure according to three passes.
+    1. Split into windows of the given size plus a residual window.
+    2. Backward split into windows of the given size plus a residual window.
+    3. A window of half size, then split into windows of the given size plus a residual window.
+
+    ### Args:
+        exposure_time `float`: Exposure time, in kiloseconds.
+        window `float`: Window size, in kiloseconds.
+
+    ### Returns:
+        `list[tuple[float, float]]`: List of start and end times for the given exposure time and window size.
+    """
+    residual_limit = 8.0
+    start_end_times = []
+
+    current_start = 0.0
+    current_end = window
+
+    if exposure_time < window:
+        return [(0, exposure_time)]
+
+    # forward
+    while current_end < exposure_time:
+        start_end_times.append((current_start, current_end))
+        current_start += window
+        current_end += window
+    else:  # residual window
+        if exposure_time - current_start > residual_limit:
+            start_end_times.append((current_start, exposure_time))
+
+    # backward
+    current_start = exposure_time - window
+    current_end = exposure_time
+    while current_start > 0:
+        start_end_times.append((current_start, current_end))
+        current_start -= window
+        current_end -= window
+    else:  # residual window
+        if current_end > residual_limit:
+            start_end_times.append((0, current_end))
+
+    # shift
+    shift = window / 2
+    start_end_times.append((0, shift))
+
+    current_start = shift
+    current_end = shift + window
+    while current_end < exposure_time:
+        start_end_times.append((current_start, current_end))
+        current_start += window
+        current_end += window
+    else:  # residual window
+        if exposure_time - current_start > residual_limit:
+            start_end_times.append((current_start, exposure_time))
+
+    return start_end_times
 
 
 def transient_selection_test(
@@ -173,6 +241,7 @@ def transient_selection_test(
     transient_candidates = np.where(candidates_1 | candidates_2)[0]
 
     if len(transient_candidates) > 0:
+        # if True:
         print(
             f"\tq1 + q2: {before_counts[0]}",
             f"\tq3 + q4: {after_counts[0]}",
@@ -255,6 +324,9 @@ def test_search_algorithm(obsid: str, fxt_ra: float, fxt_dec: float, fxt_theta: 
     for t_begin, t_end in get_start_end_times((t_stop - t_start) / 1000.0, window):
         t_begin, t_end = t_begin * 1000.0 + t_start, t_end * 1000.0 + t_start
 
+        # print(
+        #     f'Checking window: [{(t_begin - t_start) / 1000}, {(t_end - t_start) / 1000}]')
+
         event_data = event_data_raw[np.where(
             (event_data_raw['time'] >= t_begin) &
             (event_data_raw['time'] < t_end)
@@ -277,3 +349,40 @@ def test_search_algorithm(obsid: str, fxt_ra: float, fxt_dec: float, fxt_theta: 
                 f'{obsid} - RA: {fxt_ra:.3f}, DEC: {fxt_dec:.3f} - [{(t_begin - t_start) / 1000}, {(t_end - t_start) / 1000}]')
 
     os.chdir(current_dir)
+
+
+def download_missing_data():
+    date_range = [
+        '',
+        '2015-01-01',
+        # '2022-04-01',
+        # ''
+    ]
+
+    detections = get_no_match_fxts(
+        20, from_date=date_range[0], to_date=date_range[1])
+
+    for i, detection in detections.iterrows():
+        print(f'Checking obsid: {detection["ObsId"]}')
+        matching_obsids = find_obsids_matching_detection(detection)
+
+        for obsid in matching_obsids:
+            print(f'\tChecking matching obsid: {obsid}')
+            downloaded_obsids = os.listdir(DATA_PATH)
+            if obsid not in downloaded_obsids:
+                download_data(obsid, data_path=DATA_PATH)
+                if not process_data(obsid, data_path=DATA_PATH):
+                    # message printed in process_data
+                    continue
+            else:
+                print(f'\tObsid data already downloaded')
+
+
+if __name__ == '__main__':
+    download_missing_data()
+    # get_min_max_dates()
+    # test_search_algorithm('20087', 0.0, 0.0, 0.0)
+    # get_random_light_curves()
+    # random_detections, random_light_curves = get_random_light_curves()
+    # plot_random_light_curves(random_detections, random_light_curves)
+    # pass

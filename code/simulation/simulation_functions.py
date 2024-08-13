@@ -385,7 +385,9 @@ def get_before_after_counts(events: pd.DataFrame, t_start: float, t_end: float, 
     R /= acis_pix_size
     R_src = R*1.5
     R_bkg = R_src+20
-    scl = (R_src**2)/(R_bkg**2)
+
+    # scl = (R_src**2)/(R_bkg**2)
+    scl = (R_src**2)/(R_bkg**2-R_src**2)
 
     # Get total and background counts
     total_counts = len(counts)
@@ -446,9 +448,9 @@ def get_transient_candidate(before_counts: int, after_counts: int) -> bool:
     """
     # Calculate counts upper and lower Poisson limit
     before_counts_lower_limit,  before_counts_upper_limit = poisson_conf_interval(before_counts,
-                                                                                  interval='frequentist-confidence', sigma=4)
+                                                                                  interval='frequentist-confidence', sigma=5)
     after_counts_lower_limit, after_counts_upper_limit = poisson_conf_interval(after_counts,
-                                                                               interval='frequentist-confidence', sigma=4)
+                                                                               interval='frequentist-confidence', sigma=5)
 
     # Select XT candidates
     is_transient_candidate = \
@@ -551,11 +553,11 @@ def transient_selection(time: np.ndarray, energy: np.ndarray, T_exp: float, back
     events_total = pd.DataFrame(list(zip(time, energy)))
     events_total.columns = ['time', 'energy']
 
-    # Select events within the energy band
-    aux = (e_lower <= events_total['energy']) & (
-        events_total['energy'] <= e_upper)
     # selects the elements of events_total that correspond to a true value in aux
-    events_total = events_total[aux]
+    events_total = events_total[(e_lower <= events_total['energy']) &
+                                (events_total['energy'] <= e_upper)]
+
+    # print(f'new_sim')
 
     for t_start, t_end in get_start_end_times(T_exp, window, forward, backward, shifted):
         # Convert to seconds
@@ -570,6 +572,9 @@ def transient_selection(time: np.ndarray, energy: np.ndarray, T_exp: float, back
         # Get counts
         before_counts, after_counts, edge_counts, center_counts = get_before_after_counts(
             events, t_start, t_end, background, theta)
+
+        # print(f'\twindow: {t_start/1000} - {t_end/1000}')
+        # print(f'\tbefore: {before_counts}, after: {after_counts}, edge: {edge_counts}, center: {center_counts}')
 
         # Select candidate
         # By N1 and N2
@@ -605,7 +610,7 @@ def simulate_detection(T_exp: float, F_peak: float, background: float, theta: fl
         1.6e14*F_peak)  # convert F_peak to net counts: Yang et al. 2019
     e_lower = 5e2  # ev
     e_upper = 7e3  # ev
-    t_bin = 10
+    t_bin = 2
 
     detections = 0
 

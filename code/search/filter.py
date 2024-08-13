@@ -93,7 +93,25 @@ def filter_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs
     # add new detections to filtered dataframe
     filtered = update_detections(detections, filtered, catalogs)
 
+    # to check if detection has already been queried
+    # TODO: make this a more permanent solution
+    filtered_20 = pd.read_csv(
+        'output/filtered_w20.csv', sep=',', header=0, dtype=str)
+
     for i, detection in filtered.iterrows():
+        # check if detection is in the filtered_20 file
+        if detection['RA'] in filtered_20['RA'].values and detection['DEC'] in filtered_20['DEC'].values:
+            filtered_detection = filtered_20[(filtered_20['RA'] == detection['RA']) & (
+                filtered_20['DEC'] == detection['DEC'])].iloc[0]  # retrieve the previously filtered detection
+            for catalog in catalogs.keys():  # populate the new filtered file with the previously filtered detection
+                if filtered_detection[f'{catalog}_match'] != 'unknown':
+                    filtered.at[i,
+                                f'{catalog}_match'] = filtered_detection[f'{catalog}_match']
+            if verbose > 1:
+                print(
+                    f'{i}: {detection.at["ObsId"]} - populated from filtered_w20 file.')
+            continue
+
         for catalog, filter_func in catalogs.items():
             if detection.at[f'{catalog}_match'] == 'unknown':
                 try:
@@ -154,8 +172,8 @@ def clear_filter_matches(filtered_filename: str, catalog: str) -> None:
     filtered.to_csv(filtered_filename, index=False)
 
 
-DETECTIONS_FILENAME = 'output/detections_w20.txt'
-FILTERED_FILENAME = 'output/filtered_w20.csv'
+DETECTIONS_FILENAME = 'output/detections_w30.txt'
+FILTERED_FILENAME = 'output/filtered_w30.csv'
 CATALOGS = {
     'gaia': filter_gaia,
     'archival': filter_archival,

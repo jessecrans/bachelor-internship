@@ -366,29 +366,29 @@ def get_start_end_times(exposure_time: float, window: float) -> list[tuple[float
             start_end_times.append((current_start, exposure_time))
 
     # backward
-    current_start = exposure_time - window
-    current_end = exposure_time
-    while current_start > 0:
-        start_end_times.append((current_start, current_end))
-        current_start -= window
-        current_end -= window
-    else:  # residual window
-        if current_end > residual_limit:
-            start_end_times.append((0, current_end))
+    # current_start = exposure_time - window
+    # current_end = exposure_time
+    # while current_start > 0:
+    #     start_end_times.append((current_start, current_end))
+    #     current_start -= window
+    #     current_end -= window
+    # else:  # residual window
+    #     if current_end > residual_limit:
+    #         start_end_times.append((0, current_end))
 
     # shift
-    shift = window / 2
-    start_end_times.append((0, shift))
+    # shift = window / 2
+    # start_end_times.append((0, shift))
 
-    current_start = shift
-    current_end = shift + window
-    while current_end < exposure_time:
-        start_end_times.append((current_start, current_end))
-        current_start += window
-        current_end += window
-    else:  # residual window
-        if exposure_time - current_start > residual_limit:
-            start_end_times.append((current_start, exposure_time))
+    # current_start = shift
+    # current_end = shift + window
+    # while current_end < exposure_time:
+    #     start_end_times.append((current_start, current_end))
+    #     current_start += window
+    #     current_end += window
+    # else:  # residual window
+    #     if exposure_time - current_start > residual_limit:
+    #         start_end_times.append((current_start, exposure_time))
 
     return start_end_times
 
@@ -469,13 +469,17 @@ def Yang_search(
 
     candidates = pd.unique(np.array(candidates)).tolist()
 
-    with open(f"{sys.argv[1]}/output/detections_w{int(window)}.txt", "a") as f:
+    with open(f"{sys.argv[1]}/output/detections_w{int(window)}_forward.txt", "a") as f:
         for i, candidate in enumerate(candidates):
             f.write(
                 f"{obs_id} {sources.at[candidate, 'RA']} {sources.at[candidate, 'DEC']} {sources.at[candidate, 'theta']} {sources.at[candidate, 'position_err']} {sources.at[candidate, 'significance']}\n"
             )
+            if verbose > 1:
+                print(
+                    f"ObsID: {obs_id}, Candidate {i+1}: RA {sources.at[candidate, 'RA']}, DEC {sources.at[candidate, 'DEC']}, theta {sources.at[candidate, 'theta']}, position_err {sources.at[candidate, 'position_err']}, significance {sources.at[candidate, 'significance']}"
+                )
 
-    with open(f"{sys.argv[1]}/output/analysed_w{int(window)}.txt", "a") as f:
+    with open(f"{sys.argv[1]}/output/analysed_w{int(window)}_forward.txt", "a") as f:
         f.write(f'{obs_id}\n')
 
 
@@ -548,6 +552,6 @@ if __name__ == '__main__':
             window_value = 20.0  # default value
 
         search_candidates(src_file, event_file,
-                        window_value, verbose=sys.argv[3])
+                          window_value, verbose=sys.argv[3])
     except Exception as e:
         print('Error with search - ', e)

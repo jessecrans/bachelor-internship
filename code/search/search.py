@@ -4,9 +4,27 @@ import glob
 import os
 import time
 import pandas as pd
-from results import read_obsids
 
 DEFAULT_DATA_PATH = "/data/jcrans/fxrt-data/obsids"
+
+
+def read_obsids(filenames: list[str], columns: list[str] = ['Obs ID', 'Public Release Date']) -> pd.DataFrame:
+    """
+    ## Read obsids from a list of files.
+
+    ### Args:
+        filenames `list[str]`: List of filenames to read obsids from.
+        columns `list[str]` (optional): Defaults to `['Obs ID', 'Public Release Date']`. Columns to read from the files.
+
+    ### Returns:
+        `pd.DataFrame`: DataFrame with the obsids.
+    """
+    obsids = pd.DataFrame(columns=columns)
+    for filename in filenames:
+        inter_obsids = pd.read_csv(
+            filename, header=0, dtype=str, usecols=columns)
+        obsids = pd.concat([obsids, inter_obsids], ignore_index=True)
+    return obsids
 
 
 def download_data(obsid: str, verbose: int = 0, data_path: str = DEFAULT_DATA_PATH):
@@ -185,7 +203,7 @@ def pipeline(obsid: str, window_size: float = 20.0, verbose: int = 0, data_path:
             return
 
     # analyse data if not already analysed
-    analysed = pd.read_csv(f'output/analysed_w20.txt',
+    analysed = pd.read_csv(f'output/analysed_w{int(window_size)}_forward.txt',
                            header=0, sep=' ', dtype=str)
     if obsid in analysed['ObsId'].values:
         if verbose > 0:
@@ -210,9 +228,13 @@ def start_search(filenames: list, window_size: float = 20.0, data_path: str = DE
         limit_observations `bool` (optional): Defaults to `False`. Whether to only search observations with an exposure time longer than window_size.
         verbose `int` (optional): Defaults to `0`. Level of verbosity.
     """
-    obsids = read_obsids(filenames, ['Obs ID'])
+    obsids = read_obsids(filenames, ['Obs ID', 'Exposure'])
+    obsids['Exposure'] = obsids['Exposure'].astype(float)
 
-    for i, obsid in obsids.iterrows():
+    if limit_observations:
+        obsids = obsids[obsids['Exposure'] > window_size]
+
+    for i, (index, obsid) in enumerate(obsids.iterrows()):
         print(f"progress: {(i+1)/len(obsids) * 100:.2f}%")
         pipeline(obsid['Obs ID'], window_size, verbose, data_path)
 
@@ -225,8 +247,9 @@ FILENAMES = [  # List of filenames to search
     'obsid_lists/obsids_b-10_220401-.csv',
 ]
 WINDOW_SIZE = 20.0  # The window size to use for the search
-VERBOSE = 2  # Level of verbosity for the search functions
+VERBOSE = 1  # Level of verbosity for the search functions
 
 if __name__ == '__main__':
-    start_search(FILENAMES, WINDOW_SIZE, VERBOSE, DATA_PATH)
-    # pipeline('8490', WINDOW_SIZE, VERBOSE, DATA_PATH)
+    start_search(FILENAMES, WINDOW_SIZE, DATA_PATH,
+                 verbose=VERBOSE, limit_observations=False)
+    # pipeline('13478', WINDOW_SIZE, VERBOSE, DATA_PATH)
