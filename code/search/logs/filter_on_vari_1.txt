@@ -1,0 +1,10 @@
+Filtering: 23488
+	region: ellipse(3797.19403,4082.283582,3.694534,2.331754,89.706258)
+	chip_id: 7
+	prob: 1.00
+	result: variable
+Filtering: 28964
+	region: ellipse(4481.333333,3455.0,4.290119,3.254977,154.902786)
+	chip_id: 6
+	prob: 0.99
+	result: variable

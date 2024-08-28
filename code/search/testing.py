@@ -10,8 +10,10 @@ import matplotlib.pyplot as plt
 from results import gen_light_curve
 from auxiliary.search_algorithm import *
 from search import download_data, process_data, DATA_PATH
-from results import find_obsids_matching_detection, get_new_detections, get_no_match_fxts
+from results import find_obsids_matching_detection, get_new_detections, get_no_match_fxts, get_candidates
 import os
+import subprocess
+import re
 
 
 def get_random_light_curves(n: int = 10, from_date: str = '', to_date: str = '') -> Tuple[pd.DataFrame, Dict[int, pd.DataFrame]]:
@@ -378,8 +380,165 @@ def download_missing_data():
                 print(f'\tObsid data already downloaded')
 
 
+def filter_variable_check(candidates: pd.DataFrame, window: int = 20, exclusions: list = [], from_date: str = '', to_date: str = '') -> None:
+    for i, candidate in candidates.iterrows():
+        print(f'Filtering: {candidate["ObsId"]}')
+        # print(f'Candidate: {candidate}')
+        event_file_path = glob.glob(
+            f'{DATA_PATH}/{candidate["ObsId"]}/*evt2.fits', recursive=True)[0]
+        src_file_path = glob.glob(
+            f'{DATA_PATH}/{candidate["ObsId"]}/s3_expmap_src.fits', recursive=True)[0]
+        reg_file_path = glob.glob(
+            f'{DATA_PATH}/{candidate["ObsId"]}/*src.reg', recursive=True)[0]
+        asol_file_path = glob.glob(
+            f'{DATA_PATH}/{candidate["ObsId"]}/*asol1.fits', recursive=True)[0]
+
+        # getting x, y coordinates of the source
+        with fits.open(src_file_path, mode='readonly') as src_file:
+            src_data = src_file[1].data
+
+        src_ras = src_data['RA']
+        src_decs = src_data['DEC']
+        src_xs = src_data['X']
+        src_ys = src_data['Y']
+
+        src_ra = np.array(candidate['RA'], dtype=float)
+        src_dec = np.array(candidate['DEC'], dtype=float)
+
+        src_idx = np.where((src_ras == src_ra) & (src_decs == src_dec))[0][0]
+
+        src_x = src_xs[src_idx]
+        src_y = src_ys[src_idx]
+
+        # getting region parameters
+        with open(reg_file_path) as reg_file:
+            reg_file = reg_file.read()
+
+        reg_file = reg_file.split('\n')
+        regex = re.compile(r'(\w+)\(([^)]+)\)')
+
+        reg_file = [[match[0]] + list(map(float, match[1].split(',')))
+                    for item in reg_file for match in regex.findall(item)]
+        reg_file = np.array(reg_file)
+
+        reg_xs = np.array(reg_file[:, 1], dtype=float)
+        reg_ys = np.array(reg_file[:, 2], dtype=float)
+
+        reg_dists = np.sqrt((reg_xs - src_x) ** 2 + (reg_ys - src_y) ** 2)
+        reg_idx = np.argmin(reg_dists)
+
+        reg_params = reg_file[reg_idx]
+
+        reg_string = f'{reg_params[0]}({",".join(map(str, reg_params[1:]))})'
+        print(f'\tregion: {reg_string}')
+
+        src_reg_file_path = f'{DATA_PATH}/{candidate["ObsId"]}/src.reg'
+        command = f'dmmakereg \"{reg_string}\" {src_reg_file_path} clobber=yes'
+        proc = subprocess.run(command, shell=True)
+
+        # getting ccd_id
+        command = f'dmcoords {event_file_path} op=cel ra={src_ra} dec={src_dec}'
+        proc = subprocess.run(command, shell=True)
+
+        command = f'pget dmcoords chip_id'
+        proc = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
+        chip_id = int(proc.stdout)
+        print(f'\tchip_id: {chip_id}')
+
+        # efficiency file
+        eff_file_path = f'{DATA_PATH}/{candidate["ObsId"]}/dither_region.fits'
+        command = f'dither_region infile={asol_file_path} outfile={eff_file_path} region=\"region({src_reg_file_path})\" wcsfile={event_file_path} clobber=yes'
+        proc = subprocess.run(command, shell=True)
+
+        # running glvary
+        vary_file_path = f'{DATA_PATH}/{candidate["ObsId"]}/gl_prob.fits'
+        lc_file_path = f'{DATA_PATH}/{candidate["ObsId"]}/lc_prob.fits'
+        command = f'glvary infile=\"{event_file_path}[sky=region({src_reg_file_path}),ccd_id={chip_id}]\" outfile={vary_file_path} lcfile={lc_file_path} effile=\"{eff_file_path}[cols time,dtf=fracarea]\" clobber=yes'
+        proc = subprocess.run(command, shell=True, stdout=subprocess.PIPE)
+
+        # outfile
+        try:
+            with fits.open(vary_file_path, mode='readonly') as vary_file:
+                vary_data = vary_file[1].data
+                vary_header = vary_file[1].header
+        except:
+            print('\tError: glvary failed')
+            continue
+
+        probability = vary_header['PROB']
+        print(f'\tprob: {probability:.2f}')
+
+        if probability <= 0.5:
+            print('\tresult: not variable')
+        elif probability > 0.5 and probability <= (2/3):
+            print('\tresult: possibly variable')
+        elif probability > (2/3):
+            print('\tresult: variable')
+
+        # remove candidate if not variable
+        if probability <= 0.5:
+            candidates.drop(i, inplace=True)
+
+    # give new candidates
+    candidates.reset_index(drop=True, inplace=True)
+    candidates.index += 1
+    candidates.to_csv(
+        f'output/candidates/candidates_w_{window}_ex_{"_".join([str(i) for i in exclusions])}_daterange_{from_date}_{to_date}.csv')
+
+
+parameters = [
+    # {
+    #     'date_range': [
+    #         '2022-04-01',
+    #         ''
+    #     ],
+    #     'window': 20,
+    #     'exclusions': []
+    # },
+    # {
+    #     'date_range': [
+    #         '2015-01-01',
+    #         '2022-04-01'
+    #     ],
+    #     'window': 20,
+    #     'exclusions': []
+    # },
+    # {
+    #     'date_range': [
+    #         '',
+    #         '2015-01-01'
+    #     ],
+    #     'window': 20,
+    #     'exclusions': []
+    # },
+    {
+        'date_range': [
+            '',
+            ''
+        ],
+        'window': 50,
+        'exclusions': [20]
+    }
+]
+
+excluded_obsids = ['2561']
+
 if __name__ == '__main__':
-    download_missing_data()
+    for params in parameters:
+        candidates = get_candidates(
+            params['window'], from_date=params['date_range'][0], to_date=params['date_range'][1], exclusions=params['exclusions']
+        )
+        candidates = candidates[~candidates['ObsId'].isin(excluded_obsids)]
+
+        filter_variable_check(
+            candidates,
+            window=params['window'],
+            exclusions=params['exclusions'],
+            from_date=params['date_range'][0],
+            to_date=params['date_range'][1]
+        )
+
+    # download_missing_data()
     # get_min_max_dates()
     # test_search_algorithm('20087', 0.0, 0.0, 0.0)
     # get_random_light_curves()

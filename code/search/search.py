@@ -252,4 +252,4 @@ VERBOSE = 1  # Level of verbosity for the search functions
 if __name__ == '__main__':
     start_search(FILENAMES, WINDOW_SIZE, DATA_PATH,
                  verbose=VERBOSE, limit_observations=False)
-    # pipeline('13478', WINDOW_SIZE, VERBOSE, DATA_PATH)
+    # pipeline('13478', WINDOW_SIZE, VERBOSE, DATA_PATH) # for single obsid

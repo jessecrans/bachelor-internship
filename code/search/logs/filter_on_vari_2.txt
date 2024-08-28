@@ -1,0 +1,349 @@
+# dither_region (CIAO 4.16.0): WARNING: Too many pixels, resetting resolution from 1.000000e+00 to 2.000000e+00
+
+# dither_region (CIAO 4.16.0): WARNING: Too many pixels, resetting resolution from 1.000000e+00 to 2.000000e+00
+
+# dither_region (CIAO 4.16.0): WARNING: Too many pixels, resetting resolution from 1.000000e+00 to 2.000000e+00
+
+# dither_region (CIAO 4.16.0): WARNING: Too many pixels, resetting resolution from 2.000000e+00 to 3.000000e+00
+
+# dither_region (CIAO 4.16.0): WARNING: Too many pixels, resetting resolution from 1.000000e+00 to 2.000000e+00
+
+# dither_region (CIAO 4.16.0): WARNING: Too many pixels, resetting resolution from 2.000000e+00 to 3.000000e+00
+
+# dither_region (CIAO 4.16.0): WARNING: Too many pixels, resetting resolution from 1.000000e+00 to 2.000000e+00
+
+# dither_region (CIAO 4.16.0): ERROR: specified region has 0 area as bound by the data space
+
+# glvary (CIAO 4.16.0): WARNING: No rows in input event file. Create empty output files.
+# glvary (CIAO 4.16.0): ERROR: Could not open effile='/data/jcrans/fxrt-data/obsids/3744/dither_region.fits[cols time,dtf=fracarea]'
+
+# glvary (CIAO 4.16.0): Could not read data in input file
+
+# glvary (CIAO 4.16.0): lperser has failed
+# dither_region (CIAO 4.16.0): WARNING: Too many pixels, resetting resolution from 1.000000e+00 to 2.000000e+00
+
+# dither_region (CIAO 4.16.0): WARNING: Too many pixels, resetting resolution from 1.000000e+00 to 2.000000e+00
+
+# dither_region (CIAO 4.16.0): WARNING: Too many pixels, resetting resolution from 1.000000e+00 to 2.000000e+00
+
+Filtering: 16302
+	region: ellipse(4994.15625,4404.140625,22.041767,15.782615,44.409436)
+	chip_id: 2
+	prob: 0.40
+	result: not variable
+Filtering: 16093
+	region: ellipse(4143.75,3832.75,4.198214,2.598076,156.801409)
+	chip_id: 7
+	prob: 1.00
+	result: variable
+Filtering: 22558
+	region: ellipse(4582.939655,3919.991379,8.279627,5.105831,69.593389)
+	chip_id: 7
+	prob: 1.00
+	result: variable
+Filtering: 17615
+	region: ellipse(3975.846154,4305.307692,2.821343,1.43243,106.988272)
+	chip_id: 2
+	prob: 0.59
+	result: possibly variable
+Filtering: 17615
+	region: ellipse(4040.129032,4669.451613,11.957248,6.998162,13.24168)
+	chip_id: 2
+	prob: 0.65
+	result: possibly variable
+Filtering: 21831
+	region: ellipse(3393.609756,3968.04878,12.896361,10.434424,24.181456)
+	chip_id: 0
+	prob: 1.00
+	result: variable
+Filtering: 18926
+	region: ellipse(3811.198347,4335.033058,4.883519,2.943359,40.296102)
+	chip_id: 7
+	prob: 0.07
+	result: not variable
+Filtering: 18927
+	region: ellipse(4119.52,4111.32,2.956385,2.642838,65.504543)
+	chip_id: 3
+	prob: 1.00
+	result: variable
+Filtering: 18715
+	region: ellipse(4407.263158,3094.421053,29.888341,16.990548,168.561858)
+	chip_id: 2
+	prob: 1.00
+	result: variable
+Filtering: 20635
+	region: ellipse(3977.72619,4461.10119,4.321185,3.4184,72.900409)
+	chip_id: 2
+	prob: 1.00
+	result: variable
+Filtering: 23103
+	region: ellipse(4424.692308,3823.230769,6.039087,3.757811,142.597624)
+	chip_id: 0
+	prob: 1.00
+	result: variable
+Filtering: 16453
+	region: ellipse(4329.911504,3629.460177,6.336479,4.507234,144.73899)
+	chip_id: 0
+	prob: 1.00
+	result: variable
+Filtering: 12318
+	region: ellipse(3992.574194,4062.329032,2.499529,2.2671,114.886371)
+	chip_id: 7
+	prob: 0.10
+	result: not variable
+Filtering: 7439
+	region: ellipse(4487.25,4504.9375,7.9751,4.553859,110.254774)
+	chip_id: 6
+	prob: 1.00
+	result: variable
+Filtering: 9841
+	region: ellipse(3826.030303,4608.0,11.103099,6.200016,94.624722)
+	chip_id: 7
+	prob: 0.98
+	result: variable
+Filtering: 9923
+	region: ellipse(4574.833333,4360.25,6.040115,3.801909,150.830376)
+	chip_id: 6
+	prob: 0.87
+	result: variable
+Filtering: 803
+	region: ellipse(3211.518665,5453.63856,53.38245,40.661109,49.591599)
+	chip_id: 8
+	prob: 1.00
+	result: variable
+Filtering: 1711
+	region: ellipse(4198.211009,3973.027523,5.536735,2.184466,18.969553)
+	chip_id: 7
+	prob: 0.10
+	result: not variable
+Filtering: 2228
+	region: ellipse(4497.619512,4638.234146,15.486185,9.267897,32.248827)
+	chip_id: 0
+	prob: 0.09
+	result: not variable
+Filtering: 3214
+	region: ellipse(3548.45,3868.1,12.823264,3.930826,127.843367)
+	chip_id: 7
+	prob: 0.99
+	result: variable
+Filtering: 10475
+	region: ellipse(4238.892857,3435.857143,9.615972,7.487825,46.201999)
+	chip_id: 7
+	prob: 0.18
+	result: not variable
+Filtering: 11755
+	region: ellipse(3708.025974,3792.896104,6.470239,4.11605,129.700248)
+	chip_id: 7
+	prob: 0.41
+	result: not variable
+Filtering: 11756
+	region: ellipse(4038.256098,4343.512195,2.922648,2.485457,136.508951)
+	chip_id: 7
+	prob: 0.16
+	result: not variable
+Filtering: 12884
+	region: ellipse(2565.164539,3705.042553,48.199203,44.705636,172.456242)
+	chip_id: 3
+	prob: 1.00
+	result: variable
+Filtering: 15136
+	region: ellipse(4571.662791,3316.05814,23.486558,17.839135,167.299217)
+	chip_id: 0
+	prob: 0.09
+	result: not variable
+Filtering: 11777
+	region: ellipse(4215.460674,4298.932584,2.729478,2.584127,84.229319)
+	chip_id: 7
+	prob: 0.54
+	result: possibly variable
+Filtering: 12315
+	region: ellipse(4267.972973,4061.369369,2.503151,2.441151,17.943422)
+	chip_id: 7
+	prob: 1.00
+	result: variable
+Filtering: 1878
+	region: ellipse(4079.197503,4063.748014,2.551393,2.252071,6.089334)
+	chip_id: 3
+	prob: 1.00
+	result: variable
+Filtering: 1878
+	region: ellipse(4041.34375,4207.15625,4.196714,2.641853,118.128696)
+	chip_id: 0
+	prob: 1.00
+	result: variable
+Filtering: 1878
+	region: ellipse(4138.007143,4184.671429,2.111345,1.87239,40.909543)
+	chip_id: 2
+	prob: 1.00
+	result: variable
+Filtering: 1882
+	region: ellipse(4506.852941,4102.338235,4.436792,2.841813,111.239586)
+	chip_id: 3
+	prob: 1.00
+	result: variable
+Filtering: 1882
+	region: ellipse(4222.319444,4134.055556,2.168372,1.79638,113.23929)
+	chip_id: 3
+	prob: 1.00
+	result: variable
+Filtering: 1882
+	region: ellipse(4251.322581,4099.709677,2.997932,2.650843,170.522884)
+	chip_id: 3
+	prob: 1.00
+	result: variable
+Filtering: 1882
+	region: ellipse(4566.25,4073.55,3.26719,2.922408,113.781885)
+	chip_id: 3
+	prob: 1.00
+	result: variable
+Filtering: 3498
+	region: ellipse(4021.162162,3527.648649,12.5572,6.961,99.337431)
+	chip_id: 0
+	prob: 1.00
+	result: variable
+Filtering: 3744
+	region: ellipse(5530.0,4071.0,0.0,0.0,90.0)
+	chip_id: 1
+	Error: glvary failed
+Filtering: 4374
+	region: ellipse(4412.083333,4170.083333,3.507473,2.841238,9.485204)
+	chip_id: 1
+	prob: 1.00
+	result: variable
+Filtering: 4396
+	region: ellipse(3648.448276,4272.086207,7.910715,4.124398,39.127656)
+	chip_id: 2
+	prob: 1.00
+	result: variable
+Filtering: 6436
+	region: ellipse(4226.91358,4248.17284,2.458309,1.988461,160.993223)
+	chip_id: 2
+	prob: 1.00
+	result: variable
+Filtering: 6436
+	region: ellipse(3984.045455,4206.818182,3.721138,2.339525,12.058758)
+	chip_id: 0
+	prob: 0.90
+	result: variable
+Filtering: 2736
+	region: ellipse(4158.692308,4048.653846,1.878509,1.581856,28.051917)
+	chip_id: 7
+	prob: 1.00
+	result: variable
+Filtering: 14904
+	region: ellipse(4071.086957,3900.565217,1.757754,1.722502,151.845034)
+	chip_id: 7
+	prob: 0.99
+	result: variable
+Filtering: 4062
+	region: ellipse(2956.705736,4721.685786,35.005603,28.740514,79.990047)
+	chip_id: 8
+	prob: 1.00
+	result: variable
+Filtering: 10234
+	region: ellipse(3287.770833,4418.645833,16.929532,9.976943,58.164279)
+	chip_id: 2
+	prob: 0.79
+	result: variable
+Filtering: 3184
+	region: ellipse(4686.576471,4985.576471,27.109189,21.03956,90.233476)
+	chip_id: 0
+	prob: 1.00
+	result: variable
+Filtering: 5353
+	region: ellipse(4395.647059,3706.588235,4.802031,4.270201,25.381316)
+	chip_id: 7
+	prob: 0.55
+	result: possibly variable
+Filtering: 5353
+	region: ellipse(4185.178571,4697.214286,11.498222,9.026821,98.690549)
+	chip_id: 6
+	prob: 0.32
+	result: not variable
+Filtering: 5353
+	region: ellipse(4104.523256,4848.616279,16.844642,11.585028,106.62609)
+	chip_id: 6
+	prob: 0.16
+	result: not variable
+Filtering: 5353
+	region: ellipse(4228.875,3446.25,6.46468,3.221768,147.02031)
+	chip_id: 7
+	prob: 0.59
+	result: possibly variable
+Filtering: 11737
+	region: ellipse(4275.315789,4188.421053,2.808307,1.391447,87.83747)
+	chip_id: 7
+	prob: 1.00
+	result: variable
+Filtering: 12264
+	region: ellipse(3716.914286,4526.085714,8.338523,5.487096,145.311766)
+	chip_id: 0
+	prob: 1.00
+	result: variable
+Filtering: 12273
+	region: ellipse(4081.615385,3416.615385,10.4838,5.222391,35.718306)
+	chip_id: 1
+	prob: 0.52
+	result: possibly variable
+Filtering: 13454
+	region: ellipse(4756.601852,4709.055556,17.48276,11.052088,114.133201)
+	chip_id: 3
+	prob: 1.00
+	result: variable
+Filtering: 13505
+	region: ellipse(5043.337079,3861.88764,22.705378,16.568663,71.853535)
+	chip_id: 3
+	prob: 0.50
+	result: not variable
+Filtering: 15113
+	region: ellipse(4893.0,4221.125,15.402021,11.779734,70.951262)
+	chip_id: 0
+	prob: 1.00
+	result: variable
+Filtering: 16120
+	region: ellipse(4632.275986,4426.283154,7.839688,5.716694,71.841638)
+	chip_id: 2
+	prob: 0.09
+	result: not variable
+Filtering: 5885
+	region: ellipse(3833.722222,3733.888889,4.541492,3.011527,134.793408)
+	chip_id: 7
+	prob: 0.94
+	result: variable
+Filtering: 16454
+	region: ellipse(3832.66055,3724.926606,4.483622,3.152786,37.21737)
+	chip_id: 1
+	prob: 1.00
+	result: variable
+Filtering: 12317
+	region: ellipse(4172.125,4115.9625,2.585882,2.073025,80.734539)
+	chip_id: 7
+	prob: 0.73
+	result: variable
+Filtering: 12301
+	region: ellipse(3999.0,3714.375,2.598076,2.57087,180.0)
+	chip_id: 7
+	prob: 0.57
+	result: possibly variable
+Filtering: 6792
+	region: ellipse(3389.090909,3921.054545,15.599878,11.356893,80.677896)
+	chip_id: 3
+	prob: 0.98
+	result: variable
+Filtering: 1882
+	region: ellipse(4194.780488,4014.902439,2.576553,2.496455,125.782526)
+	chip_id: 3
+	prob: 1.00
+	result: variable
+Filtering: 4396
+	region: ellipse(3913.801653,4566.280992,5.875909,4.316498,17.323822)
+	chip_id: 3
+	prob: 1.00
+	result: variable
+Traceback (most recent call last):
+  File "/home/jcrans/bachelor-internship/code/search/testing.py", line 533, in <module>
+    filter_variable_check(
+  File "/home/jcrans/bachelor-internship/code/search/testing.py", line 486, in filter_variable_check
+    f'output/candidates/candidates_w_{window}_ex_{"_".join(exclusions)}_daterange_{from_date}_{to_date}.csv')
+                                                  ^^^^^^^^^^^^^^^^^^^^
+TypeError: sequence item 0: expected str instance, int found

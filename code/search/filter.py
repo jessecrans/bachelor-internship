@@ -91,7 +91,7 @@ def filter_detections(detections: pd.DataFrame, filtered: pd.DataFrame, catalogs
         `pd.DataFrame`: Filtered dataframe of detections.
     """
     # add new detections to filtered dataframe
-    filtered = update_detections(detections, filtered, catalogs)
+    filtered = update_detections(detections, filtered, catalogs, verbose)
 
     # to check if detection has already been queried
     # TODO: make this a more permanent solution
@@ -143,6 +143,7 @@ def filter_detection_file(detections_filename: str, filtered_filename: str, cata
         verbose `int` (optional): Defaults to `0`. Level of verbosity.
     """
     detections = pd.read_csv(detections_filename, sep=' ', header=0, dtype=str)
+
     filtered = pd.read_csv(filtered_filename, sep=',', header=0, dtype=str)
 
     if verbose > 0:
@@ -172,8 +173,8 @@ def clear_filter_matches(filtered_filename: str, catalog: str) -> None:
     filtered.to_csv(filtered_filename, index=False)
 
 
-DETECTIONS_FILENAME = 'output/detections_w30.txt'
-FILTERED_FILENAME = 'output/filtered_w30.csv'
+DETECTIONS_FILENAME = 'output/detections_w20_forward.txt'
+FILTERED_FILENAME = 'output/filtered_w20_forward.csv'
 CATALOGS = {
     'gaia': filter_gaia,
     'archival': filter_archival,

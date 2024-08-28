@@ -33,6 +33,10 @@ CRITERIA = [
 ALL_FILTERS = [
     filter for _, filters in CRITERIA for filter in filters
 ]
+NO_ARCHIVAL = [
+    filter for _, filters in CRITERIA for filter in filters if filter not in [
+        'archival_match', 'chandra_match', 'erosita_match', 'xray-binaries_match']
+]
 FILENAMES = [  # List of obsids from Chandra
     'obsid_lists/obsids_b+10_220401+.csv',
     'obsid_lists/obsids_b-10_220401+.csv',
@@ -861,13 +865,13 @@ def get_candidate_numbers(from_date: str = '', to_date: str = '', window: int = 
     ### Returns:
         `pd.DataFrame`: Table with the number of observations, analysed observations, detections and candidates that match no criteria.
     """
-    detected = pd.read_csv(f'output/detections_w{int(window)}.txt',
+    detected = pd.read_csv(f'output/detections_w{int(window)}_forward.txt',
                            header=0, dtype=str, sep=' ')
 
-    filtered = pd.read_csv(f'output/filtered_w{int(window)}.csv',
+    filtered = pd.read_csv(f'output/filtered_w{int(window)}_forward.csv',
                            header=0, dtype=str)
 
-    analysed = pd.read_csv(f'output/analysed_w{int(window)}.txt',
+    analysed = pd.read_csv(f'output/analysed_w{int(window)}_forward.txt',
                            header=0, dtype=str, sep=' ')
 
     obsids = read_obsids(FILENAMES)
@@ -1198,8 +1202,9 @@ def get_candidates(window: int = 20, from_date: str = '', to_date: str = '', exc
             ~filtered['DEC'].isin(filtered_to_exclude['DEC'])
         ]
 
-    filtered = filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1)][[
-        'ObsId', 'RA', 'DEC', 'THETA', 'POS_ERR', 'SIGNIFICANCE']]
+    # filtered = filtered[(filtered[ALL_FILTERS] == 'no').all(axis=1)][
+        # ['ObsId', 'RA', 'DEC', 'THETA', 'POS_ERR', 'SIGNIFICANCE']]
+    filtered = filtered[(filtered[NO_ARCHIVAL] == 'no').all(axis=1)]
 
     return filtered
 
@@ -1221,7 +1226,7 @@ def get_date(obsid: str) -> str:
     if start_date.day == end_date.day:
         return start_date.strftime('%Y-%m-%d')
     else:
-        return f'{start_date.strftime("%Y-%m-%d")} - {end_date.strftime("%Y-%m-%d")}'
+        return f'{start_date.strftime("%Y-%m-%d")}/{end_date.strftime("%Y-%m-%d")}'
 
 
 def get_previous_detection_status(obsid: str, ra: float, dec: float, pos_err: float) -> str:
@@ -1419,7 +1424,7 @@ def get_fxt_dataframe_detections(detections: pd.DataFrame, start_index: int = 1)
         `pd.DataFrame`: FXT table.
     """
     order = [
-        'Id', 'Previous Detection', 'ObsId', 'Exposure', 'Date', 'T_90', 'RA', 'DEC', 'THETA', 'POS_ERR', 'SIGNIFICANCE'  # , 'HR', 'Flux'
+        'Id', 'Search', 'ObsId', 'Exposure', 'Date', 'T_90', 'RA', 'DEC', 'THETA', 'POS_ERR', 'SIGNIFICANCE'  # , 'HR', 'Flux'
     ]
 
     column_names = {
@@ -1455,14 +1460,15 @@ def get_fxt_dataframe_detections(detections: pd.DataFrame, start_index: int = 1)
     #         float(detection['THETA'])
     #     )[0] for i, detection in no_match.iterrows()]
     # ]
-    detections['Previous Detection'] = [
-        get_previous_detection_status(
-            detection['ObsId'],
-            float(detection['RA']),
-            float(detection['DEC']),
-            float(detection['POS_ERR'])
-        ) for i, detection in detections.iterrows()
-    ]
+    # detections['Previous Detection'] = [
+    #     get_previous_detection_status(
+    #         detection['ObsId'],
+    #         float(detection['RA']),
+    #         float(detection['DEC']),
+    #         float(detection['POS_ERR'])
+    #     ) for i, detection in detections.iterrows()
+    # ]
+    detections['Search'] = detections['search']
     # no_match['Flux'] = [
     #     f'${get_flux(detection):.1E}$' for i, detection in no_match.iterrows()
     # ]
