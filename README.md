@@ -48,6 +48,10 @@ At the bottom of the script there are some parameters in uppercase which can be 
   - `1`: Progress messages for the search pipeline. Number of detections being filtered from what file.
   - `2`: Filter status of every filtered detection.
   - `3`: Progress messages for filter setup code.
+ 
+### display_results.ipynb
 
-### code/simulation
+In this notebook are a number of cells that let us see the results of searches. Such as: light curves of candidates, how many detections were filtered out at each step, etc. Every cell has an explaining comment as the first line.
+
+## code/simulation
 In this directory we can run simulations for modeled FXTs. With these we can simulate the detection probabilities for different FXTs and window sizes.
